@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import TopNavbar from "../components/TopNavbar";
 import styles from "../css/plans.module.css";
 import logoTagline from "../images/LOGO_Tagline.png";
+import infoStyles from "../css/planinfo.module.css";
 
 function NonVegPremium() {
   return (
