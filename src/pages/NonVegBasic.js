@@ -49,13 +49,22 @@ function NonVegPremium() {
             </div>
           </div>
           <div type="button" className={infoStyles.innerCard2}>
-            <h2> SUNDAY </h2>
+            <h3> SUNDAY </h3>
           </div>
         </div>
         <div className={infoStyles.details}>
-          <div className={infoStyles.pricing}></div>
-          <div className={infoStyles.addAddr}></div>
-          <div className={infoStyles.checkout}></div>
+          <div className={infoStyles.pricing}>
+            <div style={{ backgroundColor: "red" }}>hello</div>
+            <div>hello</div>
+            <div>hello</div>
+            <div>hello</div>
+          </div>
+          <div type="button" className={infoStyles.addAddr}>
+            <h3>Add Address</h3>
+          </div>
+          <div type="button" className={infoStyles.checkout}>
+            <h3>Proceed to Checkout</h3>
+          </div>
         </div>
       </div>
       <Footer />
