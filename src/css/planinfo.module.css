@@ -28,7 +28,6 @@
 .innerCard1 {
   height: 55%;
   width: 92%;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -65,4 +64,11 @@
 
 .innerCard2:hover {
   border: 1px solid red;
+}
+
+.pricing {
+  height: 22vh;
+  width: 100%;
+  background-color: green;
+  border-radius: 3vh;
 }

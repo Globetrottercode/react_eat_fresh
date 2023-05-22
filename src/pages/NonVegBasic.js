@@ -53,9 +53,9 @@ function NonVegPremium() {
           </div>
         </div>
         <div className={infoStyles.details}>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className={infoStyles.pricing}></div>
+          <div className={infoStyles.addAddr}></div>
+          <div className={infoStyles.checkOut}></div>
         </div>
       </div>
       <Footer />
