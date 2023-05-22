@@ -1,8 +1,15 @@
-import Footer from "../components/Footer";
-import TopNavbar from "../components/TopNavbar";
-import styles from "../css/plans.module.css";
-import logoTagline from "../images/LOGO_Tagline.png";
-import infoStyles from "../css/planinfo.module.css";
+import Footer from "../../components/Footer";
+import TopNavbar from "../../components/TopNavbar";
+import styles from "../../css/plans.module.css";
+import logoTagline from "../../images/LOGO_Tagline.png";
+import infoStyles from "../../css/planinfo.module.css";
+
+let daywisePricing = {
+  7: "5% OFF / PER DAY ",
+  14: "10% OFF / PER DAY ",
+  28: "15% OFF / PER DAY ",
+  custom: "INR 130 / PER DAY ",
+};
 
 function VegBasic() {
   return (
@@ -49,12 +56,36 @@ function VegBasic() {
             </div>
           </div>
           <div type="button" className={infoStyles.innerCard2}>
-            <h2> SUNDAY </h2>
+            <h3> SUNDAY </h3>
           </div>
         </div>
-        <div className={infoStyles.details}></div>
+        <div className={infoStyles.details}>
+          <div className={infoStyles.pricing}>
+            <div>
+              <p>7 day Plan:</p>
+              <p>{daywisePricing[7]}</p>
+            </div>
+            <div>
+              <p>14 day Plan:</p>
+              <p>{daywisePricing[14]}</p>
+            </div>
+            <div>
+              <p>28 day Plan:</p>
+              <p>{daywisePricing[28]}</p>
+            </div>
+            <div>
+              <p>custom:</p>
+              <p>{daywisePricing.custom}</p>
+            </div>
+          </div>
+          <div type="button" className={infoStyles.addAddr}>
+            <h3>Add Address</h3>
+          </div>
+          <div type="button" className={infoStyles.checkout}>
+            <h3>Proceed to Checkout</h3>
+          </div>
+        </div>
       </div>
-
       <Footer />
     </>
   );

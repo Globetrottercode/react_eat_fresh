@@ -2,11 +2,12 @@ import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
-import VegPremium from "./pages/VegPremium";
-import NonVegBasic from "./pages/NonVegBasic";
-import NonVegPremium from "./pages/NonVegPremium";
-import Plans from "./pages/Plans";
-import VegBasic from "./pages/Veg_Basic";
+import VegPremium from "./pages/PlanPages/VegPremium";
+import NonVegBasic from "./pages/PlanPages/NonVegBasic";
+import NonVegPremium from "./pages/PlanPages/NonVegPremium";
+import Plans from "./pages/PlanPages/Plans";
+import VegBasic from "./pages/PlanPages/Veg_Basic";
+import Customize from "./pages/PlanPages/Customize";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/plans/vegPremium" element={<VegPremium />} />
         <Route path="/plans/nonVegBasic" element={<NonVegBasic />} />
         <Route path="/plans/nonVegPremium" element={<NonVegPremium />} />
+        <Route path="/plans/Customize" element={<Customize />} />
       </Routes>
     </BrowserRouter>
   );
