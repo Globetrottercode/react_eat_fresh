@@ -1,9 +1,13 @@
 import LogoTagline from "../images/LOGO_Tagline.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import allActions from "../Redux/actions/allActions";
 import "../css/styles.css";
 
 function SignUp() {
+  let currentUser = useSelector((state) => state.currentUser);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   let [register, setRegister] = useState({
     username: "",
@@ -20,7 +24,7 @@ function SignUp() {
       alert("Passwords dont match !");
       return;
     }
-    console.log(register);
+    //console.log(register);
     e.preventDefault();
     const response = await fetch("http://localhost:3500/signup", {
       // credentials: 'include',
@@ -37,12 +41,27 @@ function SignUp() {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    console.log(json.user); // for testing
     if (json.success) {
+      let user = { username: register.username };
+      dispatch(allActions.userActions.setUser(user));
+      console.log(currentUser); // for testing
       navigate(`/plans`);
     } else {
       alert("Email Id already exists");
     }
+  }
+  async function HandleGoogle() {
+    console.log("hello");
+    const response = await fetch("http://localhost:3500/auth/google", {
+      // credentials: 'include',
+      // Origin:"http://localhost:3000/login",
+
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
   return (
     <div className="logincontain">
@@ -144,7 +163,7 @@ function SignUp() {
         </div>
         <a
           type="button"
-          href="/auth/google"
+          href="http://localhost:3500/auth/google"
           class="btn btn-danger btn-block mb-4 "
         >
           <i class="fab fa-google"></i> Sign Up with Google

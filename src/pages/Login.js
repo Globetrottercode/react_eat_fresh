@@ -2,10 +2,14 @@ import LogoTagline from "../images/LOGO_Tagline.png";
 import logo from "../images/LOGO_Tagline.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import allActions from "../Redux/actions/allActions";
 
 import "../css/styles.css";
 
 function Login() {
+  let currentUser = useSelector((state) => state.currentUser);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: "",
@@ -33,8 +37,11 @@ function Login() {
     });
     if (response.status === 200) {
       const json = await response.json();
-      console.log(json);
+      console.log(json); // for testing
       if (json.success) {
+        let user = { username: credentials.username };
+        dispatch(allActions.userActions.setUser(user));
+        console.log(currentUser); // for testing
         navigate("/plans");
       } else {
         alert("Check email and password");
@@ -127,10 +134,10 @@ function Login() {
         </div>
         <a
           type="button"
-          href="/auth/google"
+          href="http://localhost:3500/auth/google"
           class="btn btn-danger btn-block mb-4 "
         >
-          <i class="fab fa-google"></i> Sign in with Google
+          <i class="fab fa-google"></i> Sign In with Google
         </a>
       </div>
     </div>

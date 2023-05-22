@@ -1,4 +1,5 @@
 import brand from "../images/LOGO.png";
+import { Link } from "react-router-dom";
 import "../css/styles.css";
 
 function TopNavbar() {
@@ -40,7 +41,7 @@ function TopNavbar() {
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
-              <a className="nav-link">
+              <a type="button" className="nav-link">
                 <i
                   className="fa-sharp fa-solid fa-gear fa-2x"
                   style={{ color: "#030507", marginTop: "1vh" }}
@@ -48,7 +49,7 @@ function TopNavbar() {
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
-              <a className="nav-link">
+              <a type="button" className="nav-link">
                 <i
                   className="fa-solid fa-user fa-2x"
                   style={{ color: "#000000", marginTop: "1vh" }}

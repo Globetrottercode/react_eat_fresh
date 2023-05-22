@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import TopNavbar from "../components/TopNavbar";
-import styles from "../css/dashboard.module.css";
+import styles from "../css/plans.module.css";
 import logoTagline from "../images/LOGO_Tagline.png";
 
 function Plans() {
@@ -23,24 +23,28 @@ function Plans() {
         <div className={styles.dashRight}>
           <div className={styles.mealPlans}>
             <div
+              type="button"
               style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
               className={styles.planType}
             >
               <h3>NON-VEG BASIC</h3>
             </div>
             <div
+              type="button"
               style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
               className={styles.planType}
             >
               <h3>VEG BASIC</h3>
             </div>
             <div
+              type="button"
               style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
               className={styles.planType}
             >
               <h3>NON-VEG PREMIUM</h3>
             </div>
             <div
+              type="button"
               style={{
                 backgroundColor: "rgba(81, 153, 56, 0.8)",
               }}
@@ -49,7 +53,7 @@ function Plans() {
               <h3>VEG PREMIUM</h3>
             </div>
           </div>
-          <div className={styles.customPlan}>
+          <div type="button" className={styles.customPlan}>
             <h2> CUSTOMIZE </h2>
           </div>
         </div>

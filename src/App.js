@@ -2,15 +2,11 @@ import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
+import VegPremium from "./pages/VegPremium";
+import NonVegBasic from "./pages/NonVegBasic";
+import NonVegPremium from "./pages/NonVegPremium";
 import Plans from "./pages/Plans";
-
-function Duniya() {
-  return (
-    <div>
-      <h1> Hello Duniya ! </h1>
-    </div>
-  );
-}
+import VegBasic from "./pages/Veg_Basic";
 
 export default function App() {
   return (
@@ -20,13 +16,17 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/plans" element={<Plans />} />
+        <Route path="/plans/vegBasic" element={<VegBasic />} />
+        <Route path="/plans/vegPremium" element={<VegPremium />} />
+        <Route path="/plans/nonVegBasic" element={<NonVegBasic />} />
+        <Route path="/plans/nonVegPremium" element={<NonVegPremium />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-{
-  /* <nav>
+// {
+/* <nav>
 {" "}
 <NavLink
   to="/"
@@ -39,4 +39,4 @@ export default function App() {
 </NavLink>{" "}
 <br /> <Link to="/login"> Login </Link>{" "}
 </nav> */
-}
+// }
