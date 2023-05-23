@@ -8,6 +8,7 @@ import NonVegPremium from "./pages/PlanPages/NonVegPremium";
 import Plans from "./pages/PlanPages/Plans";
 import VegBasic from "./pages/PlanPages/Veg_Basic";
 import Customize from "./pages/PlanPages/Customize";
+import PlanDetail from "./pages/PlanPages/planDetail";
 
 export default function App() {
   return (
@@ -17,11 +18,8 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/plans" element={<Plans />} />
-        <Route path="/plans/vegBasic" element={<VegBasic />} />
-        <Route path="/plans/vegPremium" element={<VegPremium />} />
-        <Route path="/plans/nonVegBasic" element={<NonVegBasic />} />
-        <Route path="/plans/nonVegPremium" element={<NonVegPremium />} />
-        <Route path="/plans/Customize" element={<Customize />} />
+
+        <Route path="/plans/:planType" element={<PlanDetail />} />
       </Routes>
     </BrowserRouter>
   );

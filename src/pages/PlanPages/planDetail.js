@@ -1,17 +1,15 @@
+import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 import TopNavbar from "../../components/TopNavbar";
 import styles from "../../css/plans.module.css";
 import logoTagline from "../../images/LOGO_Tagline.png";
 import infoStyles from "../../css/planinfo.module.css";
+import pricing from "../../mealsData/pricing";
 
-let daywisePricing = {
-  7: "5% OFF / PER DAY ",
-  14: "10% OFF / PER DAY ",
-  28: "15% OFF / PER DAY ",
-  custom: "INR 215 / PER DAY ",
-};
+function PlanDetail() {
+  let { planType } = useParams();
+  let daywisePricing = pricing[planType];
 
-function Customize() {
   return (
     <>
       <TopNavbar className="bg-sky-700 text-lg" />
@@ -90,5 +88,4 @@ function Customize() {
     </>
   );
 }
-
-export default Customize;
+export default PlanDetail;
