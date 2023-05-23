@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import TopNavbar from "../../components/TopNavbar";
 import styles from "../../css/plans.module.css";
@@ -9,6 +9,7 @@ import pricing from "../../mealsData/pricing";
 function PlanDetail() {
   let { planType } = useParams();
   let daywisePricing = pricing[planType];
+  let navigate = useNavigate();
 
   return (
     <>
@@ -17,43 +18,53 @@ function PlanDetail() {
         <div className={infoStyles.card}>
           <div className={infoStyles.innerCard1}>
             <div
+              onClick={() => navigate(`/plans/${planType}/monday`)}
               type="button"
               style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
             >
               <h3> MON</h3>
             </div>
             <div
+              onClick={() => navigate(`/plans/${planType}/tuesday`)}
               type="button"
               style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
             >
               <h3>TUES</h3>
             </div>
             <div
+              onClick={() => navigate(`/plans/${planType}/wednesday`)}
               type="button"
               style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
             >
               <h3>WED</h3>
             </div>
             <div
+              onClick={() => navigate(`/plans/${planType}/thursday`)}
               type="button"
               style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
             >
               <h3>THURS</h3>
             </div>
             <div
+              onClick={() => navigate(`/plans/${planType}/friday`)}
               type="button"
               style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
             >
               <h3>FRI</h3>
             </div>
             <div
+              onClick={() => navigate(`/plans/${planType}/saturday`)}
               type="button"
               style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
             >
               <h3> SAT </h3>
             </div>
           </div>
-          <div type="button" className={infoStyles.innerCard2}>
+          <div
+            onClick={() => navigate(`/plans/${planType}/sunday`)}
+            type="button"
+            className={infoStyles.innerCard2}
+          >
             <h3> SUNDAY </h3>
           </div>
         </div>

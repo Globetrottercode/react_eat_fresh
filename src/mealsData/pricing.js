@@ -23,6 +23,12 @@ let pricing = {
     28: "15% OFF / PER DAY ",
     custom: "INR 200 / PER DAY ",
   },
+  customize: {
+    7: "5% OFF / PER DAY ",
+    14: "10% OFF / PER DAY ",
+    28: "15% OFF / PER DAY ",
+    custom: "INR 215 / PER DAY ",
+  },
 };
 
 export default pricing;

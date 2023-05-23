@@ -11,6 +11,19 @@
   border: 1px solid orange;
 }
 
+.cardDays {
+  background-color: rgba(217, 217, 217, 0.6);
+  height: 47vh;
+  width: 50vw;
+  border-radius: 8vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .details {
   height: 47vh;
   width: 25vw;
@@ -127,4 +140,30 @@
   padding-top: 5%;
   padding-left: 2%;
   padding-right: 2%;
+}
+
+.dayBar {
+  height: 25%;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mealTypeBar {
+  height: 17%;
+  width: 90%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.mealTypeBar:hover {
+  border: 2px solid white;
 }
