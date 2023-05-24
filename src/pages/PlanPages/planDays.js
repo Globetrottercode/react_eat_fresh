@@ -26,7 +26,7 @@ function PlanDays() {
             return (
               <div
                 onClick={() => {
-                  navigate(`/plans/${planType}/${day}/${meal}`);
+                  navigate(`/plans/${planType}/${day}/${meal.toLowerCase()}`);
                 }}
                 type="button"
                 className={infoStyles.mealTypeBar}
@@ -55,9 +55,9 @@ function PlanDays() {
               <p>{daywisePricing.custom}</p>
             </div>
           </div>
-          <div type="button" className={infoStyles.addAddr}>
+          {/* <div type="button" className={infoStyles.addAddr}>
             <h3>Add Address</h3>
-          </div>
+          </div> */}
           <div type="button" className={infoStyles.checkout}>
             <h3>Proceed to Checkout</h3>
           </div>

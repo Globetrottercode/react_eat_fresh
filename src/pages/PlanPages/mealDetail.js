@@ -10,6 +10,8 @@ import allPlansMealData from "../../mealsData/allPlansMealData";
 function MealDetail() {
   let navigate = useNavigate();
   let { planType, day, meal } = useParams();
+  let dishes = allPlansMealData[planType][day][meal];
+  console.log(dishes);
   console.log(planType, day);
   let daywisePricing = pricing[planType];
   let mealType = ["Breakfast", "lunch", "Dinner"];
@@ -22,7 +24,16 @@ function MealDetail() {
           <div className={infoStyles.dayBar}>
             <h3>{meal.toUpperCase()}</h3>
           </div>
-          <div className={infoStyles.cardInnerMeals}></div>
+          <div className={infoStyles.cardInnerMeals}>
+            {dishes.map((dish) => {
+              return (
+                <div>
+                  <p style={{ fontWeight: "bolder" }}>{dish}</p>
+                </div>
+              );
+            })}
+          </div>
+
           {/* {mealType.map((meal) => {
             return (
               <div
@@ -56,9 +67,9 @@ function MealDetail() {
               <p>{daywisePricing.custom}</p>
             </div>
           </div>
-          <div type="button" className={infoStyles.addAddr}>
+          {/* <div type="button" className={infoStyles.addAddr}>
             <h3>Add Address</h3>
-          </div>
+          </div> */}
           <div type="button" className={infoStyles.checkout}>
             <h3>Proceed to Checkout</h3>
           </div>

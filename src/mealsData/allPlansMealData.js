@@ -1,6 +1,6 @@
 let allPlansMealData = {
   vegBasic: {
-    mon: {
+    monday: {
       breakfast: ["Pav Bhaji"],
       lunch: [
         "Rice/Roti",
@@ -20,7 +20,7 @@ let allPlansMealData = {
         "Chutney",
       ],
     },
-    tues: {
+    tuesday: {
       breakfast: ["Masala Dosa", "Coconut Chutney", "Sambar"],
       lunch: [
         "Rice/Roti",
@@ -40,7 +40,7 @@ let allPlansMealData = {
         "Chutney",
       ],
     },
-    wed: {
+    wednesday: {
       breakfast: ["Dhokla", "Green Chutney", "Sauce"],
       lunch: [
         "Rice/Roti",
@@ -60,7 +60,7 @@ let allPlansMealData = {
         "Chutney",
       ],
     },
-    thurs: {
+    thursday: {
       breakfast: ["Idli/Sambar Bada", "Coconut Chutney", "Sambar"],
       lunch: [
         "Rice/Roti",
@@ -142,7 +142,7 @@ let allPlansMealData = {
     },
   },
   vegPremium: {
-    mon: {
+    monday: {
       breakfast: ["Pav Bhaji", "Orange Juice"],
       lunch: [
         "Rice/Roti",
@@ -166,7 +166,7 @@ let allPlansMealData = {
         "Gulab Jamun",
       ],
     },
-    tues: {
+    tuesday: {
       breakfast: ["Masala Dosa", "Mango Juice"],
       lunch: [
         "Rice/Roti",
@@ -190,7 +190,7 @@ let allPlansMealData = {
         "Gulab Jamun",
       ],
     },
-    wed: {
+    wednesday: {
       breakfast: ["Dhokla", "Pineapple Juice"],
       lunch: [
         "Rice/Roti",
@@ -212,7 +212,7 @@ let allPlansMealData = {
         "Chutney",
       ],
     },
-    thurs: {
+    thursday: {
       breakfast: ["Idli", "Sambar Bada", "Orange Juice"],
       lunch: [
         "Rice/Roti",
@@ -308,7 +308,7 @@ let allPlansMealData = {
     },
   },
   nonVegBasic: {
-    mon: {
+    monday: {
       breakfast: ["Chicken Maggi"],
       lunch: [
         "Rice/Roti",
@@ -329,7 +329,7 @@ let allPlansMealData = {
         "Curd/Raita",
       ],
     },
-    tues: {
+    tuesday: {
       breakfast: ["Chicken Sandwich"],
       lunch: [
         "Rice/Roti",
@@ -350,7 +350,7 @@ let allPlansMealData = {
         "Curd/Raita",
       ],
     },
-    wed: {
+    wednesday: {
       breakfast: ["Masala Dosa", "Sambar", "Coconut Chutney"],
       lunch: [
         "Rice/Roti",
@@ -371,7 +371,7 @@ let allPlansMealData = {
         "Curd/Raita",
       ],
     },
-    thurs: {
+    thursday: {
       breakfast: ["Dhokla", "Sweet Chutney"],
       lunch: [
         "Rice/Roti",
@@ -457,7 +457,7 @@ let allPlansMealData = {
     },
   },
   nonVegPremium: {
-    mon: {
+    monday: {
       breakfast: ["Chole", "Bhature", "Orange Juice"],
       lunch: [
         "Rice/Roti",
@@ -482,7 +482,7 @@ let allPlansMealData = {
         "Gulab Jamun",
       ],
     },
-    tues: {
+    tuesday: {
       breakfast: ["Pav Bhaji", "Mango Juice"],
       lunch: [
         "Rice/Roti",
@@ -507,7 +507,7 @@ let allPlansMealData = {
         "Gulab Jamun",
       ],
     },
-    wed: {
+    wednesday: {
       breakfast: ["Chole", "Kulche", "Pineapple Juice"],
       lunch: [
         "Rice/Roti",
@@ -532,7 +532,7 @@ let allPlansMealData = {
         "Gulab Jamun",
       ],
     },
-    thurs: {
+    thursday: {
       breakfast: ["Cheese Dosa", "Orange Juice"],
       lunch: [
         "Rice/Roti",

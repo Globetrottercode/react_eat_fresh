@@ -28,8 +28,7 @@ let allMeals = {
     "Dhokla",
     "chole Bhature",
     "chole Kulche",
-    "Malai Kofta",
-    "Chana Paneer",
+    "",
   ], // Storing all possible Breakfast
   allLunch: [
     "Chicken Curry",

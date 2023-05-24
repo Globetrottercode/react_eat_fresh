@@ -14,7 +14,7 @@ import PlanDetail from "./pages/PlanPages/planDetail";
 import PlanDays from "./pages/PlanPages/planDays";
 import MealDetail from "./pages/PlanPages/mealDetail";
 
-// function MealDetail() {
+// function Checkout() {
 //   let { planType, day, meal } = useParams();
 //   console.log(planType, day);
 //   return <h1>Hello Duniya eat {meal}()</h1>;

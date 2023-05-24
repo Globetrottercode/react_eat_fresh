@@ -24,33 +24,13 @@
   align-items: center;
 }
 
-.cardMealDetail {
-  background-color: rgba(217, 217, 217, 0.6);
-  height: 47vh;
-  width: 50vw;
-  border-radius: 8vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid orange;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.cardInnerMeals {
-  height: 65%;
-  width: 90%;
-  background-color: green;
-  border-radius: 3vh;
-}
-
 .details {
   height: 47vh;
   width: 25vw;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .body {
@@ -186,4 +166,46 @@
 
 .mealTypeBar:hover {
   border: 2px solid white;
+}
+
+/* ////////////////// mealDetail page stylings ////////////*/
+
+.cardMealDetail {
+  background-color: rgba(217, 217, 217, 0.6);
+  height: 47vh;
+  width: 50vw;
+  border-radius: 8vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cardInnerMeals {
+  height: 65%;
+  width: 95%;
+  /* background-color: aqua; */
+  border-radius: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.cardInnerMeals > div {
+  width: 30%;
+  height: 30%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 1.2vw;
+}
+
+.cardInnerMeals > div > p {
+  margin-top: 5%;
 }
