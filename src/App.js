@@ -13,10 +13,10 @@ import Plans from "./pages/PlanPages/Plans";
 import PlanDetail from "./pages/PlanPages/planDetail";
 import PlanDays from "./pages/PlanPages/planDays";
 
-function Duniya() {
-  let { planType, day } = useParams();
+function MealDetail() {
+  let { planType, day, meal } = useParams();
   console.log(planType, day);
-  return <h1>Hello Duniya()</h1>;
+  return <h1>Hello Duniya eat {meal}()</h1>;
 }
 
 export default function App() {
@@ -27,9 +27,9 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/plans" element={<Plans />} />
-
         <Route path="/plans/:planType" element={<PlanDetail />} />
         <Route path="/plans/:planType/:day" element={<PlanDays />} />
+        <Route path="/plans/:planType/:day/:meal" element={<MealDetail />} />
       </Routes>
     </BrowserRouter>
   );

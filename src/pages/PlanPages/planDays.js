@@ -7,6 +7,7 @@ import infoStyles from "../../css/planinfo.module.css";
 import pricing from "../../mealsData/pricing";
 
 function PlanDays() {
+  let navigate = useNavigate();
   let { planType, day } = useParams();
   console.log(planType, day);
   let daywisePricing = pricing[planType];
@@ -23,7 +24,13 @@ function PlanDays() {
 
           {mealType.map((meal) => {
             return (
-              <div className={infoStyles.mealTypeBar}>
+              <div
+                onClick={() => {
+                  navigate(`/plans/${planType}/${day}/${meal}`);
+                }}
+                type="button"
+                className={infoStyles.mealTypeBar}
+              >
                 <h3>{meal}</h3>
               </div>
             );
