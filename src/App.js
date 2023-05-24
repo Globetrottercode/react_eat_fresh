@@ -13,6 +13,7 @@ import Plans from "./pages/PlanPages/Plans";
 import PlanDetail from "./pages/PlanPages/planDetail";
 import PlanDays from "./pages/PlanPages/planDays";
 import MealDetail from "./pages/PlanPages/mealDetail";
+import Checkout from "./pages/checkout";
 
 // function Checkout() {
 //   let { planType, day, meal } = useParams();
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/plans/:planType" element={<PlanDetail />} />
         <Route path="/plans/:planType/:day" element={<PlanDays />} />
         <Route path="/plans/:planType/:day/:meal" element={<MealDetail />} />
+        <Route path="/plans/:planType/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );

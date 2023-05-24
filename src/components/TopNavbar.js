@@ -32,27 +32,39 @@ function TopNavbar() {
           <ul className="navbar-nav ms-auto">
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a className="nav-link">
-                <button class="navButton">Plans</button>
+                <button class="navButton">
+                  <p style={{ marginTop: "8%", fontSize: "2vh" }}>Plans</p>
+                </button>
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a className="nav-link">
-                <button class="navButton">Dashboard</button>
+                <button class="navButton">
+                  <p style={{ marginTop: "8%", fontSize: "2vh" }}>Dashboard</p>
+                </button>
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a type="button" className="nav-link">
                 <i
-                  className="fa-sharp fa-solid fa-gear fa-2x"
-                  style={{ color: "#030507", marginTop: "1vh" }}
+                  className="fa-sharp fa-solid fa-gear "
+                  style={{
+                    color: "#030507",
+                    marginTop: "1vh",
+                    fontSize: "4vh",
+                  }}
                 ></i>
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a type="button" className="nav-link">
                 <i
-                  className="fa-solid fa-user fa-2x"
-                  style={{ color: "#000000", marginTop: "1vh" }}
+                  className="fa-solid fa-user "
+                  style={{
+                    color: "#000000",
+                    marginTop: "1vh",
+                    fontSize: "4vh",
+                  }}
                 ></i>
               </a>
             </li>

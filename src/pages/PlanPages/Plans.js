@@ -9,7 +9,7 @@ function Plans() {
   return (
     <>
       <TopNavbar className="bg-sky-700 text-lg" />
-      <div className={styles.dashboardBody}>
+      <div className={styles.plansBody}>
         <div className={styles.dashLeft}>
           <img style={{ height: "30vh" }} src={logoTagline} />
           <div className={styles.dashText}>

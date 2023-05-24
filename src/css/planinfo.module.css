@@ -85,7 +85,6 @@
 .pricing {
   height: 22vh;
   width: 100%;
-  background-color: green;
   border-radius: 3vh;
   display: flex;
   flex-direction: column;
@@ -94,8 +93,8 @@
   background-color: rgba(217, 217, 217, 0.6);
 }
 
-.addAddr {
-  height: 11vh;
+/* .addAddr {
+  height: 11vh;  // add Address button removed from planPages
   width: 100%;
   background-color: greenyellow;
   border-radius: 3vh;
@@ -107,7 +106,7 @@
 }
 .addAddr:hover {
   border: 2px solid red;
-}
+} */
 
 .checkout {
   height: 11vh;
@@ -186,11 +185,10 @@
 .cardInnerMeals {
   height: 65%;
   width: 95%;
-  /* background-color: aqua; */
+
   border-radius: 3vh;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
 }
 
 .cardInnerMeals > div {
@@ -208,4 +206,80 @@
 
 .cardInnerMeals > div > p {
   margin-top: 5%;
+}
+
+/* /////// checkout.js styles ////////// */
+
+.checkoutLeft {
+  height: 52vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkoutRight {
+  height: 52vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.planSelectCard {
+  height: 50%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+  border: 1px solid orange;
+}
+
+.checkoutAddr {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkoutAddr > div {
+  height: 40%;
+  width: 60%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutAddr > div:hover {
+  border: 2px solid white;
+}
+
+.checkoutPricingCard {
+  height: 75%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+}
+
+.checkoutPayment {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.checkoutPayment > div {
+  height: 95%;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  border-radius: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutPayment > div:hover {
+  border: 2px solid white;
 }

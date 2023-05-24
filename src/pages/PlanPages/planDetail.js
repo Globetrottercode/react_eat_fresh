@@ -90,7 +90,13 @@ function PlanDetail() {
           {/* <div type="button" className={infoStyles.addAddr}>
             <h3>Add Address</h3>
           </div> */}
-          <div type="button" className={infoStyles.checkout}>
+          <div
+            type="button"
+            onClick={() => {
+              navigate(`/plans/${planType}/checkout`);
+            }}
+            className={infoStyles.checkout}
+          >
             <h3>Proceed to Checkout</h3>
           </div>
         </div>
