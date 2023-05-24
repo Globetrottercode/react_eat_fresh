@@ -37,7 +37,8 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
+//MealPlan - vegBasic , vP , nvB , nvp
+//daysPlan - 7, 14,28, custom
 // {
 /* <nav>
 {" "}
