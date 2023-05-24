@@ -12,12 +12,13 @@ import SignUp from "./pages/Signup";
 import Plans from "./pages/PlanPages/Plans";
 import PlanDetail from "./pages/PlanPages/planDetail";
 import PlanDays from "./pages/PlanPages/planDays";
+import MealDetail from "./pages/PlanPages/mealDetail";
 
-function MealDetail() {
-  let { planType, day, meal } = useParams();
-  console.log(planType, day);
-  return <h1>Hello Duniya eat {meal}()</h1>;
-}
+// function MealDetail() {
+//   let { planType, day, meal } = useParams();
+//   console.log(planType, day);
+//   return <h1>Hello Duniya eat {meal}()</h1>;
+// }
 
 export default function App() {
   return (
