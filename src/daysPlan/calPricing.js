@@ -18,7 +18,7 @@ function calculatePrice(planType, days) {
   if (Number(days) > 6) {
     total = total - total * (discount[days] / 100); // applying discount
   }
-  additional = Math.ceil(0.05 * total);
+  additional = Math.ceil(0.05 * total); // 5% Tax
   total = Math.ceil(total);
   subtotal = total + additional;
   return {

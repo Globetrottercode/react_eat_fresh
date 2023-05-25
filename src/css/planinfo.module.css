@@ -33,13 +33,13 @@
   justify-content: space-evenly;
 }
 
-.body {
+/* .body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   margin-top: 1vh;
   height: 65vh;
-}
+} */
 
 .innerCard1 {
   height: 55%;
@@ -210,12 +210,12 @@
 
 /* /////// checkout.js styles ////////// */
 
-.checkoutLeft {
+/* .checkoutLeft {
   height: 52vh;
   width: 40vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .checkoutRight {
@@ -248,7 +248,7 @@
 .checkoutAddr > div {
   height: 40%;
   width: 60%;
-  background-color: rgba(255, 165, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.65);
   border-radius: 3vh;
   color: white;
   display: flex;
@@ -257,6 +257,9 @@
 }
 .checkoutAddr > div:hover {
   border: 2px solid white;
+}
+.checkoutAddr > div > h3 {
+  margin-top: 2.5%;
 }
 
 .checkoutPricingCard {
@@ -286,6 +289,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.checkoutPayment > div > h3 {
+  margin-top: 2%;
 }
 
 .checkoutPayment > div:hover {
@@ -333,9 +340,6 @@
   font-weight: bolder;
   text-align-last: center;
   margin-right: 38%;
-  /* -webkit-appearance: none; */
-  /* -moz-appearance: none; */
-  /* appearance: none; */
 
   background-color: rgba(0, 0, 0, 0.65);
-}
+} */

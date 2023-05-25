@@ -13,12 +13,11 @@ import Plans from "./pages/PlanPages/Plans";
 import PlanDetail from "./pages/PlanPages/planDetail";
 import PlanDays from "./pages/PlanPages/planDays";
 import MealDetail from "./pages/PlanPages/mealDetail";
-import Checkout from "./pages/checkout";
+import Checkout from "./pages/CheckoutPages/checkout";
+import CheckoutAddr from "./pages/CheckoutPages/CheckoutAddr";
 
-// function Checkout() {
-//   let { planType, day, meal } = useParams();
-//   console.log(planType, day);
-//   return <h1>Hello Duniya eat {meal}()</h1>;
+// function CheckoutAddr() {
+//   return <h1>Hello Duniya eat ()</h1>;
 // }
 
 export default function App() {
@@ -33,6 +32,10 @@ export default function App() {
         <Route path="/plans/:planType/:day" element={<PlanDays />} />
         <Route path="/plans/:planType/:day/:meal" element={<MealDetail />} />
         <Route path="/plans/:planType/checkout" element={<Checkout />} />
+        <Route
+          path="/plans/:planType/checkout/address"
+          element={<CheckoutAddr />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,182 @@
+/* /////////chekcout.js///////////// */
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1vh;
+  height: 65vh;
+}
+.checkoutLeft {
+  height: 52vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.checkoutRight {
+  height: 52vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.planSelectCard {
+  height: 50%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.checkoutAddr {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkoutAddr > div {
+  height: 40%;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutAddr > div:hover {
+  border: 2px solid white;
+}
+.checkoutAddr > div > h3 {
+  margin-top: 2.5%;
+}
+
+.checkoutPricingCard {
+  height: 75%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.checkoutPayment {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.checkoutPayment > div {
+  height: 95%;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  border-radius: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutPayment > div > h3 {
+  margin-top: 2%;
+}
+
+.checkoutPayment > div:hover {
+  border: 2px solid white;
+}
+
+.checkoutPricingCard > div {
+  height: 16%;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutPricingCard > div > h3 {
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 4%;
+}
+.planDropDown {
+  height: 30%;
+  width: 90%;
+  background-color: rgba(81, 153, 56, 0.69);
+  border-radius: 3vh;
+  display: flex;
+  color: white;
+  font-size: 3vh;
+  font-weight: bolder;
+  text-align-last: center;
+}
+
+.planDropDown > option {
+  margin-left: 5%;
+}
+
+.daysDropDown {
+  height: 30%;
+  width: 50%;
+
+  border-radius: 3vh;
+  display: flex;
+  color: white;
+  font-size: 3vh;
+  font-weight: bolder;
+  text-align-last: center;
+  margin-right: 38%;
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  /* appearance: none; */
+
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* //////////////////// Checkout.js //////////////////*/
+
+.checkoutAddrLeft {
+  height: 52vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkoutChooseAddress {
+  height: 10vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.checkoutChooseAddress > h3 {
+  margin-top: 1.5%;
+}
+
+.checkoutAddrRight {
+  height: 52vh;
+  width: 30vw;
+  background-color: blueviolet;
+}
+.checkoutAddressCard {
+  height: 75%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+  border: 1px solid orange;
+}

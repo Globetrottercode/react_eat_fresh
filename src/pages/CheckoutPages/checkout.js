@@ -1,11 +1,11 @@
-import TopNavbar from "../components/TopNavbar";
-import Footer from "../components/Footer";
-import infoStyles from "../css/planinfo.module.css";
+import TopNavbar from "../../components/TopNavbar";
+import Footer from "../../components/Footer";
+import checkout from "../../css/checkout.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
-import getStartAndEnd from "../daysPlan/startAndEnd";
-import calculatePrice from "../daysPlan/calPricing";
-import "../css/styles.css";
+import getStartAndEnd from "../../daysPlan/startAndEnd";
+import calculatePrice from "../../daysPlan/calPricing";
+import "../../css/styles.css";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -19,7 +19,7 @@ function Checkout() {
   let startAndEnd = getStartAndEnd(selectedDays); // getting start and end date
   let start = startAndEnd[0];
   let end = startAndEnd[1];
-  let ref = useRef(null);
+  // let ref = useRef(null);
   let navigate = useNavigate();
   let { planType } = useParams();
   let [selectedPlan, setSelectedPlan] = useState(planType);
@@ -32,20 +32,20 @@ function Checkout() {
     console.log(startAndEnd);
     start = startAndEnd[0];
     end = startAndEnd[1];
-    let days = document.getElementById("days");
-    console.log(days.options.selectedIndex);
+    // let days = document.getElementById("days");
+    // console.log(days.options.selectedIndex);
   }, [selectedDays, selectedPlan]);
   return (
     <>
       <TopNavbar />
-      <div className={infoStyles.body}>
-        <div className={infoStyles.checkoutLeft}>
-          <div className={infoStyles.planSelectCard}>
+      <div className={checkout.body}>
+        <div className={checkout.checkoutLeft}>
+          <div className={checkout.planSelectCard}>
             <select
               onChange={(e) => {
                 setSelectedDays(e.target.value);
               }}
-              ref={ref}
+              // ref={ref}
               className="form-select daysDropDown"
               name="cars"
               id="days"
@@ -62,7 +62,7 @@ function Checkout() {
             </select>
             <select
               onChange={(e) => {
-                console.log(e.target.value, "planooooooooooo");
+                // console.log(e.target.value, "planooooooooooo");
                 setSelectedPlan(e.target.value);
               }}
               className="form-select plansDropDown"
@@ -84,14 +84,17 @@ function Checkout() {
               })}
             </select>
           </div>
-          <div className={infoStyles.checkoutAddr}>
+          {/* <div
+            style={{ backgroundColor: "green" }}
+            className={checkout.checkoutAddr}
+          >
             <div type="button">
               <h3>Choose Address</h3>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className={infoStyles.checkoutRight}>
-          <div className={infoStyles.checkoutPricingCard}>
+        <div className={checkout.checkoutRight}>
+          <div className={checkout.checkoutPricingCard}>
             <div>
               <h3>Start Date :</h3>
               <h3>{start}</h3>
@@ -115,9 +118,14 @@ function Checkout() {
               <h3>{charges.subtotal}</h3>
             </div>
           </div>
-          <div className={infoStyles.checkoutPayment}>
+          <div
+            onClick={() => {
+              navigate(`/plans/${planType}/checkout/address`);
+            }}
+            className={checkout.checkoutPayment}
+          >
             <div type="button">
-              <h3>Proceed to Payment</h3>
+              <h3>Continue</h3>
             </div>
           </div>
         </div>

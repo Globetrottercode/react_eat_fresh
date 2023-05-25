@@ -1,19 +1,15 @@
 function getStartAndEnd(daysPlan) {
   let arr = [];
   let date = new Date();
-  let month = date.getMonth() + 1;
-  let pDay = date.getDate() + "/" + month + "/" + date.getFullYear();
-  let curr = pDay;
+  // let month = date.getMonth() + 1;
+  // let pDay = date.getDate() + "/" + month + "/" + date.getFullYear();
+  let curr;
   let i = 0;
   while (i < daysPlan) {
     date.setDate(date.getDate() + 1);
 
     curr =
-      date.getDate() +
-      "-" +
-      (date.getMonth() + 1).toString() +
-      "-" +
-      date.getFullYear();
+      date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
     // console.log(curr);
     arr.push(curr);
     i++;
