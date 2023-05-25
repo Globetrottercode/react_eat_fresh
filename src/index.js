@@ -10,6 +10,8 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+const days = document.getElementById("days");
+console.log(days, "ok");
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 

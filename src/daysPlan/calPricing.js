@@ -1,8 +1,8 @@
 let pricing = {
-  vegBasic: 3900,
-  vegPremium: 5100,
-  nonVegBasic: 4500,
-  nonVegPremium: 6000,
+  vegBasic: 3640,
+  vegPremium: 4760,
+  nonVegBasic: 4200,
+  nonVegPremium: 5600,
   customize: 6500,
 };
 let discount = {
@@ -28,6 +28,6 @@ function calculatePrice(planType, days) {
   };
 }
 
-console.log(calculatePrice("vegBasic", "6"));
+console.log(calculatePrice("vegBasic", "28"));
 
 export default calculatePrice;

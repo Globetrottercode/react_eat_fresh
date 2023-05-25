@@ -297,8 +297,15 @@
   width: 90%;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 2vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }
-
+.checkoutPricingCard > div > h3 {
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 4%;
+}
 .planDropDown {
   height: 30%;
   width: 90%;
