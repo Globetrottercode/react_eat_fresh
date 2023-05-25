@@ -21,39 +21,56 @@ function CheckoutAddr() {
                 name="age"
                 value="30"
               />
+              <label for="age1">0 - 30</label>
             </div>
-
-            <br />
-            <input
-              onClick={(e) => {
-                console.log(e.target.value);
-              }}
-              type="radio"
-              id="age2"
-              name="age"
-              value="60"
-            />
-            <label for="age2">31 - 60</label>
-            <br />
-            <input
-              onClick={(e) => {
-                console.log(e.target.value);
-              }}
-              type="radio"
-              id="age3"
-              name="age"
-              value="100"
-            />
-            <label for="age3">61 - 100</label>
-            <br />
-            <br />
-            <input
-              onClick={(e) => {
-                console.log(e.target.value);
-              }}
-              type="submit"
-              value="Submit"
-            />
+            <div>
+              <input
+                onClick={(e) => {
+                  console.log(e.target.value);
+                }}
+                type="radio"
+                id="age2"
+                name="age"
+                value="60"
+              />
+              <label for="age2">31 - 60</label>
+            </div>
+            <div>
+              <input
+                onClick={(e) => {
+                  console.log(e.target.value);
+                }}
+                type="radio"
+                id="age3"
+                name="age"
+                value="100"
+              />
+              <label for="age3">61 - 100</label>
+            </div>
+            <div>
+              <input
+                onClick={(e) => {
+                  console.log(e.target.value);
+                }}
+                type="radio"
+                id="age3"
+                name="age"
+                value="100"
+              />
+              <label for="age3">61 - 100</label>
+            </div>
+            <div>
+              <input
+                onClick={(e) => {
+                  console.log(e.target.value);
+                }}
+                type="radio"
+                id="age3"
+                name="age"
+                value="100"
+              />
+              <label for="age3">61 - 100</label>
+            </div>
           </div>
         </div>
         <div className={checkout.checkoutAddrRight}></div>
