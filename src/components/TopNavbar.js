@@ -1,8 +1,9 @@
 import brand from "../images/LOGO.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "../css/styles.css";
 
 function TopNavbar() {
+  let navigate = useNavigate();
   return (
     <>
       <nav
@@ -31,7 +32,12 @@ function TopNavbar() {
         >
           <ul className="navbar-nav ms-auto">
             <li style={{ marginLeft: "4%" }} className="nav-item">
-              <a className="nav-link">
+              <a
+                onClick={() => {
+                  navigate("/plans");
+                }}
+                className="nav-link"
+              >
                 <button class="navButton">
                   <p style={{ marginTop: "8%", fontSize: "2vh" }}>Plans</p>
                 </button>

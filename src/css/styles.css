@@ -119,3 +119,28 @@ body {
 .f_icon:hover {
   color: black;
 }
+
+.plansDropDown {
+  height: 30%;
+  width: 90%;
+  background-color: rgba(81, 153, 56, 0.69);
+  border-radius: 3vh;
+  display: flex;
+  color: white;
+  font-size: 3vh;
+  font-weight: bolder;
+  text-align-last: center;
+}
+
+.daysDropDown {
+  height: 30%;
+  width: 50%;
+  border-radius: 3vh;
+  display: flex;
+  color: white;
+  font-size: 3vh;
+  font-weight: bolder;
+  text-align-last: center;
+  margin-right: 38%;
+  background-color: rgba(0, 0, 0, 0.65);
+}

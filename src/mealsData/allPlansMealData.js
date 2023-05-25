@@ -235,7 +235,7 @@ let allPlansMealData = {
       ],
     },
     friday: {
-      breakfast: ["Uttapam", ",Mange Juice"],
+      breakfast: ["Uttapam", "Mange Juice"],
       lunch: [
         "Rice/Roti",
         "Dal Fry",

@@ -329,7 +329,6 @@
   /* -webkit-appearance: none; */
   /* -moz-appearance: none; */
   /* appearance: none; */
-  background: url(https://upload.wikimedia.org/wikipedia/en/5/57/DownArrow.png);
-  overflow: hidden;
+
   background-color: rgba(0, 0, 0, 0.65);
 }
