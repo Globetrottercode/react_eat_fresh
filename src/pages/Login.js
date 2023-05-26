@@ -27,10 +27,17 @@ function Login() {
       // Origin:"http://localhost:3000/login",
 
       method: "POST",
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: JSON.stringify({
+      // body: JSON.stringify({
+      //   username: credentials.username,
+      //   password: credentials.password,
+      // }),
+      body: new URLSearchParams({
         username: credentials.username,
         password: credentials.password,
       }),
@@ -42,6 +49,8 @@ function Login() {
         let user = { username: credentials.username };
         dispatch(allActions.userActions.setUser(user));
         console.log(currentUser); // for testing
+        localStorage.setItem("username", credentials.username);
+        localStorage.setItem("token", json.authToken);
         navigate("/plans");
       } else {
         alert("Check email and password");

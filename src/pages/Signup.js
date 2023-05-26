@@ -26,26 +26,33 @@ function SignUp() {
     }
     //console.log(register);
     e.preventDefault();
+    let data = {
+      username: register.username,
+      name: register.name,
+      password: register.password,
+    };
     const response = await fetch("http://localhost:3500/signup", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
 
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: JSON.stringify({
+      body: new URLSearchParams({
         username: register.username,
         name: register.name,
         password: register.password,
       }),
     });
     const json = await response.json();
-    console.log(json.user); // for testing
+    console.log(json); // for testing
     if (json.success) {
       let user = { username: register.username };
       dispatch(allActions.userActions.setUser(user));
       console.log(currentUser); // for testing
+      localStorage.setItem("username", register.username);
+      localStorage.setItem("token", json.authToken);
       navigate(`/plans`);
     } else {
       alert("Email Id already exists");

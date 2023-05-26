@@ -5,6 +5,8 @@ import logoTagline from "../../images/LOGO_Tagline.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Plans() {
+  console.log(localStorage.getItem("token"), "token");
+  console.log(localStorage.getItem("username"), "token");
   const navigate = useNavigate();
   return (
     <>
