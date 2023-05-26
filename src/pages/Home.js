@@ -1,10 +1,11 @@
 import Logo from "../images/LOGO.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import styles from "../css/home.module.css";
 
 function Home() {
+  let navigate = useNavigate();
   let [city, setCity] = useState("");
   function handleChange(event) {
     setCity(event.target.value);
@@ -21,19 +22,19 @@ function Home() {
           {" "}
           <button className="btn btn-dark btn-lg"> Login </button>{" "}
         </Link>
-        <Link to="/signup" reloadDocument className={styles.signup}>
+        {/* <Link to="/signup" reloadDocument className={styles.signup}>
           <button className="btn btn-dark btn-lg"> SignUp</button>
-        </Link>
+        </Link> */}
       </div>
       <div className={styles.mid}>
-        <h2 style={{ fontWeight: "bolder" }}>
+        <h2 style={{ fontWeight: "bolder", fontSize: "6vh" }}>
           <span style={{ color: "#519938" }}> Need Fresh </span> ,{" "}
           <span style={{ color: "orange" }}> Hygienic Food ? </span>
         </h2>
         <h3> Get hassle free breakfast, lunch and dinner. </h3>
         <form className={styles.form}>
           {" "}
-          <div class="input-group input-group-lg ">
+          {/* <div class="input-group input-group-lg ">
             <input
               style={{ borderColor: "orange" }}
               value={city}
@@ -51,9 +52,12 @@ function Home() {
               {" "}
               Check Plans{" "}
             </button>
+          </div> */}
+          <div type="button" className={styles.homeCheckPlans}>
+            <h3 style={{ fontSize: "3vh" }}>Check Plans</h3>
           </div>
         </form>
-        <h5>
+        <h5 style={{ fontSize: "2vh" }}>
           {" "}
           Popular Cities: Bangalore, Hyderabad, Mumbai, Pune, Delhi, Noida,
           Chennai, Kolkata, Gurgaon, Ahmedabad.{" "}
