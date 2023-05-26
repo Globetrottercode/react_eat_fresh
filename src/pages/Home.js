@@ -53,7 +53,13 @@ function Home() {
               Check Plans{" "}
             </button>
           </div> */}
-          <div type="button" className={styles.homeCheckPlans}>
+          <div
+            type="button"
+            onClick={() => {
+              navigate("/plans");
+            }}
+            className={styles.homeCheckPlansButton}
+          >
             <h3 style={{ fontSize: "3vh" }}>Check Plans</h3>
           </div>
         </form>

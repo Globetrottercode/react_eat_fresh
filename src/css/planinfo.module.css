@@ -33,13 +33,13 @@
   justify-content: space-evenly;
 }
 
-/* .body {
+.body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   margin-top: 1vh;
   height: 65vh;
-} */
+}
 
 .innerCard1 {
   height: 55%;
