@@ -81,7 +81,11 @@ function Login() {
       </div>
       <div className="right">
         <div className="rightUpper">
-          <button type="submit" className="btn btn-warning">
+          <button
+            type="submit"
+            style={{ borderRadius: "3vh", width: "10vw" }}
+            className="btn btn-dark"
+          >
             Check Plans
           </button>
         </div>
@@ -128,7 +132,7 @@ function Login() {
             <span style={{ fontWeight: "bolder" }}>Not a Member ? </span>
 
             <Link to="/signup" reloadDocument>
-              <button className="btn btn-dark btn-lg"> SignUp</button>
+              <a> SignUp</a>
             </Link>
           </div>
         </div>

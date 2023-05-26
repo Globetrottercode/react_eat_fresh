@@ -189,4 +189,13 @@
   border-radius: 3vh;
   margin-left: 2.5%;
   margin-top: 2%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.checkoutAddressCard > div > input {
+  margin-left: 3%;
+}
+.checkoutAddressCard > div > label {
+  margin-left: 2%;
 }
