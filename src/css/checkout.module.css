@@ -144,10 +144,10 @@
   background-color: rgba(0, 0, 0, 0.65);
 }
 
-/* //////////////////// Checkout.js //////////////////*/
+/* //////////////////// CheckoutAddr.js //////////////////*/
 
 .checkoutAddrLeft {
-  height: 52vh;
+  height: 55vh;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -169,9 +169,13 @@
 }
 
 .checkoutAddrRight {
-  height: 52vh;
+  height: 55vh;
   width: 30vw;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .checkoutAddressCard {
   height: 75%;
@@ -198,4 +202,85 @@
 }
 .checkoutAddressCard > div > label {
   margin-left: 2%;
+}
+
+.checkoutAddAddressCard {
+  height: 60%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+  border: 3px solid rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkoutAddAddressCard > div {
+  height: 17%;
+  width: 92%;
+  background-color: aqua;
+}
+
+.checkoutAddBtn {
+  height: 15%;
+  width: 70%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutAddBtn:hover {
+  border: 2px solid white;
+}
+.checkoutAddBtn > h3 {
+  margin-top: 2%;
+}
+
+.checkoutContinue {
+  height: 15%;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutContinue:hover {
+  border: 2px solid white;
+}
+
+.checkoutContinue > h3 {
+  margin-top: 2%;
+}
+
+.checkoutAddAddressCardLine1 {
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutAddAddressCardLine1 > div {
+  height: 100%;
+  width: 35%;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 1vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutAddAddressCardLine1 > div > p {
+  margin-top: 10%;
+}
+.checkoutAddAddressCardLine1 > input {
+  border-radius: 2vh;
+  width: 60%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.checkoutAddAddressCardLine1 > input::placeholder {
+  font-weight: bolder;
+  padding-left: 5%;
 }

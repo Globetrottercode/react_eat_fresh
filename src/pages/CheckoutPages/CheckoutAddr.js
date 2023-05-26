@@ -73,7 +73,30 @@ function CheckoutAddr() {
             </div>
           </div>
         </div>
-        <div className={checkout.checkoutAddrRight}></div>
+        <div className={checkout.checkoutAddrRight}>
+          <div className={checkout.checkoutAddAddressCard}>
+            <div className={checkout.checkoutAddAddressCardLine1}>
+              <div>
+                <p>Save As : </p>
+              </div>
+              <input placeholder="Complete Address" type="text" />
+            </div>
+            <div className={checkout.checkoutAddAddressCardLine2}>
+              <input placeholder="Floor(Optional)" type="text" />
+            </div>
+            <div className={checkout.checkoutAddAddressCardLine3}>
+              <input placeholder="Home" type="text" />
+            </div>
+            <div className={checkout.checkoutAddAddressCardLine4}></div>
+            <div className={checkout.checkoutAddAddressCardLine5}></div>
+          </div>
+          <div type="button" className={checkout.checkoutAddBtn}>
+            <h3>Add</h3>
+          </div>
+          <div type="button" className={checkout.checkoutContinue}>
+            <h3>Continue</h3>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
