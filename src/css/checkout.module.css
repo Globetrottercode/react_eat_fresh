@@ -110,7 +110,7 @@
   margin-left: 2%;
   margin-right: 4%;
 }
-.planDropDown {
+/* .planDropDown {
   height: 30%;
   width: 90%;
   background-color: rgba(81, 153, 56, 0.69);
@@ -120,9 +120,9 @@
   font-size: 3vh;
   font-weight: bolder;
   text-align-last: center;
-}
+} */
 
-.planDropDown > option {
+/* .planDropDown > option {
   margin-left: 5%;
 }
 
@@ -137,12 +137,8 @@
   font-weight: bolder;
   text-align-last: center;
   margin-right: 38%;
-  /* -webkit-appearance: none; */
-  /* -moz-appearance: none; */
-  /* appearance: none; */
-
   background-color: rgba(0, 0, 0, 0.65);
-}
+} */
 
 /* //////////////////// CheckoutAddr.js //////////////////*/
 
@@ -219,7 +215,7 @@
 .checkoutAddAddressCard > div {
   height: 17%;
   width: 92%;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .checkoutAddBtn {
@@ -263,8 +259,8 @@
 }
 .checkoutAddAddressCardLine1 > div {
   height: 100%;
-  width: 35%;
-  background-color: rgba(0, 0, 0, 0.65);
+  width: 30%;
+  background-color: rgba(81, 153, 56, 0.9);
   border-radius: 1vh;
   color: white;
   display: flex;
@@ -276,11 +272,62 @@
 }
 .checkoutAddAddressCardLine1 > input {
   border-radius: 2vh;
-  width: 60%;
+  width: 65%;
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .checkoutAddAddressCardLine1 > input::placeholder {
+  font-weight: bolder;
+  padding-left: 5%;
+}
+
+.checkoutAddAddressCardLine2 > input {
+  border-radius: 2vh;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.checkoutAddAddressCardLine2 > input::placeholder {
+  font-weight: bolder;
+  padding-left: 5%;
+}
+
+.checkoutAddAddressCardLine3 > input {
+  border-radius: 2vh;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.checkoutAddAddressCardLine3 > input::placeholder {
+  font-weight: bolder;
+  padding-left: 5%;
+}
+
+.checkoutAddAddressCardLine4 > input {
+  border-radius: 2vh;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.checkoutAddAddressCardLine4 > input::placeholder {
+  font-weight: bolder;
+  padding-left: 5%;
+}
+.checkoutAddAddressCardLine5 {
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-between;
+}
+.checkoutAddAddressCardLine5 > input {
+  border-radius: 2vh;
+  width: 48%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.checkoutAddAddressCardLine5 > input::placeholder {
   font-weight: bolder;
   padding-left: 5%;
 }
