@@ -35,6 +35,38 @@ function Checkout() {
     // let days = document.getElementById("days");
     // console.log(days.options.selectedIndex);
   }, [selectedDays, selectedPlan]);
+  // let response,
+  //   allAddress = [];
+  // async function fetchAddress() {
+  //   if (localStorage.getItem("username")) {
+  //     response = await fetch(
+  //       "http://localhost:3500/customer/address/getAddress",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/x-www-form-urlencoded",
+  //         },
+  //         body: new URLSearchParams({
+  //           // what is this ??
+  //           username: localStorage.getItem("username"),
+  //         }),
+  //       }
+  //     );
+  //     if (response.status === 200) {
+  //       allAddress = await response.json();
+  //       console.log(allAddress);
+  //       return await allAddress;
+  //     } else {
+  //       console.log(response.status);
+  //       return await allAddress;
+  //     }
+  //   }
+  // }
+  // fetchAddress().then((data) => {
+  //   console.log(data, "ohoooooo");
+  //   allAddress = data;
+  // });
+
   return (
     <>
       <TopNavbar />

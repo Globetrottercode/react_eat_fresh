@@ -76,9 +76,9 @@ function Home() {
         </h5>
       </div>
       <div className={styles.bottom}>
-        <i class="fa-brands fa-facebook fa-2x"></i>
-        <i class="fa-brands fa-instagram fa-2x"></i>{" "}
-        <i class="fa-regular fa-envelope fa-2x"></i>
+        <i className="fa-brands fa-facebook fa-2x"></i>
+        <i className="fa-brands fa-instagram fa-2x"></i>{" "}
+        <i className="fa-regular fa-envelope fa-2x"></i>
       </div>
     </div>
   );

@@ -38,14 +38,14 @@ function TopNavbar() {
                 }}
                 className="nav-link"
               >
-                <button class="navButton">
+                <button className="navButton">
                   <p style={{ marginTop: "8%", fontSize: "2vh" }}>Plans</p>
                 </button>
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a className="nav-link">
-                <button class="navButton">
+                <button className="navButton">
                   <p style={{ marginTop: "8%", fontSize: "2vh" }}>Dashboard</p>
                 </button>
               </a>

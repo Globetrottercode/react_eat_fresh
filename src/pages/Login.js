@@ -103,27 +103,27 @@ function Login() {
           className="card1"
         >
           <form className="loginForm">
-            <div class="input-group input-group-lg ">
+            <div className="input-group input-group-lg ">
               <input
                 style={{ borderColor: "orange" }}
                 placeholder="Email"
                 value={credentials.username}
                 name="username"
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-lg"
                 onChange={onChange}
               />
             </div>
-            <div class="input-group input-group-lg ">
+            <div className="input-group input-group-lg ">
               <input
                 style={{ borderColor: "orange" }}
                 value={credentials.password}
                 name="password"
                 type="password"
                 placeholder="Password"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-lg"
                 onChange={onChange}
@@ -141,16 +141,16 @@ function Login() {
             <span style={{ fontWeight: "bolder" }}>Not a Member ? </span>
 
             <Link to="/signup" reloadDocument>
-              <a> SignUp</a>
+              <span> SignUp</span>
             </Link>
           </div>
         </div>
         <a
           type="button"
           href="http://localhost:3500/auth/google"
-          class="btn btn-danger btn-block mb-4 "
+          className="btn btn-danger btn-block mb-4 "
         >
-          <i class="fab fa-google"></i> Sign In with Google
+          <i className="fab fa-google"></i> Sign In with Google
         </a>
       </div>
     </div>
