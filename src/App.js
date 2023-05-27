@@ -15,10 +15,11 @@ import PlanDays from "./pages/PlanPages/planDays";
 import MealDetail from "./pages/PlanPages/mealDetail";
 import Checkout from "./pages/CheckoutPages/checkout";
 import CheckoutAddr from "./pages/CheckoutPages/CheckoutAddr";
+import Payment from "./pages/CheckoutPages/Payment";
 
-function Payment() {
-  return <h1>Hello Duniya eat ()</h1>;
-}
+// function Payment() {
+//   return <h1>Hello Duniya eat ()</h1>;
+// }
 
 export default function App() {
   return (
