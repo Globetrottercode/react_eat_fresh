@@ -91,6 +91,9 @@ function Login() {
       <div className="right">
         <div className="rightUpper">
           <button
+            onClick={() => {
+              navigate("/plans");
+            }}
             type="submit"
             style={{ borderRadius: "3vh", width: "10vw" }}
             className="btn btn-dark"

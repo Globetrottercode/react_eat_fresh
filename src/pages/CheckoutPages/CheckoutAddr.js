@@ -9,6 +9,8 @@ import allAddress from "../../Redux/reducers/storeAllAddress";
 import { all } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
+let i = 0;
+
 function CheckoutAddr() {
   let { planType } = useParams();
   console.log("plan type", planType);
@@ -18,7 +20,7 @@ function CheckoutAddr() {
   let dispatch = useDispatch();
   let newAddress = useSelector((state) => state.addNewAddress);
   let allAddresses = JSON.parse(localStorage.getItem("allAddress"));
-  console.log(allAddresses, "allAddresses");
+  console.log(allAddresses, "allAddresses--");
 
   async function handleClickAdd() {
     if (
@@ -32,7 +34,6 @@ function CheckoutAddr() {
         newAddress.city = "Bangalore";
       }
       localStorage.setItem("selected_address", JSON.stringify(newAddress));
-      allAddresses = [...allAddresses, newAddress];
       newAddress.username = localStorage.getItem("username");
       let response = await fetch("http://localhost:3500/customer/address/", {
         method: "POST",
@@ -106,29 +107,45 @@ function CheckoutAddr() {
             <h3>CHOOSE ADDRESS</h3>
           </div>
           <div className={checkout.checkoutAddressCard}>
-            {allAddresses.map((address, index) => {
-              return (
-                <div>
-                  <input
-                    onClick={(e) => {
-                      localStorage.setItem(
-                        "selected_address",
-                        JSON.stringify(allAddresses[e.target.value])
-                      );
-                      console.log(e.target.value);
-                    }}
-                    type="radio"
-                    id={index}
-                    name="age"
-                    value={index}
-                  />
-                  <label for={index}>
-                    {address.saveAs} , {address.floor} ,{address.detailed} ,{" "}
-                    {address.landmark} {address.city} , {address.pincode}
-                  </label>
-                </div>
-              );
-            })}
+            {localStorage.getItem("allAddress") ? (
+              allAddresses.map((address, index) => {
+                return (
+                  <div>
+                    <input
+                      onClick={(e) => {
+                        localStorage.setItem(
+                          "selected_address",
+                          JSON.stringify(allAddresses[e.target.value])
+                        );
+                        i++;
+                        console.log(allAddresses[e.target.value]);
+                      }}
+                      type="radio"
+                      id={index}
+                      name="age"
+                      value={index}
+                    />
+                    <label for={index}>
+                      {address.saveAs} , {address.floor} ,{address.detailed} ,{" "}
+                      {address.landmark} {address.city} , {address.pincode}
+                    </label>
+                  </div>
+                );
+              })
+            ) : (
+              <div>
+                <input
+                  onClick={(e) => {
+                    console.log(e.target.value);
+                  }}
+                  type="radio"
+                  id="age1"
+                  name="age"
+                  value="30"
+                />
+                <label for="age1">No saved Addresses</label>
+              </div>
+            )}
 
             {/* <div>
               <input
@@ -292,7 +309,17 @@ function CheckoutAddr() {
           >
             <h3>Add and Continue</h3>
           </div>
-          <div type="button" className={checkout.checkoutContinue}>
+          <div
+            onClick={() => {
+              if (localStorage.getItem("selected_address")) {
+                navigate("payment");
+              } else {
+                alert("Choose Address field");
+              }
+            }}
+            type="button"
+            className={checkout.checkoutContinue}
+          >
             <h3>Continue</h3>
           </div>
         </div>

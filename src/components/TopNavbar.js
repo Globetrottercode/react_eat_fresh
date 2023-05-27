@@ -4,6 +4,18 @@ import "../css/styles.css";
 
 function TopNavbar() {
   let navigate = useNavigate();
+  function handleLoginClick() {
+    navigate("/login");
+  }
+  function handleLogoutClick() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("token");
+    localStorage.removeItem("selected_plan");
+    localStorage.removeItem("selected_days");
+    localStorage.removeItem("allAddress");
+    localStorage.removeItem("selected_address");
+    navigate("/login");
+  }
   return (
     <>
       <nav
@@ -50,6 +62,7 @@ function TopNavbar() {
                 </button>
               </a>
             </li>
+
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a type="button" className="nav-link">
                 <i
@@ -74,6 +87,43 @@ function TopNavbar() {
                 ></i>
               </a>
             </li>
+            {localStorage.getItem("username") ? (
+              <li style={{ marginLeft: "4%" }} className="nav-item">
+                <a
+                  onClick={handleLogoutClick}
+                  type="button"
+                  className="nav-link"
+                >
+                  <i
+                    className="fa-solid fa-right-from-bracket "
+                    style={{
+                      color: "#000000",
+                      marginTop: "1vh",
+                      fontSize: "4vh",
+                      marginRight: "2vw",
+                    }}
+                  ></i>
+                </a>
+              </li>
+            ) : (
+              <li style={{ marginLeft: "4%" }} className="nav-item">
+                <a
+                  onClick={handleLoginClick}
+                  type="button"
+                  className="nav-link"
+                >
+                  <i
+                    className="fa-solid fa-right-to-bracket "
+                    style={{
+                      color: "#000000",
+                      marginTop: "1vh",
+                      fontSize: "4vh",
+                      marginRight: "2vw",
+                    }}
+                  ></i>
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

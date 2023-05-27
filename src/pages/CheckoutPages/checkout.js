@@ -26,6 +26,9 @@ function Checkout() {
   // let ref = useRef(null);
   let navigate = useNavigate();
   let { planType } = useParams();
+  // localStorage.setItem("selected_plan", planType); // setting initial selected plan
+  // localStorage.setItem("selected_days", "7"); // setting initial  selected days
+
   let [selectedPlan, setSelectedPlan] = useState(planType);
   let charges = calculatePrice(selectedPlan, selectedDays); // getting prices based on selected fields
 
@@ -33,8 +36,8 @@ function Checkout() {
     console.log(selectedDays);
     startAndEnd = getStartAndEnd(selectedDays);
     charges = calculatePrice(selectedPlan, selectedDays);
-    console.log(charges);
-    console.log(startAndEnd);
+    console.log(charges); // logging
+    console.log(startAndEnd); // logging
     start = startAndEnd[0];
     end = startAndEnd[1];
   }, [selectedDays, selectedPlan]);
@@ -60,8 +63,12 @@ function Checkout() {
         console.log(allAddress);
         dispatch(allActions.setAll_Address(allAddress));
         console.log(arrayOfAddress, "got it");
-        localStorage.setItem("allAddress", JSON.stringify(allAddress));
-        navigate(`/plans/${planType}/checkout/address`);
+        if (allAddress.savedAddress === 0) {
+          navigate(`/plans/${planType}/checkout/address`);
+        } else {
+          localStorage.setItem("allAddress", JSON.stringify(allAddress));
+          navigate(`/plans/${planType}/checkout/address`);
+        }
       } else {
         console.log(response.status);
         dispatch(allActions.setAll_Address(allAddress));
@@ -83,6 +90,11 @@ function Checkout() {
             <select
               onChange={(e) => {
                 setSelectedDays(e.target.value);
+                localStorage.setItem("selected_days", e.target.value);
+                console.log(
+                  "selected days is",
+                  localStorage.getItem("selected_days")
+                );
               }}
               // ref={ref}
               className="form-select daysDropDown"
@@ -103,6 +115,11 @@ function Checkout() {
               onChange={(e) => {
                 // console.log(e.target.value, "planooooooooooo");
                 setSelectedPlan(e.target.value);
+                localStorage.setItem("selected_plan", e.target.value);
+                console.log(
+                  "selected plan is",
+                  localStorage.getItem("selected_plan")
+                );
               }}
               className="form-select plansDropDown"
               name="cars"
