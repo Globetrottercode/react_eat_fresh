@@ -16,9 +16,9 @@ import MealDetail from "./pages/PlanPages/mealDetail";
 import Checkout from "./pages/CheckoutPages/checkout";
 import CheckoutAddr from "./pages/CheckoutPages/CheckoutAddr";
 
-// function CheckoutAddr() {
-//   return <h1>Hello Duniya eat ()</h1>;
-// }
+function Payment() {
+  return <h1>Hello Duniya eat ()</h1>;
+}
 
 export default function App() {
   return (
@@ -35,6 +35,10 @@ export default function App() {
         <Route
           path="/plans/:planType/checkout/address"
           element={<CheckoutAddr />}
+        />
+        <Route
+          path="/plans/:planType/checkout/address/payment"
+          element={<Payment />}
         />
       </Routes>
     </BrowserRouter>

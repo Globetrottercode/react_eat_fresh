@@ -4,20 +4,64 @@ import checkout from "../../css/checkout.module.css";
 import "../../css/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../Redux/actions/allActions";
-
-let response;
-var allAddress = [];
+import { useEffect, useRef } from "react";
+import allAddress from "../../Redux/reducers/storeAllAddress";
+import { all } from "axios";
 
 function CheckoutAddr() {
-  var array = [];
+  var array = [1, 2, 3];
+  let ref = useRef(null);
   let dispatch = useDispatch();
   let newAddress = useSelector((state) => state.addNewAddress);
-  // let all_Addr = useSelector((state) => state.allAddress);
-  // async function fetchAddress() {
+  let allAddresses = JSON.parse(localStorage.getItem("allAddress"));
+  console.log(allAddresses, "allAddresses");
+
+  async function handleClickAdd() {
+    if (
+      newAddress.saveAs &&
+      newAddress.landmark &&
+      newAddress.detailed &&
+      newAddress.pincode
+    ) {
+      if (!newAddress.city) {
+        console.log("setting def Bangalore");
+        newAddress.city = "Bangalore";
+      }
+      localStorage.setItem("selected_address", JSON.stringify(newAddress));
+      allAddresses = [...allAddresses, newAddress];
+      newAddress.username = localStorage.getItem("username");
+      let response = await fetch("http://localhost:3500/customer/address/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          username: newAddress.username,
+          saveAs: newAddress.saveAs,
+          city: newAddress.city,
+          landmark: newAddress.landmark,
+          detailed: newAddress.detailed,
+          pincode: newAddress.pincode,
+          floor: newAddress.floor,
+        }),
+      });
+      if (response.status === 200) {
+        let data = await response.json();
+        console.log("success :", data.succes);
+        dispatch(allActions.addAddressActions.SetEmpty());
+        console.log("Check if empty", newAddress);
+      }
+    } else {
+      alert("Please enter all fields");
+    }
+  }
+
+  // getting all address from redux
+
+  // async function fetchAllAddress() {
   //   if (localStorage.getItem("username")) {
-  //     newAddress.username = localStorage.getItem("username");
-  //     console.log(newAddress.username);
-  //     response = await fetch(
+  //     let allAddress = [];
+  //     let response = await fetch(
   //       "http://localhost:3500/customer/address/getAddress",
   //       {
   //         method: "POST",
@@ -33,21 +77,21 @@ function CheckoutAddr() {
   //     if (response.status === 200) {
   //       allAddress = await response.json();
   //       console.log(allAddress);
-  //       return await allAddress;
+  //       allAddresses = allAddress;
+  //       console.log(allAddress, "ok");
+  //       dispatch(allActions.setAll_Address(allAddress));
   //     } else {
   //       console.log(response.status);
-  //       return await allAddress;
+  //       dispatch(allActions.setAll_Address(allAddress));
+
+  //       // navigate();
   //     }
   //   }
   // }
-  // fetchAddress().then((data) => {
-  //   console.log(data, "ohoooooo");
-  //   allAddress = data;
-  //   array = allAddress;
-  //   dispatch(allActions.setAll_Address(data));
-  // });
-  // console.log(all_Addr, "allAddress");
-  // console.log(array, "letsSee");
+  // useEffect(() => {
+  //   fetchAllAddress();
+  // }, [allAddresses]);
+  // console.log(allAddresses, "all the addresses");
   return (
     <>
       <TopNavbar />
@@ -57,15 +101,30 @@ function CheckoutAddr() {
             <h3>CHOOSE ADDRESS</h3>
           </div>
           <div className={checkout.checkoutAddressCard}>
-            {/* {allAddress.map((address) => {
-              let i = 0;
-              console.log(i++);
+            {allAddresses.map((address, index) => {
               return (
                 <div>
-                  <p style={{ fontWeight: "bolder" }}></p>
+                  <input
+                    onClick={(e) => {
+                      localStorage.setItem(
+                        "selected_address",
+                        JSON.stringify(allAddresses[e.target.value])
+                      );
+                      console.log(e.target.value);
+                    }}
+                    type="radio"
+                    id={index}
+                    name="age"
+                    value={index}
+                  />
+                  <label for={index}>
+                    {address.saveAs} , {address.floor} ,{address.detailed} ,{" "}
+                    {address.landmark} {address.city} , {address.pincode}
+                  </label>
                 </div>
               );
-            })} */}
+            })}
+
             {/* <div>
               <input
                 onClick={(e) => {
@@ -219,7 +278,13 @@ function CheckoutAddr() {
               />
             </div>
           </div>
-          <div type="button" className={checkout.checkoutAddBtn}>
+          <div
+            id="add"
+            ref={ref}
+            onClick={handleClickAdd}
+            type="button"
+            className={checkout.checkoutAddBtn}
+          >
             <h3>Add</h3>
           </div>
           <div type="button" className={checkout.checkoutContinue}>

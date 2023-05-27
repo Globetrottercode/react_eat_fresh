@@ -30,6 +30,8 @@ const addNewAddress = (state = {}, action) => {
         ...state,
         pincode: action.payload,
       };
+    case "SET_EMPTY":
+      return {};
     default:
       return state;
   }

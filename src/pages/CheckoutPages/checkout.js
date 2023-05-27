@@ -5,6 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import getStartAndEnd from "../../daysPlan/startAndEnd";
 import calculatePrice from "../../daysPlan/calPricing";
+import { useSelector, useDispatch } from "react-redux";
+import allActions from "../../Redux/actions/allActions";
 import "../../css/styles.css";
 
 let allPlans = [
@@ -15,6 +17,8 @@ let allPlans = [
 ];
 
 function Checkout() {
+  let arrayOfAddress = useSelector((state) => state.allAddress);
+  let dispatch = useDispatch();
   let [selectedDays, setSelectedDays] = useState("7"); //setting state for selected Days
   let startAndEnd = getStartAndEnd(selectedDays); // getting start and end date
   let start = startAndEnd[0];
@@ -24,6 +28,7 @@ function Checkout() {
   let { planType } = useParams();
   let [selectedPlan, setSelectedPlan] = useState(planType);
   let charges = calculatePrice(selectedPlan, selectedDays); // getting prices based on selected fields
+
   useEffect(() => {
     console.log(selectedDays);
     startAndEnd = getStartAndEnd(selectedDays);
@@ -32,40 +37,42 @@ function Checkout() {
     console.log(startAndEnd);
     start = startAndEnd[0];
     end = startAndEnd[1];
-    // let days = document.getElementById("days");
-    // console.log(days.options.selectedIndex);
   }, [selectedDays, selectedPlan]);
-  // let response,
-  //   allAddress = [];
-  // async function fetchAddress() {
-  //   if (localStorage.getItem("username")) {
-  //     response = await fetch(
-  //       "http://localhost:3500/customer/address/getAddress",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/x-www-form-urlencoded",
-  //         },
-  //         body: new URLSearchParams({
-  //           // what is this ??
-  //           username: localStorage.getItem("username"),
-  //         }),
-  //       }
-  //     );
-  //     if (response.status === 200) {
-  //       allAddress = await response.json();
-  //       console.log(allAddress);
-  //       return await allAddress;
-  //     } else {
-  //       console.log(response.status);
-  //       return await allAddress;
-  //     }
-  //   }
-  // }
-  // fetchAddress().then((data) => {
-  //   console.log(data, "ohoooooo");
-  //   allAddress = data;
-  // });
+
+  async function handleClick() {
+    if (localStorage.getItem("username")) {
+      let allAddress = [];
+      let response = await fetch(
+        "http://localhost:3500/customer/address/getAddress",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            // what is this ??
+            username: localStorage.getItem("username"),
+          }),
+        }
+      );
+      if (response.status === 200) {
+        allAddress = await response.json();
+        console.log(allAddress);
+        dispatch(allActions.setAll_Address(allAddress));
+        console.log(arrayOfAddress, "got it");
+        localStorage.setItem("allAddress", JSON.stringify(allAddress));
+        navigate(`/plans/${planType}/checkout/address`);
+      } else {
+        console.log(response.status);
+        dispatch(allActions.setAll_Address(allAddress));
+        // localStorage.setItem("allAddress", allAddress);
+        console.log(arrayOfAddress, "ok ok");
+        // navigate();
+      }
+    } else {
+      navigate("/login");
+    }
+  }
 
   return (
     <>
@@ -151,9 +158,10 @@ function Checkout() {
             </div>
           </div>
           <div
-            onClick={() => {
-              navigate(`/plans/${planType}/checkout/address`);
-            }}
+            // onClick={() => {
+            //   navigate(`/plans/${planType}/checkout/address`);
+            // }}
+            onClick={handleClick}
             className={checkout.checkoutPayment}
           >
             <div type="button">

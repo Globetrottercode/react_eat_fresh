@@ -40,6 +40,12 @@ const SetLandmark = (data) => {
   };
 };
 
+const SetEmpty = () => {
+  return {
+    type: "SET_EMPTY",
+  };
+};
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   SetCompleteAddress,
@@ -48,4 +54,5 @@ export default {
   SetPincode,
   SetSaveAs,
   SetFloor,
+  SetEmpty,
 };
