@@ -7,8 +7,12 @@ import allActions from "../../Redux/actions/allActions";
 import { useEffect, useRef } from "react";
 import allAddress from "../../Redux/reducers/storeAllAddress";
 import { all } from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 function CheckoutAddr() {
+  let { planType } = useParams();
+  console.log("plan type", planType);
+  let navigate = useNavigate();
   var array = [1, 2, 3];
   let ref = useRef(null);
   let dispatch = useDispatch();
@@ -50,6 +54,7 @@ function CheckoutAddr() {
         console.log("success :", data.succes);
         dispatch(allActions.addAddressActions.SetEmpty());
         console.log("Check if empty", newAddress);
+        navigate(`payment`);
       }
     } else {
       alert("Please enter all fields");
@@ -285,7 +290,7 @@ function CheckoutAddr() {
             type="button"
             className={checkout.checkoutAddBtn}
           >
-            <h3>Add</h3>
+            <h3>Add and Continue</h3>
           </div>
           <div type="button" className={checkout.checkoutContinue}>
             <h3>Continue</h3>
