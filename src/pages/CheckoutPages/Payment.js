@@ -1,11 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import getStartAndEnd from "../../daysPlan/startAndEnd";
 import calculatePrice from "../../daysPlan/calPricing";
 import checkout from "../../css/checkout.module.css";
+import { useState } from "react";
+import axios from "axios";
 
 function Payment() {
+  let navigate = useNavigate();
+  let [userDetail, setuserDetail] = useState({
+    name: "",
+    phone: "",
+  });
+
+  function handleChange(e) {
+    setuserDetail({ ...userDetail, [e.target.name]: e.target.value });
+    console.log(userDetail);
+  }
   let selectedPlan, selectedDays;
   let { planType } = useParams();
   let address = JSON.parse(localStorage.getItem("selected_address"));
@@ -31,8 +43,118 @@ function Payment() {
   let start = startAndEnd[0];
   let end = startAndEnd[1];
   let charges = calculatePrice(selectedPlan, selectedDays);
-  //   localStorage.removeItem("selected_plan");
-  //   localStorage.removeItem("selected_days");
+
+  let data = {
+    username: localStorage.getItem("username"),
+    name: userDetail.name,
+    phone: userDetail.phone,
+    start: start,
+    end: end,
+    selectedPlan: selectedPlan,
+    selectedDays: selectedDays,
+    address: `${address.saveAs} , ${address.floor}, ${address.detailed} , ${address.landmark}
+    , ${address.city} - ${address.pincode}`,
+    total: charges.total,
+    additional: charges.additional,
+    subtotal: charges.subtotal,
+  };
+
+  async function handleCOD() {
+    if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
+      alert("Please enter the input fields");
+      return;
+    }
+    let response = await fetch("http://localhost:3500/customer/myPlan", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        username: localStorage.getItem("username"),
+        name: userDetail.name,
+        phone: userDetail.phone,
+        start: start,
+        end: end,
+        selectedPlan: selectedPlan,
+        selectedDays: selectedDays,
+        address: `${address.saveAs} , ${address.floor}, ${address.detailed} , ${address.landmark}
+      , ${address.city} - ${address.pincode}`,
+        total: charges.total,
+        additional: charges.additional,
+        subtotal: charges.subtotal,
+      }),
+    });
+    if (response.status === 200) {
+      let data = await response.json();
+      console.log("success :", data);
+      navigate("/ordersuccess");
+    }
+  }
+  const checkoutHandler = async (amount) => {
+    if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
+      alert("Please enter the input fields");
+      return;
+    }
+    let response = await fetch("http://localhost:3500/customer/myPlan", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        username: localStorage.getItem("username"),
+        name: userDetail.name,
+        phone: userDetail.phone,
+        start: start,
+        end: end,
+        selectedPlan: selectedPlan,
+        selectedDays: selectedDays,
+        address: `${address.saveAs} , ${address.floor}, ${address.detailed} , ${address.landmark}
+      , ${address.city} - ${address.pincode}`,
+        total: charges.total,
+        additional: charges.additional,
+        subtotal: charges.subtotal,
+      }),
+    });
+    if (response.status === 200) {
+      let data = await response.json();
+      console.log("success :", data);
+    }
+    const {
+      data: { key },
+    } = await axios.get("http://www.localhost:3500/api/getkey");
+
+    const {
+      data: { order },
+    } = await axios.post("http://localhost:3500/api/checkout", {
+      amount,
+    });
+
+    const options = {
+      key,
+      amount: order.amount,
+      currency: "INR",
+      name: "EAT FRESH",
+      description: "Food Meal Plan Service",
+      image: "../../images/LOGO.png",
+      order_id: order.id,
+      callback_url: "http://localhost:3500/api/paymentverification", // check
+      prefill: {
+        name: userDetail.name,
+        email: localStorage.getItem("username"),
+        contact: userDetail.phone,
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#121212",
+      },
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+    // razor.createPayment(options);
+  };
+
   return (
     <>
       <TopNavbar />
@@ -79,19 +201,33 @@ function Payment() {
               <div className={checkout.inputPaymentLabel}>
                 <span> Name : </span>
               </div>
-              <input className={checkout.inputPayment} type="text" />
+              <input
+                onChange={handleChange}
+                name="name"
+                className={checkout.inputPayment}
+                type="text"
+              />
             </div>
             <div>
               <div className={checkout.inputPaymentLabel}>
                 <span> Contact : </span>
               </div>
-              <input className={checkout.inputPayment} type="number" />
+              <input
+                onChange={handleChange}
+                name="phone"
+                className={checkout.inputPayment}
+                type="number"
+              />
             </div>
           </div>
-          <div type="button" className={checkout.COD}>
+          <div onClick={handleCOD} type="button" className={checkout.COD}>
             <h3>Cash On Delivery</h3>
           </div>
-          <div type="button" className={checkout.Online}>
+          <div
+            onClick={() => checkoutHandler(charges.subtotal)}
+            type="button"
+            className={checkout.Online}
+          >
             <h3>Pay via Online</h3>
           </div>
         </div>

@@ -16,6 +16,8 @@ import MealDetail from "./pages/PlanPages/mealDetail";
 import Checkout from "./pages/CheckoutPages/checkout";
 import CheckoutAddr from "./pages/CheckoutPages/CheckoutAddr";
 import Payment from "./pages/CheckoutPages/Payment";
+import PaymentSuccess from "./pages/CheckoutPages/PaymentSuccess";
+import CODSuccess from "./pages/CheckoutPages/codSuccess";
 
 // function Payment() {
 //   return <h1>Hello Duniya eat ()</h1>;
@@ -41,6 +43,8 @@ export default function App() {
           path="/plans/:planType/checkout/address/payment"
           element={<Payment />}
         />
+        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
+        <Route path="/ordersuccess" element={<CODSuccess />} />
       </Routes>
     </BrowserRouter>
   );

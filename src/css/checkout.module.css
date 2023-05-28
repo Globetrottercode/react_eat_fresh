@@ -403,7 +403,7 @@
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
-  font-size: 90%;
+  font-size: 2vh;
 }
 
 .addressCard {
@@ -490,4 +490,17 @@
   width: 65%;
   background-color: white;
   border-radius: 1vh;
+}
+
+/* ////////// PaymentSuccess.js ////////////////// */
+
+.paymentSuccessBody {
+  height: 68vh;
+  /* margin-top: 1vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  background-color: rgba(217, 217, 217, 0.2);
 }

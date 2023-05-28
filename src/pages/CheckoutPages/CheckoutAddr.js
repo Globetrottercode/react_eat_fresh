@@ -52,7 +52,7 @@ function CheckoutAddr() {
       });
       if (response.status === 200) {
         let data = await response.json();
-        console.log("success :", data.succes);
+        console.log("success :", data.success);
         dispatch(allActions.addAddressActions.SetEmpty());
         console.log("Check if empty", newAddress);
         navigate(`payment`);
