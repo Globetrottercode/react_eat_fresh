@@ -125,7 +125,7 @@ function CheckoutAddr() {
                       name="age"
                       value={index}
                     />
-                    <label for={index}>
+                    <label style={{ fontSize: "2vh" }} for={index}>
                       {address.saveAs} , {address.floor} ,{address.detailed} ,{" "}
                       {address.landmark} {address.city} , {address.pincode}
                     </label>
