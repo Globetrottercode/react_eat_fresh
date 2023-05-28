@@ -42,7 +42,11 @@ function Payment() {
           <div className={checkout.summaryCard}></div>
           <div className={checkout.addressCard}></div>
         </div>
-        <div className={checkout.rightPayment}></div>
+        <div className={checkout.rightPayment}>
+          <div className={checkout.NameAndPhone}></div>
+          <div className={checkout.COD}></div>
+          <div className={checkout.Online}></div>
+        </div>
       </div>
       <Footer />
     </>
