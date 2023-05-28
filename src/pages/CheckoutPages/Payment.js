@@ -38,14 +38,62 @@ function Payment() {
       <TopNavbar />
       <div className={checkout.body}>
         <div className={checkout.leftPayment}>
-          <div className={checkout.orderSummary}></div>
-          <div className={checkout.summaryCard}></div>
-          <div className={checkout.addressCard}></div>
+          <div className={checkout.orderSummary}>
+            <h3>ORDER SUMMARY</h3>
+          </div>
+          <div className={checkout.summaryCard}>
+            <div>
+              <p>Start Date :</p> <p>{start}</p>
+            </div>
+            <div>
+              <p>End Date :</p>
+              <p>{end}</p>
+            </div>
+            <div>
+              <p>Selected Plan :</p>
+              <p>{selectedPlan} </p>
+            </div>
+            <div>
+              <p>Selected Days :</p>
+
+              <p>{selectedDays}</p>
+            </div>
+            <div style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
+              <p>Sub Total :</p>
+              <p>{charges.subtotal}</p>
+            </div>
+          </div>
+          <div className={checkout.addressCard}>
+            <span>{address.saveAs}</span>
+            <span>
+              {address.floor} , {address.detailed} ,
+            </span>
+            <span>
+              {address.landmark} , {address.city} - {address.pincode}
+            </span>
+          </div>
         </div>
         <div className={checkout.rightPayment}>
-          <div className={checkout.NameAndPhone}></div>
-          <div className={checkout.COD}></div>
-          <div className={checkout.Online}></div>
+          <div className={checkout.NameAndPhone}>
+            <div>
+              <div className={checkout.inputPaymentLabel}>
+                <span> Name : </span>
+              </div>
+              <input className={checkout.inputPayment} type="text" />
+            </div>
+            <div>
+              <div className={checkout.inputPaymentLabel}>
+                <span> Contact : </span>
+              </div>
+              <input className={checkout.inputPayment} type="number" />
+            </div>
+          </div>
+          <div type="button" className={checkout.COD}>
+            <h3>Cash On Delivery</h3>
+          </div>
+          <div type="button" className={checkout.Online}>
+            <h3>Pay via Online</h3>
+          </div>
         </div>
       </div>
       <Footer />

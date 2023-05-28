@@ -273,7 +273,7 @@
   margin-top: 10%;
 }
 .checkoutAddAddressCardLine1 > input {
-  border-radius: 2vh;
+  border-radius: 1vh;
   width: 65%;
   border: 1px solid rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -285,7 +285,7 @@
 }
 
 .checkoutAddAddressCardLine2 > input {
-  border-radius: 2vh;
+  border-radius: 1vh;
   width: 100%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -298,7 +298,7 @@
 }
 
 .checkoutAddAddressCardLine3 > input {
-  border-radius: 2vh;
+  border-radius: 1vh;
   width: 100%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -311,7 +311,7 @@
 }
 
 .checkoutAddAddressCardLine4 > input {
-  border-radius: 2vh;
+  border-radius: 1vh;
   width: 100%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -328,7 +328,7 @@
   justify-content: space-between;
 }
 .checkoutAddAddressCardLine5 > input {
-  border-radius: 2vh;
+  border-radius: 1vh;
   width: 48%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -338,6 +338,8 @@
   font-weight: bolder;
   /* padding-left: 5%; */
 }
+
+/* ////////////// Payment.js////////////// */
 
 .leftPayment {
   width: 40%;
@@ -364,6 +366,14 @@
   height: 8vh;
   background-color: rgba(0, 0, 0, 0.65);
   border-radius: 1vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderSummary > h3 {
+  margin-top: 1%;
 }
 
 .summaryCard {
@@ -371,6 +381,29 @@
   height: 32vh;
   background-color: rgba(217, 217, 217, 0.6);
   border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.summaryCard > div {
+  height: 16%;
+  width: 95%;
+  border-radius: 1vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bolder;
+  color: white;
+}
+
+.summaryCard > div > p {
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 90%;
 }
 
 .addressCard {
@@ -379,6 +412,14 @@
   background-color: white;
   border-radius: 2vh;
   border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.addressCard > span {
+  margin-left: 3%;
+  font-size: 90%;
 }
 
 .NameAndPhone {
@@ -387,18 +428,66 @@
   background-color: rgba(217, 217, 217, 0.6);
   border: 1px solid orange;
   border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NameAndPhone > div {
+  height: 30%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .COD {
-  height: 10vh;
+  height: 9vh;
   width: 90%;
   background-color: rgba(255, 165, 0, 0.9);
   border-radius: 2vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.COD > h3 {
+  margin-top: 2%;
+  font-size: 3vh;
 }
 
 .Online {
-  height: 10vh;
+  height: 9vh;
   width: 90%;
   background-color: rgba(0, 0, 0, 0.65);
   border-radius: 2vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Online > h3 {
+  margin-top: 2%;
+  font-size: 3vh;
+}
+
+.inputPaymentLabel {
+  height: 100%;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 1vh;
+  color: white;
+  font-size: 2vh;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputPayment {
+  height: 100%;
+  width: 65%;
+  background-color: white;
+  border-radius: 1vh;
 }
