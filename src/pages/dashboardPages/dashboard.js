@@ -22,13 +22,28 @@ function Dashboard() {
         </div>
         <div className={dashboard.right}>
           <div className={dashboard.myPlanCard}>
-            <div className={dashboard.myPlanLabel}></div>
+            <div className={dashboard.myPlanLabel}>
+              <p>My Plans</p>
+            </div>
             <div className={dashboard.planType}></div>
             <div className={dashboard.planDays}></div>
             <div className={dashboard.start}></div>
             <div className={dashboard.end}></div>
           </div>
-          <div className={dashboard.cardRight}></div>
+          <div className={dashboard.cardRight}>
+            <div className={dashboard.creditsCard}>
+              <div className={dashboard.creditLabel}>
+                <p>My Plans</p>
+              </div>
+              <div className={dashboard.creditValue}></div>
+            </div>
+            <div className={dashboard.addressBtn}>
+              <p>Addresses</p>
+            </div>
+            <div className={dashboard.changePlanBtn}>
+              <p>Change Plan</p>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
