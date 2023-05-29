@@ -261,6 +261,12 @@ flex-direction: column; */
   color: white;
 }
 
+.savedAddressLabel > p {
+  font-size: 4vh;
+  font-weight: bolder;
+  margin-top: 1.5%;
+}
+
 .savedAddressesCard {
   height: 75%;
   width: 60%;
@@ -268,4 +274,19 @@ flex-direction: column; */
   border-radius: 2vh;
   border: 1px solid orange;
   overflow-y: scroll;
+}
+.savedAddressesCard > div {
+  height: 30%;
+  width: 95%;
+  background-color: white;
+  border-radius: 3vh;
+  margin-left: 2.5%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.savedAddressesCard > div > span {
+  margin-left: 4%;
 }

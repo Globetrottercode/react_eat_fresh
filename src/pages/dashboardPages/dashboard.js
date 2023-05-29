@@ -2,6 +2,8 @@ import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import dashboard from "../../css/dashboard.module.css";
 import LOGO from "../../images/LOGO_Tagline.png";
+import getAllAddress from "../../getData/getAllAddress";
+import { useNavigate } from "react-router-dom";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -47,6 +49,7 @@ function assignSelectedDays(plan) {
 }
 
 function Dashboard() {
+  let navigate = useNavigate();
   let selectedDays;
   let selectedPlan;
   let plan = null;
@@ -69,6 +72,12 @@ function Dashboard() {
       " selected Days :" +
       selectedDays
   );
+  async function addrBtnClick() {
+    let allAddress = await getAllAddress(localStorage.getItem("username"));
+    localStorage.setItem("allAddress", JSON.stringify(allAddress));
+    console.log(JSON.parse(localStorage.getItem("allAddress")));
+    navigate("/addresses");
+  }
 
   return (
     <>
@@ -133,7 +142,11 @@ function Dashboard() {
                 <p>INR {credits}</p>
               </div>
             </div>
-            <div type="button" className={dashboard.addressBtn}>
+            <div
+              onClick={addrBtnClick}
+              type="button"
+              className={dashboard.addressBtn}
+            >
               <p>Addresses</p>
             </div>
             <div type="button" className={dashboard.changePlanBtn}>
