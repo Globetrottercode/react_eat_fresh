@@ -1,4 +1,5 @@
 async function getAllPlans(username) {
+  // return empty array if no plan else returns an array of plans
   const response = await fetch(
     "http://localhost:3500/customer/myPlan/getMyPlan",
     {
@@ -22,7 +23,7 @@ async function getAllPlans(username) {
 }
 
 async function check() {
-  console.log(await getAllPlans("dassouvik2021@gmail.com"));
+  console.log(await getAllPlans("dassouvik2023@gmail.com"));
 }
 
 check();
