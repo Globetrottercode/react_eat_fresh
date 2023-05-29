@@ -1,6 +1,11 @@
 import brand from "../images/LOGO.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../css/styles.css";
+import getAddress from "../getData/getAllPlans";
+import getCredits from "../getData/getCredits";
+import planValidator from "../daysPlan/planValidator";
+
+let getLastPlan = getAddress.getLastPlan;
 
 function TopNavbar() {
   let navigate = useNavigate();
@@ -17,8 +22,30 @@ function TopNavbar() {
     navigate("/login");
   }
 
-  function handleDashboardClick() {
-    navigate("/dashboard");
+  async function handleDashboardClick() {
+    if (!localStorage.getItem("username")) {
+      alert("Login first");
+      return setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    }
+    let lastPlan = await getLastPlan(localStorage.getItem("username")); // getting last plan
+    if (lastPlan.end) {
+      localStorage.setItem("lastPlan", JSON.stringify(lastPlan));
+      localStorage.setItem("planValid", planValidator(lastPlan.end)); // checking if last plan is valid
+      console.log("last plan :", localStorage.getItem("lastPlan"));
+      console.log("plan valid", localStorage.getItem("planValid"));
+    } else {
+      localStorage.setItem("planValid", false);
+      console.log("plan valid", localStorage.getItem("planValid"));
+      console.log("user never had a plan");
+    }
+    localStorage.setItem(
+      "credits",
+      await getCredits(localStorage.getItem("username"))
+    );
+    console.log(localStorage.getItem("credits"));
+    // navigate("/dashboard");
   }
 
   return (

@@ -39,6 +39,4 @@ function planValidator(end) {
   }
 }
 
-console.log(planValidator("12-10-2024"));
-
 export default planValidator;

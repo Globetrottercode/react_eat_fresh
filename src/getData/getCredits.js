@@ -19,7 +19,7 @@ async function getCredits(username) {
   //   console.log(json);
   if (response.status === 200) {
     if (json.message) return [];
-    else return json;
+    else return json[0].credits;
   }
 }
 
@@ -29,4 +29,4 @@ async function getCredits(username) {
 
 // check();
 
-export default getCredits.js;
+export default getCredits;
