@@ -16,6 +16,11 @@ function TopNavbar() {
     localStorage.removeItem("selected_address");
     navigate("/login");
   }
+
+  function handleDashboardClick() {
+    navigate("/dashboard");
+  }
+
   return (
     <>
       <nav
@@ -56,7 +61,7 @@ function TopNavbar() {
               </a>
             </li>
             <li style={{ marginLeft: "4%" }} className="nav-item">
-              <a className="nav-link">
+              <a onClick={handleDashboardClick} className="nav-link">
                 <button className="navButton">
                   <p style={{ marginTop: "8%", fontSize: "2vh" }}>Dashboard</p>
                 </button>
