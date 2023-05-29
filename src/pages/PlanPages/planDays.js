@@ -11,7 +11,7 @@ function PlanDays() {
   let { planType, day } = useParams();
   console.log(planType, day);
   let daywisePricing = pricing[planType];
-  let mealType = ["Breakfast", "lunch", "Dinner"];
+  let mealType = ["Breakfast", "Lunch", "Dinner"];
 
   return (
     <>

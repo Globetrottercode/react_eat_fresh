@@ -1,11 +1,11 @@
 import brand from "../images/LOGO.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../css/styles.css";
-import getAddress from "../getData/getAllPlans";
+import getPlans from "../getData/getAllPlans";
 import getCredits from "../getData/getCredits";
 import planValidator from "../daysPlan/planValidator";
 
-let getLastPlan = getAddress.getLastPlan;
+let getLastPlan = getPlans.getLastPlan;
 
 function TopNavbar() {
   let navigate = useNavigate();
