@@ -26,11 +26,7 @@ function SignUp() {
     }
     //console.log(register);
     e.preventDefault();
-    let data = {
-      username: register.username,
-      name: register.name,
-      password: register.password,
-    };
+    //creating user data
     const response = await fetch("http://localhost:3500/signup", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
@@ -53,9 +49,29 @@ function SignUp() {
       console.log(currentUser); // for testing
       localStorage.setItem("username", register.username);
       localStorage.setItem("token", json.authToken);
-      navigate(`/plans`);
     } else {
       alert("Email Id already exists");
+    }
+    const result = await fetch(
+      "http://localhost:3500/customer/credits/createCredits",
+      {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
+
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          username: register.username,
+        }),
+      }
+    );
+    let creditData = await result.json();
+    console.log(creditData);
+    if (creditData.success === true) {
+      console.log(creditData);
+      navigate(`/plans`);
     }
   }
   async function HandleGoogle() {
