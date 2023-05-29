@@ -1,0 +1,103 @@
+.body {
+  height: 65vh;
+  margin-top: 1vh;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.left {
+  height: 50vh;
+  width: 25%;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* height: 47vh;
+width: 25vw;
+display: flex;
+flex-direction: column; */
+
+.left > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 100vh;
+  /* background-color: black; */
+}
+
+.left > div > h3 {
+  font-size: 3vh;
+}
+
+.right {
+  height: 50vh;
+  width: 45%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 3vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cardRight {
+  width: 40%;
+  height: 90%;
+  background-color: aqua;
+}
+
+.myPlanCard {
+  width: 50%;
+  height: 90%;
+  border-radius: 3vh;
+  border: 1px solid orange;
+  background-color: rgba(217, 217, 217, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.myPlanCard > div {
+  margin-top: 1%;
+}
+
+.myPlanLabel {
+  height: 18%;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 3vh;
+}
+
+.planType {
+  height: 22%;
+  width: 90%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 2vh;
+}
+
+.planDays {
+  height: 22%;
+  width: 90%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 2vh;
+}
+
+.start {
+  height: 9%;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3vh;
+}
+
+.end {
+  height: 9%;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3vh;
+}

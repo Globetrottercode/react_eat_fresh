@@ -32,20 +32,23 @@ function TopNavbar() {
     let lastPlan = await getLastPlan(localStorage.getItem("username")); // getting last plan
     if (lastPlan.end) {
       localStorage.setItem("lastPlan", JSON.stringify(lastPlan));
-      localStorage.setItem("planValid", planValidator(lastPlan.end)); // checking if last plan is valid
-      console.log("last plan :", localStorage.getItem("lastPlan"));
-      console.log("plan valid", localStorage.getItem("planValid"));
+      localStorage.setItem(
+        "planValid",
+        JSON.stringify(planValidator(lastPlan.end))
+      ); // checking if last plan is valid
+      // console.log("last plan :", localStorage.getItem("lastPlan"));
+      // console.log("plan valid", JSON.parse(localStorage.getItem("planValid")));
     } else {
-      localStorage.setItem("planValid", false);
-      console.log("plan valid", localStorage.getItem("planValid"));
-      console.log("user never had a plan");
+      localStorage.setItem("planValid", JSON.stringify(false));
+      // console.log("plan valid", JSON.parse(localStorage.getItem("planValid")));
+      // console.log("user never had a plan");
     }
     localStorage.setItem(
       "credits",
       await getCredits(localStorage.getItem("username"))
     );
-    console.log(localStorage.getItem("credits"));
-    // navigate("/dashboard");
+    // console.log(localStorage.getItem("credits"));
+    navigate("/dashboard");
   }
 
   return (
