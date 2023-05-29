@@ -36,7 +36,7 @@ function TopNavbar() {
         "planValid",
         JSON.stringify(planValidator(lastPlan.end))
       ); // checking if last plan is valid
-      // console.log("last plan :", localStorage.getItem("lastPlan"));
+      // console.log("last plan :", JSON.parse(localStorage.getItem("lastPlan")));
       // console.log("plan valid", JSON.parse(localStorage.getItem("planValid")));
     } else {
       localStorage.setItem("planValid", JSON.stringify(false));
@@ -48,6 +48,7 @@ function TopNavbar() {
       await getCredits(localStorage.getItem("username"))
     );
     // console.log(localStorage.getItem("credits"));
+
     navigate("/dashboard");
   }
 

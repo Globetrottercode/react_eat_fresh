@@ -3,7 +3,73 @@ import Footer from "../../components/Footer";
 import dashboard from "../../css/dashboard.module.css";
 import LOGO from "../../images/LOGO_Tagline.png";
 
+let allPlans = [
+  ["vegBasic", "Veg Basic"],
+  ["vegPremium", "Veg Premium"],
+  ["nonVegBasic", "Non Veg Basic"],
+  ["nonVegPremium", "Non Veg Premium"],
+];
+
+let allSchemes = [
+  ["1", "Custom 1 Day"],
+  ["2", "Custom 2 Day"],
+  ["3", "Custom 3 Day"],
+  ["4", "Custom 4 Day"],
+  ["5", "Custom 5 Day"],
+  ["6", "Custom 6 Day"],
+  ["7", "7 Day Plan"],
+  ["14", "14 Day Plan"],
+  ["28", "28 Day Plan"],
+];
+
+function assignSelectedPlan(plan) {
+  let selectedPlan;
+  for (let i = 0; i < allPlans.length; i++) {
+    if (plan.selectedPlan !== allPlans[i][0]) {
+      continue;
+    }
+    selectedPlan = allPlans[i][1];
+    break;
+  }
+  return selectedPlan;
+}
+
+function assignSelectedDays(plan) {
+  let selectedDays;
+  for (let i = 0; i < allSchemes.length; i++) {
+    if (plan.selectedDays !== allSchemes[i][0]) {
+      continue;
+    }
+    selectedDays = allSchemes[i][1];
+    break;
+  }
+  return selectedDays;
+}
+
 function Dashboard() {
+  let selectedDays;
+  let selectedPlan;
+  let plan = null;
+  let credits = localStorage.getItem("credits");
+  let planValid = JSON.parse(localStorage.getItem("planValid"));
+  if (planValid) {
+    plan = JSON.parse(localStorage.getItem("lastPlan"));
+    selectedPlan = assignSelectedPlan(plan);
+    selectedDays = assignSelectedDays(plan);
+  }
+
+  console.log(
+    "plan valid :" + planValid,
+    " plan :" +
+      plan +
+      " credits :" +
+      credits +
+      " selected Plan :" +
+      selectedPlan +
+      " selected Days :" +
+      selectedDays
+  );
+
   return (
     <>
       <TopNavbar />
@@ -25,22 +91,52 @@ function Dashboard() {
             <div className={dashboard.myPlanLabel}>
               <p>My Plans</p>
             </div>
-            <div className={dashboard.planType}></div>
-            <div className={dashboard.planDays}></div>
-            <div className={dashboard.start}></div>
-            <div className={dashboard.end}></div>
+            {planValid ? (
+              <div className={dashboard.planType}>
+                {" "}
+                <p>{selectedPlan}</p>
+              </div>
+            ) : (
+              <div className={dashboard.planType}>
+                {" "}
+                <p>No Plans</p>
+              </div>
+            )}
+            {planValid ? (
+              <div className={dashboard.planDays}>
+                <p>{selectedDays}</p>
+              </div>
+            ) : (
+              ""
+            )}
+            {planValid ? (
+              <div className={dashboard.start}>
+                <p>Start :</p> <p>{plan.start}</p>
+              </div>
+            ) : (
+              ""
+            )}
+            {planValid ? (
+              <div className={dashboard.end}>
+                <p>End :</p> <p>{plan.end}</p>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <div className={dashboard.cardRight}>
             <div className={dashboard.creditsCard}>
               <div className={dashboard.creditLabel}>
-                <p>My Plans</p>
+                <p>Credits</p>
               </div>
-              <div className={dashboard.creditValue}></div>
+              <div className={dashboard.creditValue}>
+                <p>INR {credits}</p>
+              </div>
             </div>
-            <div className={dashboard.addressBtn}>
+            <div type="button" className={dashboard.addressBtn}>
               <p>Addresses</p>
             </div>
-            <div className={dashboard.changePlanBtn}>
+            <div type="button" className={dashboard.changePlanBtn}>
               <p>Change Plan</p>
             </div>
           </div>

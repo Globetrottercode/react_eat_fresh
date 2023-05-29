@@ -62,12 +62,12 @@ flex-direction: column; */
   background-color: rgba(217, 217, 217, 0.6);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
 }
 
 .myPlanCard > div {
-  margin-top: 1%;
+  margin-top: 4%;
 }
 
 .myPlanLabel {
@@ -92,6 +92,16 @@ flex-direction: column; */
   width: 90%;
   background-color: rgba(255, 165, 0, 0.9);
   border-radius: 2vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planType > p {
+  margin-top: 5%;
+  font-size: 3vh;
+  font-weight: bolder;
 }
 
 .planDays {
@@ -99,6 +109,15 @@ flex-direction: column; */
   width: 90%;
   background-color: rgba(255, 165, 0, 0.9);
   border-radius: 2vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.planDays > p {
+  margin-top: 5%;
+  font-size: 3vh;
+  font-weight: bolder;
 }
 
 .start {
@@ -106,6 +125,16 @@ flex-direction: column; */
   width: 90%;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.start > p {
+  font-weight: bolder;
+  font-size: 2vh;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-top: 1.5%;
 }
 
 .end {
@@ -113,6 +142,17 @@ flex-direction: column; */
   width: 90%;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3vh;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.end > p {
+  font-weight: bolder;
+  font-size: 2vh;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-top: 1.5%;
 }
 
 .creditsCard {
@@ -148,7 +188,18 @@ flex-direction: column; */
   width: 90%;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 1vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.creditValue > p {
+  font-weight: bolder;
+  font-size: 2vh;
+  margin-top: 7%;
+}
+
 .addressBtn {
   height: 25%;
   width: 100%;
@@ -165,6 +216,9 @@ flex-direction: column; */
   font-size: 3vh;
   margin-top: 5%;
 }
+.addressBtn:hover {
+  border: 2px solid rgba(217, 217, 217, 0.6);
+}
 
 .changePlanBtn {
   height: 20%;
@@ -180,4 +234,8 @@ flex-direction: column; */
   font-weight: bolder;
   font-size: 3vh;
   margin-top: 5%;
+}
+
+.changePlanBtn:hover {
+  border: 2px solid rgba(217, 217, 217, 0.6);
 }
