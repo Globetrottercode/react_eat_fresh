@@ -22,8 +22,10 @@ async function getAllPlans(username) {
   }
 }
 
-async function check() {
-  console.log(await getAllPlans("dassouvik2023@gmail.com"));
-}
+// async function check() {
+//   console.log(await getAllPlans("dassouvik2023@gmail.com"));
+// }
 
-check();
+// check();
+
+export default getAllPlans;
