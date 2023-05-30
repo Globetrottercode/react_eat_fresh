@@ -1,4 +1,5 @@
 function planValidator(end) {
+  if (end === undefined) return false;
   let date = new Date();
   let c = 0;
   let s = "";
@@ -39,4 +40,6 @@ function planValidator(end) {
   }
 }
 
+// let abc = {};
+// console.log(planValidator(abc.end));
 export default planValidator;

@@ -57,11 +57,11 @@ function Payment() {
       setSubtotal(allTotal);
     } else {
       allCredits = allCredits - allTotal;
-      setSubtotal(0);
-      setCredits(allCredits);
+      setSubtotal(1);
+      setCredits(allCredits + 1);
     }
-    localStorage.setItem("tempCredits", credits);
-    console.log(localStorage.getItem("tempCredits"), "credits");
+    // localStorage.setItem("tempCredits", credits);
+    // console.log(localStorage.getItem("tempCredits"), "tempcredits");
   }
   async function handleCOD() {
     if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
@@ -70,7 +70,7 @@ function Payment() {
     }
     let updated = await updateCredits(
       localStorage.getItem("username"),
-      localStorage.getItem("tempCredits")
+      credits
     );
     console.log(updated);
     let response = await fetch("http://localhost:3500/customer/myPlan", {
@@ -104,6 +104,11 @@ function Payment() {
       alert("Please enter the input fields");
       return;
     }
+    let updated = await updateCredits(
+      localStorage.getItem("username"),
+      localStorage.getItem("tempCredits")
+    );
+    console.log(updated);
     let response = await fetch("http://localhost:3500/customer/myPlan", {
       method: "POST",
       headers: {
@@ -121,7 +126,8 @@ function Payment() {
       , ${address.city} - ${address.pincode}`,
         total: charges.total,
         additional: charges.additional,
-        subtotal: charges.subtotal,
+        subtotal: subtotal,
+        creditsUsed: charges.total + charges.additional - subtotal,
       }),
     });
     if (response.status === 200) {

@@ -5,6 +5,10 @@ import styles from "../../css/plans.module.css";
 import logoTagline from "../../images/LOGO_Tagline.png";
 import infoStyles from "../../css/planinfo.module.css";
 import pricing from "../../mealsData/pricing";
+import getAllPlans from "../../getData/getAllPlans";
+import planValidator from "../../daysPlan/planValidator";
+
+let getLastPlan = getAllPlans.getLastPlan;
 
 function PlanDetail() {
   let { planType } = useParams();

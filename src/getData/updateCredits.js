@@ -25,7 +25,7 @@ async function updateCredits(username, credits) {
 }
 
 // async function check() {
-//   console.log(await updateCredits("dassouvik2023@gmail.com", 900));
+//   console.log(await updateCredits("dassouvik2023@gmail.com", 29900));
 // }
 
 // check();
