@@ -1,5 +1,5 @@
 async function getCredits(username) {
-  // return empty array if no credits created else returns an array of credit
+  // returns -1 if no credits created else returns an integer value of credit
   const response = await fetch(
     "http://localhost:3500/customer/credits/getCredits",
     {
@@ -18,7 +18,7 @@ async function getCredits(username) {
   const json = await response.json();
   //   console.log(json);
   if (response.status === 200) {
-    if (json.message) return [];
+    if (json.message) return -1;
     else return json[0].credits;
   }
 }

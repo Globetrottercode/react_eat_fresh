@@ -198,6 +198,19 @@ function Payment() {
           </div>
         </div>
         <div className={checkout.rightPayment}>
+          <div className={checkout.creditsCheckout}>
+            <div className={checkout.credits}>
+              <div className={checkout.creditsLabel}>
+                <span>Credits</span>
+              </div>
+              <div className={checkout.creditsDisplay}>
+                <span>INR 400</span>
+              </div>
+            </div>
+            <div type="button" className={checkout.creditsUse}>
+              <span>Use</span>
+            </div>
+          </div>
           <div className={checkout.NameAndPhone}>
             <div>
               <div className={checkout.inputPaymentLabel}>

@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react";
 import allAddress from "../../Redux/reducers/storeAllAddress";
 import { all } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import getCredits from "../../getData/getCredits";
 
 let i = 0;
 
@@ -310,7 +311,12 @@ function CheckoutAddr() {
             <h3>Add and Continue</h3>
           </div>
           <div
-            onClick={() => {
+            onClick={async () => {
+              localStorage.setItem(
+                "credits",
+                await getCredits(localStorage.getItem("username"))
+              );
+              console.log(localStorage.getItem("credits"), "credits");
               if (localStorage.getItem("selected_address")) {
                 navigate("payment");
               } else {
