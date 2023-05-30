@@ -6,8 +6,11 @@ import calculatePrice from "../../daysPlan/calPricing";
 import checkout from "../../css/checkout.module.css";
 import { useState } from "react";
 import axios from "axios";
+import updateCredits from "../../getData/updateCredits";
 
 function Payment() {
+  let [credits, setCredits] = useState(localStorage.getItem("credits"));
+  console.log(localStorage.getItem("tempCredits"), "tempCredits");
   let navigate = useNavigate();
   let [userDetail, setuserDetail] = useState({
     name: "",
@@ -43,23 +46,29 @@ function Payment() {
   let start = startAndEnd[0];
   let end = startAndEnd[1];
   let charges = calculatePrice(selectedPlan, selectedDays);
+  let [subtotal, setSubtotal] = useState(charges.subtotal);
 
-  let data = {
-    username: localStorage.getItem("username"),
-    name: userDetail.name,
-    phone: userDetail.phone,
-    start: start,
-    end: end,
-    selectedPlan: selectedPlan,
-    selectedDays: selectedDays,
-    address: `${address.saveAs} , ${address.floor}, ${address.detailed} , ${address.landmark}
-    , ${address.city} - ${address.pincode}`,
-    total: charges.total,
-    additional: charges.additional,
-    subtotal: charges.subtotal,
-  };
-
+  async function handleCreditsUse() {
+    let allTotal = subtotal;
+    let allCredits = credits;
+    if (allTotal > allCredits) {
+      allTotal = allTotal - allCredits;
+      setCredits(0);
+      setSubtotal(allTotal);
+    } else {
+      allCredits = allCredits - allTotal;
+      setSubtotal(0);
+      setCredits(allCredits);
+    }
+    localStorage.setItem("tempCredits", credits);
+    console.log(localStorage.getItem("tempCredits"), "credits");
+  }
   async function handleCOD() {
+    let updated = await updateCredits(
+      localStorage.getItem("username"),
+      localStorage.getItem("tempCredits")
+    );
+    console.log(updated);
     if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
       alert("Please enter the input fields");
       return;
@@ -184,7 +193,7 @@ function Payment() {
             </div>
             <div style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
               <p>Sub Total :</p>
-              <p>{charges.subtotal}</p>
+              <p>{subtotal}</p>
             </div>
           </div>
           <div className={checkout.addressCard}>
@@ -204,10 +213,14 @@ function Payment() {
                 <span>Credits</span>
               </div>
               <div className={checkout.creditsDisplay}>
-                <span>INR 400</span>
+                <span>INR {credits}</span>
               </div>
             </div>
-            <div type="button" className={checkout.creditsUse}>
+            <div
+              onClick={handleCreditsUse}
+              type="button"
+              className={checkout.creditsUse}
+            >
               <span>Use</span>
             </div>
           </div>
@@ -239,7 +252,7 @@ function Payment() {
             <h3>Cash On Delivery</h3>
           </div>
           <div
-            onClick={() => checkoutHandler(charges.subtotal)}
+            onClick={() => checkoutHandler(subtotal)}
             type="button"
             className={checkout.Online}
           >

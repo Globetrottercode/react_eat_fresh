@@ -316,6 +316,10 @@ function CheckoutAddr() {
                 "credits",
                 await getCredits(localStorage.getItem("username"))
               );
+              localStorage.setItem(
+                "tempCredits",
+                localStorage.getItem("credits")
+              );
               console.log(localStorage.getItem("credits"), "credits");
               if (localStorage.getItem("selected_address")) {
                 navigate("payment");
