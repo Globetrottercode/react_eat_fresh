@@ -26,13 +26,14 @@ function calculateChange(current, change, end) {
   if (amt < 0) {
     pay = Math.abs(amt);
     addToCredits = 0;
+    amt = Math.abs(amt);
   } else {
     pay = 0;
     addToCredits = amt;
   }
-  return { pay: pay, addToCredits: addToCredits };
+  return { pay: pay, addToCredits: addToCredits, amt: amt };
 }
 
-// console.log(calculateChange("vegPremium", "vegBasic", "7-6-2023"));
+// console.log(calculateChange("vegPremium", "nonVegPremium", "7-6-2023"));
 
 export default calculateChange;
