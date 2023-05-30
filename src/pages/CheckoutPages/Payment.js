@@ -10,7 +10,7 @@ import updateCredits from "../../getData/updateCredits";
 
 function Payment() {
   let [credits, setCredits] = useState(localStorage.getItem("credits"));
-  console.log(localStorage.getItem("tempCredits"), "tempCredits");
+  // console.log(localStorage.getItem("tempCredits"), "tempCredits");
   let navigate = useNavigate();
   let [userDetail, setuserDetail] = useState({
     name: "",

@@ -2,6 +2,8 @@ import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import change from "../../css/dashboard.module.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import calculateChange from "../../daysPlan/calcChangePlan";
 
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
 // plan was already stored in dashboard when the user goes through dashboard
@@ -11,7 +13,7 @@ let allPlans = [
   ["nonVegBasic", "Non Veg Basic"],
   ["nonVegPremium", "Non Veg Premium"],
 ];
-let chosenPlan;
+
 function assignPlan(planType) {
   for (let i = 0; i < allPlans.length; i++) {
     if (planType === allPlans[i][0]) {
@@ -21,21 +23,28 @@ function assignPlan(planType) {
 }
 
 function ChangePlan() {
+  let [chosenPlan, setChosenPlan] = useState("");
   let navigate = useNavigate();
   let plan = JSON.parse(localStorage.getItem("lastPlan"));
   let currentPlan = assignPlan(plan.selectedPlan);
 
   console.log(currentPlan);
   function handleChoose(e) {
-    chosenPlan = e.target.value;
-    console.log(e.target.value);
+    setChosenPlan(e.target.value);
+    console.log(chosenPlan, " ---");
   }
   function handleProceed() {
-    if (!chosenPlan) {
-      alert("Choose a plan for change");
-    } else {
+    console.log("chosen plan is : " + chosenPlan);
+    if (
+      chosenPlan === "vegBasic" ||
+      chosenPlan === "vegPremium" ||
+      chosenPlan === "nonVegBasic" ||
+      chosenPlan === "nonVegPremium"
+    ) {
       localStorage.setItem("changePlan", chosenPlan);
       navigate("/dashboard/changePlan/changeProcess");
+    } else {
+      alert("Choose a plan for change");
     }
   }
   return (
@@ -99,10 +108,16 @@ function ChangePlan() {
 }
 
 function ChangePlanProcess() {
-  let newPlan = localStorage.getItem("changePlan");
-  let assignNewPlan = assignPlan(newPlan);
+  let newChangedPlan = localStorage.getItem("changePlan");
+  let assignNewPlan = assignPlan(newChangedPlan);
   let plan = JSON.parse(localStorage.getItem("lastPlan"));
   let currentPlan = assignPlan(plan.selectedPlan);
+  let changeDetail = calculateChange(
+    plan.selectedPlan,
+    newChangedPlan,
+    plan.end
+  );
+  console.log(changeDetail);
   return (
     <>
       <TopNavbar />
@@ -134,11 +149,24 @@ function ChangePlanProcess() {
             <div className={change.newChangedPlan}>
               <p>{assignNewPlan}</p>
             </div>
-            <div className={change.changeAmt}></div>
-
-            <div type="button" className={change.changeProceed}>
-              <p>Proceed</p>
+            <div className={change.changeAmt}>
+              <p>Ammount : </p>
+              <p>{changeDetail.amt}</p>
             </div>
+            {changeDetail.pay === 0 ? (
+              <div type="button" className={change.changeProceed}>
+                <p>Add to Credits</p>
+              </div>
+            ) : (
+              <div className={change.changePayment}>
+                <div type="button">
+                  <p>COD</p>
+                </div>
+                <div type="button">
+                  <p>Pay Online</p>
+                </div>
+              </div>
+            )}
           </div>
           <i>*Note : Credits can't be used for change plan payments</i>
         </div>

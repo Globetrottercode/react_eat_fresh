@@ -4,6 +4,11 @@ import checkout from "../../css/checkout.module.css";
 import successLogo from "../../images/succesful.png";
 
 function CODSuccess() {
+  localStorage.removeItem("selected_days"); // removing from local storage
+  localStorage.removeItem("selected_plan");
+  localStorage.removeItem("allAddress");
+  localStorage.removeItem("credits");
+  localStorage.removeItem("selected_address");
   return (
     <>
       <TopNavbar />
