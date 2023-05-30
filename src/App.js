@@ -20,7 +20,10 @@ import PaymentSuccess from "./pages/CheckoutPages/PaymentSuccess";
 import CODSuccess from "./pages/CheckoutPages/codSuccess";
 import Dashboard from "./pages/dashboardPages/dashboard";
 import Addresses from "./pages/dashboardPages/Addresses";
-import ChangePlan from "./pages/dashboardPages/ChangePlan";
+import {
+  ChangePlan,
+  ChangePlanProcess,
+} from "./pages/dashboardPages/ChangePlan";
 
 // function ChangePlan() {
 //   return <h1>Hello Duniya eat ()</h1>;
@@ -51,6 +54,10 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/addresses" element={<Addresses />} />
         <Route path="/dashboard/changePlan" element={<ChangePlan />} />
+        <Route
+          path="/dashboard/changePlan/changeProcess"
+          element={<ChangePlanProcess />}
+        />
       </Routes>
     </BrowserRouter>
   );
