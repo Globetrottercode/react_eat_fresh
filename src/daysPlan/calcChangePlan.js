@@ -1,13 +1,15 @@
 let pricing = {
-  // 28 day price
-  vegBasic: 3640,
-  vegPremium: 4760,
-  nonVegBasic: 4200,
-  nonVegPremium: 5600,
-  customize: 6500, // 30 day price
+  // 1 day price
+  vegBasic: 130,
+  vegPremium: 170,
+  nonVegBasic: 150,
+  nonVegPremium: 200,
+  customize: 215, // 1 day price
 };
 
 function calculateChange(current, change, end) {
+  let pay;
+  let addToCredits;
   let date = new Date();
   let remain = 0;
   while (true) {
@@ -20,7 +22,17 @@ function calculateChange(current, change, end) {
       break;
     }
   }
-  let amt = pricing;
+  let amt = pricing[current] * remain - pricing[change] * remain;
+  if (amt < 0) {
+    pay = Math.abs(amt);
+    addToCredits = 0;
+  } else {
+    pay = 0;
+    addToCredits = amt;
+  }
+  return { pay: pay, addToCredits: addToCredits };
 }
 
-console.log(calculateChange(1, 2, "7-7-2023"));
+// console.log(calculateChange("vegPremium", "vegBasic", "7-6-2023"));
+
+export default calculateChange;
