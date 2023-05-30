@@ -77,7 +77,10 @@ function Checkout() {
         // navigate();
       }
     } else {
-      navigate("/login");
+      alert("You need to login first");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     }
   }
 

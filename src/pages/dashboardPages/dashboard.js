@@ -76,7 +76,7 @@ function Dashboard() {
     let allAddress = await getAllAddress(localStorage.getItem("username"));
     localStorage.setItem("allAddress", JSON.stringify(allAddress));
     console.log(JSON.parse(localStorage.getItem("allAddress")));
-    navigate("/addresses");
+    navigate("/dashboard/addresses");
   }
 
   return (
@@ -149,7 +149,16 @@ function Dashboard() {
             >
               <p>Addresses</p>
             </div>
-            <div type="button" className={dashboard.changePlanBtn}>
+            <div
+              onClick={() => {
+                if (planValid) navigate("/dashboard/changePlan");
+                else {
+                  alert("You currently have no valid plans to change");
+                }
+              }}
+              type="button"
+              className={dashboard.changePlanBtn}
+            >
               <p>Change Plan</p>
             </div>
           </div>

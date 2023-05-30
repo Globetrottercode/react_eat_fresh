@@ -76,8 +76,22 @@ function MealDetail() {
           </div> */}
           <div
             type="button"
-            onClick={() => {
-              navigate(`/plans/${planType}/checkout`);
+            onClick={async () => {
+              if (!localStorage.getItem("username"))
+                navigate(`/plans/${planType}/checkout`);
+              else {
+                let plan = await getLastPlan(localStorage.getItem("username"));
+                if (!planValidator(plan.end)) {
+                  navigate(`/plans/${planType}/checkout`);
+                } else {
+                  alert(
+                    "You already have a valid plan, You can change your plan instead"
+                  );
+                  setTimeout(() => {
+                    navigate(`/dashboard`);
+                  }, 2000);
+                }
+              }
             }}
             className={infoStyles.checkout}
           >

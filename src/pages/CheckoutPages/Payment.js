@@ -106,7 +106,7 @@ function Payment() {
     }
     let updated = await updateCredits(
       localStorage.getItem("username"),
-      localStorage.getItem("tempCredits")
+      credits
     );
     console.log(updated);
     let response = await fetch("http://localhost:3500/customer/myPlan", {
