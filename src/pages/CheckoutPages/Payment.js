@@ -64,15 +64,15 @@ function Payment() {
     console.log(localStorage.getItem("tempCredits"), "credits");
   }
   async function handleCOD() {
+    if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
+      alert("Please enter the input fields");
+      return;
+    }
     let updated = await updateCredits(
       localStorage.getItem("username"),
       localStorage.getItem("tempCredits")
     );
     console.log(updated);
-    if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
-      alert("Please enter the input fields");
-      return;
-    }
     let response = await fetch("http://localhost:3500/customer/myPlan", {
       method: "POST",
       headers: {
