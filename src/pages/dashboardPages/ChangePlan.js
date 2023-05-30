@@ -1,6 +1,7 @@
 import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import change from "../../css/dashboard.module.css";
+import { useNavigate } from "react-router-dom";
 
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
 // plan was already stored in dashboard when the user goes through dashboard
@@ -20,12 +21,22 @@ function assignPlan(planType) {
 }
 
 function ChangePlan() {
+  let navigate = useNavigate();
   let plan = JSON.parse(localStorage.getItem("lastPlan"));
   let currentPlan = assignPlan(plan.selectedPlan);
+
   console.log(currentPlan);
   function handleChoose(e) {
     chosenPlan = e.target.value;
     console.log(e.target.value);
+  }
+  function handleProceed() {
+    if (!chosenPlan) {
+      alert("Choose a plan for change");
+    } else {
+      localStorage.setItem("changePlan", chosenPlan);
+      navigate("/dashboard/changePlan/changeProcess");
+    }
   }
   return (
     <>
@@ -63,7 +74,7 @@ function ChangePlan() {
                   type="radio"
                   id={index}
                   name="age"
-                  value={plan[1]}
+                  value={plan[0]}
                 />
                 <label style={{ fontSize: "3vh" }} for={index}>
                   {plan[1]}
@@ -73,7 +84,11 @@ function ChangePlan() {
               ""
             );
           })}
-          <div type="button" className={change.changeProceed}>
+          <div
+            onClick={handleProceed}
+            type="button"
+            className={change.changeProceed}
+          >
             <p>Proceed</p>
           </div>
         </div>
@@ -84,6 +99,8 @@ function ChangePlan() {
 }
 
 function ChangePlanProcess() {
+  let newPlan = localStorage.getItem("changePlan");
+  let assignNewPlan = assignPlan(newPlan);
   let plan = JSON.parse(localStorage.getItem("lastPlan"));
   let currentPlan = assignPlan(plan.selectedPlan);
   return (
@@ -109,14 +126,21 @@ function ChangePlanProcess() {
             </h3>
           </div>
         </div>
-        <div className={change.changeRight}>
-          <div className={change.changechoosePlanLabel}>
-            <p>Plan</p>
-          </div>
+        <div className={change.changeRightParent}>
+          <div className={change.changeProcessRight}>
+            <div className={change.changechoosePlanLabel}>
+              <p>Plan</p>
+            </div>
+            <div className={change.newChangedPlan}>
+              <p>{assignNewPlan}</p>
+            </div>
+            <div className={change.changeAmt}></div>
 
-          <div type="button" className={change.changeProceed}>
-            <p>Proceed</p>
+            <div type="button" className={change.changeProceed}>
+              <p>Proceed</p>
+            </div>
           </div>
+          <i>*Note : Credits can't be used for change plan payments</i>
         </div>
       </div>
       <Footer />
