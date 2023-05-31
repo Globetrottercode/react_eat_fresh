@@ -20,12 +20,12 @@ async function updateCredits(username, credits) {
   //   console.log(json);
   if (response.status === 200) {
     if (json.message) return -1;
-    else return json;
+    else return json[0].credits;
   }
 }
 
 // async function check() {
-//   console.log(await updateCredits("dassouvik2023@gmail.com", 29900));
+//   console.log(await updateCredits("dassouvik2023@gmail.com", 10000));
 // }
 
 // check();

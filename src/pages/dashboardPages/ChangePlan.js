@@ -4,7 +4,11 @@ import change from "../../css/dashboard.module.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import calculateChange from "../../daysPlan/calcChangePlan";
+import updateCredits from "../../getData/updateCredits";
+import updateMyPlan from "../../getData/updateMyPlan";
+import getAllPlans from "../../getData/getAllPlans";
 
+let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
 // plan was already stored in dashboard when the user goes through dashboard
 let allPlans = [
@@ -108,6 +112,8 @@ function ChangePlan() {
 }
 
 function ChangePlanProcess() {
+  let navigate = useNavigate();
+  let currCredits = localStorage.getItem("credits");
   let newChangedPlan = localStorage.getItem("changePlan");
   let assignNewPlan = assignPlan(newChangedPlan);
   let plan = JSON.parse(localStorage.getItem("lastPlan"));
@@ -117,6 +123,19 @@ function ChangePlanProcess() {
     newChangedPlan,
     plan.end
   );
+  async function handleCredits() {
+    let result = await updateCredits(
+      localStorage.getItem("username"),
+      Number(changeDetail.amt) + Number(currCredits)
+    );
+    // let data = await update
+    console.log(result[0].credits, "credits");
+    localStorage.setItem("credits", result[0].credits);
+    //toastify
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1000);
+  }
   console.log(changeDetail);
   return (
     <>
@@ -143,9 +162,16 @@ function ChangePlanProcess() {
         </div>
         <div className={change.changeRightParent}>
           <div className={change.changeProcessRight}>
-            <div className={change.changechoosePlanLabel}>
-              <p>Plan</p>
-            </div>
+            {changeDetail.pay === 0 ? (
+              <div className={change.changechoosePlanLabel}>
+                <p>Plan Downgrade</p>
+              </div>
+            ) : (
+              <div className={change.changechoosePlanLabel}>
+                <p>Plan Upgrade</p>
+              </div>
+            )}
+
             <div className={change.newChangedPlan}>
               <p>{assignNewPlan}</p>
             </div>
@@ -154,7 +180,11 @@ function ChangePlanProcess() {
               <p>{changeDetail.amt}</p>
             </div>
             {changeDetail.pay === 0 ? (
-              <div type="button" className={change.changeProceed}>
+              <div
+                onClick={handleCredits}
+                type="button"
+                className={change.changeProceed}
+              >
                 <p>Add to Credits</p>
               </div>
             ) : (
