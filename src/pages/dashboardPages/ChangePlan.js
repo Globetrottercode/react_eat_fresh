@@ -7,6 +7,8 @@ import calculateChange from "../../daysPlan/calcChangePlan";
 import updateCredits from "../../getData/updateCredits";
 import updateMyPlan from "../../getData/updateMyPlan";
 import getAllPlans from "../../getData/getAllPlans";
+import LOGO from "../../images/LOGO.png";
+import axios from "axios";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -128,13 +130,83 @@ function ChangePlanProcess() {
       localStorage.getItem("username"),
       Number(changeDetail.amt) + Number(currCredits)
     );
-    // let data = await update
-    console.log(result[0].credits, "credits");
-    localStorage.setItem("credits", result[0].credits);
+    let data = await updateMyPlan(
+      plan._id,
+      plan.selectedPlan,
+      newChangedPlan,
+      changeDetail.pay,
+      changeDetail.addToCredits
+    );
+    console.log("updated plan : ", data);
+    console.log(result, "credits");
+    localStorage.setItem("lastPlan", JSON.stringify(data));
+    localStorage.setItem("credits", result);
     //toastify
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
+  }
+  async function handleCOD() {
+    let data = await updateMyPlan(
+      plan._id,
+      plan.selectedPlan,
+      newChangedPlan,
+      changeDetail.pay,
+      changeDetail.addToCredits
+    );
+    console.log("updated plan : ", await data);
+    localStorage.setItem("lastPlan", JSON.stringify(data));
+    // toastify
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1000);
+  }
+  async function payOnline(amount) {
+    console.log(amount, "ok");
+    let data = await updateMyPlan(
+      plan._id,
+      plan.selectedPlan,
+      newChangedPlan,
+      changeDetail.pay,
+      changeDetail.addToCredits
+    );
+    console.log("updated plan : ", await data);
+    let username = localStorage.getItem("username");
+    localStorage.setItem("lastPlan", JSON.stringify(data));
+    const {
+      data: { key },
+    } = await axios.get("http://www.localhost:3500/api/getkey");
+
+    const {
+      data: { order },
+    } = await axios.post("http://localhost:3500/api/checkout", {
+      amount,
+      username,
+    });
+
+    const options = {
+      key,
+      amount: order.amount,
+      currency: "INR",
+      name: "EAT FRESH",
+      description: "Food Meal Plan Service",
+      image: LOGO,
+      order_id: order.id,
+      callback_url: "http://localhost:3500/api/paymentverification", // check
+      prefill: {
+        name: plan.name,
+        email: localStorage.getItem("username"),
+        contact: plan.phone,
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#121212",
+      },
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
   }
   console.log(changeDetail);
   return (
@@ -189,10 +261,15 @@ function ChangePlanProcess() {
               </div>
             ) : (
               <div className={change.changePayment}>
-                <div type="button">
-                  <p>COD</p>
+                <div onClick={handleCOD} type="button">
+                  <p>Cash</p>
                 </div>
-                <div type="button">
+                <div
+                  onClick={() => {
+                    payOnline(changeDetail.amt);
+                  }}
+                  type="button"
+                >
                   <p>Pay Online</p>
                 </div>
               </div>
