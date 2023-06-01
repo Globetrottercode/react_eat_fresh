@@ -10,7 +10,9 @@ function Settings() {
         <div className={settings.settingCard}>
           <div className={settings.outerCardBody}>
             <div className={settings.settingsLabel}>
-              <p>Settings</p>
+              <p>
+                <i class="fa-solid fa-gear"></i> Settings
+              </p>
             </div>
             <div className={settings.settingsAboutUs}>
               <p>About Us</p>

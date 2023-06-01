@@ -71,7 +71,7 @@
 .settingsLabel > p {
   font-size: 3.5vh;
   font-weight: bolder;
-  margin-top: 4%;
+  margin-top: 5%;
 }
 
 .settingsAboutUs {
@@ -92,4 +92,15 @@
 
 .settingsAboutUs:hover {
   border: 2px solid white;
+}
+
+/* ///////////////////////// AboutUs.js ///////////////////////*/
+
+.aboutUsBody {
+  height: 75%;
+  width: 50%;
+  background-color: brown;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }

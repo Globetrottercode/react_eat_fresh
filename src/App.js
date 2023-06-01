@@ -25,8 +25,9 @@ import {
   ChangePlanProcess,
 } from "./pages/dashboardPages/ChangePlan";
 import Settings from "./pages/SettingsPages/settings";
+import AboutUs from "./pages/SettingsPages/aboutUs";
 
-// function Settings() {
+// function AboutUs() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
 
@@ -60,6 +61,7 @@ export default function App() {
           element={<ChangePlanProcess />}
         />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/settings/aboutus" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   );
