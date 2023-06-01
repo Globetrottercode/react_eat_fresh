@@ -15,7 +15,7 @@ function MealDetail() {
   let navigate = useNavigate();
   let { planType, day, meal } = useParams();
   let dishes = allPlansMealData[planType][day][meal];
-  console.log(dishes);
+  console.log(dishes, "dishes");
   console.log(planType, day);
   let daywisePricing = pricing[planType];
   let mealType = ["Breakfast", "lunch", "Dinner"];

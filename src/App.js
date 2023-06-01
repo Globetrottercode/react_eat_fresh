@@ -24,8 +24,9 @@ import {
   ChangePlan,
   ChangePlanProcess,
 } from "./pages/dashboardPages/ChangePlan";
+import Settings from "./pages/SettingsPages/settings";
 
-// function ChangePlan() {
+// function Settings() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
 
@@ -58,6 +59,7 @@ export default function App() {
           path="/dashboard/changePlan/changeProcess"
           element={<ChangePlanProcess />}
         />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );

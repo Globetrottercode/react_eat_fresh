@@ -140,6 +140,7 @@ function ChangePlanProcess() {
     console.log("updated plan : ", data);
     console.log(result, "credits");
     localStorage.setItem("lastPlan", JSON.stringify(data));
+
     localStorage.setItem("credits", result);
     //toastify
     setTimeout(() => {
@@ -156,6 +157,7 @@ function ChangePlanProcess() {
     );
     console.log("updated plan : ", await data);
     localStorage.setItem("lastPlan", JSON.stringify(data));
+
     // toastify
     setTimeout(() => {
       navigate("/dashboard");
@@ -173,6 +175,7 @@ function ChangePlanProcess() {
     console.log("updated plan : ", await data);
     let username = localStorage.getItem("username");
     localStorage.setItem("lastPlan", JSON.stringify(data));
+
     const {
       data: { key },
     } = await axios.get("http://www.localhost:3500/api/getkey");

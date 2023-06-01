@@ -49,6 +49,14 @@ function assignSelectedDays(plan) {
 }
 
 function Dashboard() {
+  let date = new Date();
+  let curr =
+    date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+  let allowChange = true;
+  // if (curr === localStorage.getItem("changeDate")) {
+  //   // if current date equals the change date user wont be allowed to change plan
+  //   allowChange = false;
+  // }
   let navigate = useNavigate();
   let selectedDays;
   let selectedPlan;
@@ -59,6 +67,14 @@ function Dashboard() {
     plan = JSON.parse(localStorage.getItem("lastPlan"));
     selectedPlan = assignSelectedPlan(plan);
     selectedDays = assignSelectedDays(plan);
+    if (curr === plan.planChangeDate) {
+      console.log("matched");
+      //if no change date available then ,it wont enter this block
+      //if current date equals the change date user wont be allowed to change plan
+      allowChange = false;
+    } else {
+      console.log("not matched");
+    }
   }
 
   console.log(
@@ -151,8 +167,13 @@ function Dashboard() {
             </div>
             <div
               onClick={() => {
-                if (planValid) navigate("/dashboard/changePlan");
-                else {
+                if (planValid) {
+                  if (allowChange) {
+                    navigate("/dashboard/changePlan");
+                  } else {
+                    alert("You can't change plans twice in a day");
+                  }
+                } else {
                   alert("You currently have no valid plans to change");
                 }
               }}
