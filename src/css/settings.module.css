@@ -1,8 +1,67 @@
 .body {
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: space-evenly; */
+  justify-content: center;
   margin-top: 1vh;
   height: 65vh;
-  background-color: aqua;
+  /* background-color: aqua; */
+}
+
+.settingCard {
+  height: 70%;
+  width: 60%;
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.outerCardBody {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: green; */
+  align-items: flex-end;
+}
+
+.settingCardBody {
+  height: 75%;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 2vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.settingCardBody > div {
+  height: 25%;
+  width: 90%;
+  background-color: rgba(81, 153, 56, 0.9);
+  border-radius: 1vh;
+}
+
+.settingCardBody > div:hover {
+  border: 2px solid rgba(217, 217, 217, 0.6);
+}
+
+.settingsLabel {
+  height: 100%;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2vh;
+}
+
+.settingsAboutUs {
+  height: 80%;
+  width: 20%;
+  background-color: rgba(255, 165, 0, 0.9);
+  border-radius: 3vh;
+}
+
+.settingsAboutUs:hover {
+  border: 2px solid white;
 }

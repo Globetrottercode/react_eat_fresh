@@ -6,8 +6,18 @@ function Settings() {
   return (
     <>
       <TopNavbar />
-      <div>
-        <h1 className={settings.body}>Hello Users welcome to your settings</h1>
+      <div className={settings.body}>
+        <div className={settings.settingCard}>
+          <div className={settings.outerCardBody}>
+            <div className={settings.settingsLabel}></div>
+            <div className={settings.settingsAboutUs}></div>
+          </div>
+          <div className={settings.settingCardBody}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
