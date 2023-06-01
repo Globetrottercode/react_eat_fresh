@@ -99,8 +99,27 @@
 .aboutUsBody {
   height: 75%;
   width: 50%;
-  background-color: brown;
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
+}
+
+.aboutUsHeading {
+  color: rgba(81, 153, 56, 0.9);
+  font-size: 5vh;
+  font-weight: bolder;
+}
+
+.aboutUsContent {
+  height: 80%;
+  width: 90%;
+  /* border: 1px solid green; */
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
