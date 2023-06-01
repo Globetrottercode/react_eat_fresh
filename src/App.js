@@ -27,9 +27,9 @@ import {
 import Settings from "./pages/SettingsPages/settings";
 import AboutUs from "./pages/SettingsPages/aboutUs";
 
-// function AboutUs() {
-//   return <h1>Hello Duniya eat ()</h1>;
-// }
+function PrevoiusPlans() {
+  return <h1>Hello Duniya eat ()</h1>;
+}
 
 export default function App() {
   return (
@@ -62,6 +62,7 @@ export default function App() {
         />
         <Route path="/settings" element={<Settings />} />
         <Route path="/settings/aboutus" element={<AboutUs />} />
+        <Route path="/settings/prevplans" element={<PrevoiusPlans />} />
       </Routes>
     </BrowserRouter>
   );
