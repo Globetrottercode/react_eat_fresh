@@ -51,6 +51,9 @@ function TopNavbar() {
 
     navigate("/dashboard");
   }
+  function handleSettings() {
+    navigate("/settings");
+  }
 
   return (
     <>
@@ -99,7 +102,11 @@ function TopNavbar() {
               </a>
             </li>
 
-            <li style={{ marginLeft: "4%" }} className="nav-item">
+            <li
+              onClick={handleSettings}
+              style={{ marginLeft: "4%" }}
+              className="nav-item"
+            >
               <a type="button" className="nav-link">
                 <i
                   className="fa-sharp fa-solid fa-gear "
