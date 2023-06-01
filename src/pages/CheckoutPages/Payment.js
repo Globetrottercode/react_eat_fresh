@@ -90,7 +90,8 @@ function Payment() {
       , ${address.city} - ${address.pincode}`,
         total: charges.total,
         additional: charges.additional,
-        subtotal: charges.subtotal,
+        subtotal: subtotal,
+        creditsUsed: charges.total + charges.additional - subtotal,
       }),
     });
     if (response.status === 200) {
