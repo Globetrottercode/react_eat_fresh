@@ -9,13 +9,23 @@ function Settings() {
       <div className={settings.body}>
         <div className={settings.settingCard}>
           <div className={settings.outerCardBody}>
-            <div className={settings.settingsLabel}></div>
-            <div className={settings.settingsAboutUs}></div>
+            <div className={settings.settingsLabel}>
+              <p>Settings</p>
+            </div>
+            <div className={settings.settingsAboutUs}>
+              <p>About Us</p>
+            </div>
           </div>
           <div className={settings.settingCardBody}>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+              <p>Previous Plans</p>
+            </div>
+            <div>
+              <p>Previous Transactions</p>
+            </div>
+            <div>
+              <p>Cancellations</p>
+            </div>
           </div>
         </div>
       </div>
