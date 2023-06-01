@@ -26,10 +26,11 @@ import {
 } from "./pages/dashboardPages/ChangePlan";
 import Settings from "./pages/SettingsPages/settings";
 import AboutUs from "./pages/SettingsPages/aboutUs";
+import PrevoiusPlans from "./pages/SettingsPages/PreviousPlans";
 
-function PrevoiusPlans() {
-  return <h1>Hello Duniya eat ()</h1>;
-}
+// function PrevoiusPlans() {
+//   return <h1>Hello Duniya eat ()</h1>;
+// }
 
 export default function App() {
   return (
