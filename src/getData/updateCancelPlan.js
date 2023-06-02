@@ -1,5 +1,5 @@
 async function updateCancelPlan(id, day, meal) {
-  // returns {} if no plans  else returns an object of update plan
+  // meal - (Lunch/Breakfast/Dinner) & day - 0  || meal - 0(no meal change) & day - 1
   const response = await fetch(
     "http://localhost:3500/customer/myPlan/updateCancelPlan",
     {
