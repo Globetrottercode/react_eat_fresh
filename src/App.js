@@ -27,8 +27,10 @@ import {
 import Settings from "./pages/SettingsPages/settings";
 import AboutUs from "./pages/SettingsPages/aboutUs";
 import PrevoiusPlans from "./pages/SettingsPages/PreviousPlans";
+import PrevoiusTransactions from "./pages/SettingsPages/PreviousTransactions";
+import Cancellation from "./pages/SettingsPages/Cancellation";
 
-// function PrevoiusPlans() {
+// function Cancellation() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
 
@@ -64,6 +66,11 @@ export default function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/settings/aboutus" element={<AboutUs />} />
         <Route path="/settings/prevplans" element={<PrevoiusPlans />} />
+        <Route
+          path="/settings/prevtransactions"
+          element={<PrevoiusTransactions />}
+        />
+        <Route path="/settings/cancellation" element={<Cancellation />} />
       </Routes>
     </BrowserRouter>
   );

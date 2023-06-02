@@ -59,11 +59,18 @@ function TopNavbar() {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark  "
-        style={{ backgroundColor: "rgba(255, 165, 0, 0.80)" }}
+        style={{ backgroundColor: "rgba(136, 80, 180, 0.35)" }}
       >
         <i style={{ marginLeft: "4%" }} className="navbar-brand">
           {" "}
-          <img style={{ height: "7.5vh" }} src={brand} />{" "}
+          <img
+            style={{
+              height: "7.5vh",
+              borderRadius: "50%",
+              border: "1px solid rgba(136, 80, 180, 0.35)",
+            }}
+            src={brand}
+          />{" "}
         </i>
         <button
           className="navbar-toggler"
@@ -82,7 +89,10 @@ function TopNavbar() {
           id="navbarNav"
         >
           <ul className="navbar-nav ms-auto">
-            <li style={{ marginLeft: "4%" }} className="nav-item">
+            <li
+              style={{ marginLeft: "4%", marginTop: "2%" }}
+              className="nav-item"
+            >
               <a
                 onClick={() => {
                   navigate("/plans");
@@ -90,14 +100,19 @@ function TopNavbar() {
                 className="nav-link"
               >
                 <button className="navButton">
-                  <p style={{ marginTop: "8%", fontSize: "2vh" }}>Plans</p>
+                  <p style={{ marginTop: "5%", fontSize: "1.5vh" }}>Plans</p>
                 </button>
               </a>
             </li>
-            <li style={{ marginLeft: "4%" }} className="nav-item">
+            <li
+              style={{ marginLeft: "4%", marginTop: "2%" }}
+              className="nav-item"
+            >
               <a onClick={handleDashboardClick} className="nav-link">
                 <button className="navButton">
-                  <p style={{ marginTop: "8%", fontSize: "2vh" }}>Dashboard</p>
+                  <p style={{ marginTop: "5%", fontSize: "1.5vh" }}>
+                    Dashboard
+                  </p>
                 </button>
               </a>
             </li>
@@ -109,11 +124,11 @@ function TopNavbar() {
             >
               <a type="button" className="nav-link">
                 <i
-                  className="fa-sharp fa-solid fa-gear "
+                  className="fa-solid fa-gear"
                   style={{
                     color: "#030507",
-                    marginTop: "1vh",
-                    fontSize: "4vh",
+                    marginTop: "1.5vh",
+                    fontSize: "3vh",
                   }}
                 ></i>
               </a>
@@ -121,11 +136,11 @@ function TopNavbar() {
             <li style={{ marginLeft: "4%" }} className="nav-item">
               <a type="button" className="nav-link">
                 <i
-                  className="fa-solid fa-user "
+                  className="fa-regular fa-user "
                   style={{
                     color: "#000000",
-                    marginTop: "1vh",
-                    fontSize: "4vh",
+                    marginTop: "1.5vh",
+                    fontSize: "3vh",
                   }}
                 ></i>
               </a>
@@ -141,8 +156,8 @@ function TopNavbar() {
                     className="fa-solid fa-right-from-bracket "
                     style={{
                       color: "#000000",
-                      marginTop: "1vh",
-                      fontSize: "4vh",
+                      marginTop: "1.5vh",
+                      fontSize: "3vh",
                       marginRight: "2vw",
                     }}
                   ></i>
