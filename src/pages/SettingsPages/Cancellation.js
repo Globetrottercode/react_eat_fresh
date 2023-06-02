@@ -7,6 +7,7 @@ import { useState } from "react";
 import "../../css/styles.css";
 import updateCredits from "../../getData/updateCredits";
 import { updateCancelPlan } from "../../getData/updateCancelPlan";
+import { useNavigate } from "react-router-dom";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -18,6 +19,7 @@ let pricing = {
 };
 
 function Cancellation() {
+  let navigate = useNavigate();
   let [selectedMeal, setSelectedMeal] = useState("Breakfast");
   let currCredits = localStorage.getItem("credits");
   console.log(currCredits);
@@ -40,6 +42,10 @@ function Cancellation() {
     let result = await updateCancelPlan(plan._id, 1, 0);
     console.log(result);
     console.log(updated);
+    alert(`You credits credited by ${creditsForDay}`);
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1500);
   }
   async function handleMealProceed() {
     let credits = Number(currCredits) + Number(creditsForMeal);
@@ -51,6 +57,10 @@ function Cancellation() {
     let result = await updateCancelPlan(plan._id, 0, selectedMeal);
     console.log(result);
     console.log(updated);
+    alert(`You credits credited by ${creditsForMeal}`);
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1500);
   }
   return (
     <>
@@ -60,11 +70,14 @@ function Cancellation() {
           <img style={{ height: "38.5vh" }} src={LOGO} />
           <div>
             <h3 style={{ fontWeight: "bolder" }}>
-              <span style={{ color: "#519938" }}> Hassle Free Service </span>{" "}
+              Don't
+              <span style={{ color: "#519938" }}> Panic </span>{" "}
             </h3>
-            <h3 style={{ fontWeight: "bolder" }}> Manage Day to Day Food</h3>
+            <h3 style={{ fontWeight: "bolder" }}>
+              Save Money, Get Credits for
+            </h3>
             <h3>
-              At <span style={{ color: "orange" }}> Leisure</span>
+              <span style={{ color: "orange" }}> Cancellations</span>
             </h3>
           </div>
         </div>
