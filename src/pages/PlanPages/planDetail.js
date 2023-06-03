@@ -8,6 +8,7 @@ import pricing from "../../mealsData/pricing";
 import getAllPlans from "../../getData/getAllPlans";
 import planValidator from "../../daysPlan/planValidator";
 import getUser from "../../getData/getUser";
+import { notify } from "../../alerts/toastify";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -106,7 +107,7 @@ function PlanDetail() {
                 if (!planValidator(plan.end)) {
                   navigate(`/plans/${planType}/checkout`);
                 } else {
-                  alert(
+                  notify(
                     "You already have a valid plan, You can change your plan instead"
                   );
                   setTimeout(() => {

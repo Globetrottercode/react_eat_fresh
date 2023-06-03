@@ -9,6 +9,7 @@ import axios from "axios";
 import updateCredits from "../../getData/updateCredits";
 import getUser from "../../getData/getUser";
 import LOGO from "../../images/LOGO.png";
+import { notify } from "../../alerts/toastify";
 
 function digits_count(n) {
   var count = 0;
@@ -79,11 +80,11 @@ function Payment() {
   }
   async function handleCOD() {
     if (digits_count(userDetail.phone) !== 10) {
-      alert("enter a valid number");
+      notify("enter a valid number");
       return;
     }
     if (userDetail.name.length < 3) {
-      alert("Please enter the input fields");
+      notify("Please enter the input fields");
       return;
     }
 
@@ -120,11 +121,11 @@ function Payment() {
   const checkoutHandler = async (amount) => {
     console.log(userDetail.phone.length);
     if (digits_count(userDetail.phone) !== 10) {
-      alert("enter a valid number");
+      notify("enter a valid number");
       return;
     }
     if (userDetail.name.length < 3) {
-      alert("Please enter the input fields");
+      notify("Please enter the input fields");
       return;
     }
 

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../Redux/actions/allActions";
+import { notify } from "../alerts/toastify";
 
 import "../css/styles.css";
 
@@ -53,10 +54,10 @@ function Login() {
         localStorage.setItem("token", json.authToken);
         navigate("/plans");
       } else {
-        alert("Check email and password");
+        notify("Check email and password");
       }
     } else {
-      alert("Check email and password");
+      notify("Check email and password");
     }
   }
 

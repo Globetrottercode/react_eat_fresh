@@ -10,7 +10,7 @@ import { all } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import getCredits from "../../getData/getCredits";
 import getUser from "../../getData/getUser";
-
+import { notify } from "../../alerts/toastify";
 let i = 0;
 
 function digits_count(n) {
@@ -48,7 +48,7 @@ function CheckoutAddr() {
         newAddress.city = "Bangalore";
       }
       if (digits_count(newAddress.pincode) < 6) {
-        alert("enter valid pincode");
+        notify("enter valid pincode");
         return;
       }
       let user = await getUser(localStorage.getItem("username"));
@@ -79,7 +79,7 @@ function CheckoutAddr() {
         navigate(`payment`);
       }
     } else {
-      alert("Please enter all fields");
+      notify("Please enter all fields");
     }
   }
 
@@ -342,7 +342,7 @@ function CheckoutAddr() {
               if (localStorage.getItem("selected_address")) {
                 navigate("payment");
               } else {
-                alert("Choose Address field");
+                notify("Choose Address field");
               }
             }}
             type="button"

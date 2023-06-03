@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../Redux/actions/allActions";
 import getUser from "../../getData/getUser";
 import "../../css/styles.css";
+import { notify } from "../../alerts/toastify";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -79,7 +80,7 @@ function Checkout() {
         // navigate();
       }
     } else {
-      alert("You need to login first");
+      notify("You need to login first");
       setTimeout(() => {
         navigate("/login");
       }, 2000);
