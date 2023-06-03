@@ -10,6 +10,7 @@ import getAllPlans from "../../getData/getAllPlans";
 import LOGO from "../../images/LOGO.png";
 import axios from "axios";
 import getUser from "../../getData/getUser";
+import { notify } from "../../alerts/toastify";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -51,7 +52,7 @@ function ChangePlan() {
       localStorage.setItem("changePlan", chosenPlan);
       navigate("/dashboard/changePlan/changeProcess");
     } else {
-      alert("Choose a plan for change");
+      notify("Choose a plan for change");
     }
   }
   return (

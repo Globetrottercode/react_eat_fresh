@@ -5,6 +5,7 @@ import LOGO from "../../images/LOGO_Tagline.png";
 import getAllAddress from "../../getData/getAllAddress";
 import { useNavigate } from "react-router-dom";
 import getUser from "../../getData/getUser";
+import { notify } from "../../alerts/toastify";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -173,10 +174,10 @@ function Dashboard() {
                   if (allowChange) {
                     navigate("/dashboard/changePlan");
                   } else {
-                    alert("You can't change plans twice in a day");
+                    notify("You can't change plans twice in a day");
                   }
                 } else {
-                  alert("You currently have no valid plans to change");
+                  notify("You currently have no valid plans to change");
                 }
               }}
               type="button"
