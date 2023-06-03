@@ -7,6 +7,20 @@ import checkout from "../../css/checkout.module.css";
 import { useState } from "react";
 import axios from "axios";
 import updateCredits from "../../getData/updateCredits";
+import getUser from "../../getData/getUser";
+import LOGO from "../../images/LOGO.png";
+
+function digits_count(n) {
+  var count = 0;
+  if (n >= 1) ++count;
+
+  while (n / 10 >= 1) {
+    n /= 10;
+    ++count;
+  }
+
+  return count;
+}
 
 function Payment() {
   let [credits, setCredits] = useState(localStorage.getItem("credits"));
@@ -64,14 +78,17 @@ function Payment() {
     // console.log(localStorage.getItem("tempCredits"), "tempcredits");
   }
   async function handleCOD() {
-    if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
+    if (digits_count(userDetail.phone) !== 10) {
+      alert("enter a valid number");
+      return;
+    }
+    if (userDetail.name.length < 3) {
       alert("Please enter the input fields");
       return;
     }
-    let updated = await updateCredits(
-      localStorage.getItem("username"),
-      credits
-    );
+
+    let user = await getUser(localStorage.getItem("username"));
+    let updated = await updateCredits(user._id, credits);
     console.log(updated);
     let response = await fetch("http://localhost:3500/customer/myPlan", {
       method: "POST",
@@ -79,7 +96,7 @@ function Payment() {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        username: localStorage.getItem("username"),
+        user_id: user._id,
         name: userDetail.name,
         phone: userDetail.phone,
         start: start,
@@ -101,22 +118,27 @@ function Payment() {
     }
   }
   const checkoutHandler = async (amount) => {
-    if (userDetail.name.length < 3 && userDetail.phone.length !== 10) {
+    console.log(userDetail.phone.length);
+    if (digits_count(userDetail.phone) !== 10) {
+      alert("enter a valid number");
+      return;
+    }
+    if (userDetail.name.length < 3) {
       alert("Please enter the input fields");
       return;
     }
-    let updated = await updateCredits(
-      localStorage.getItem("username"),
-      credits
-    );
+
+    let user = await getUser(localStorage.getItem("username"));
+    let updated = await updateCredits(user._id, credits);
     console.log(updated);
+    let user_id = user._id;
     let response = await fetch("http://localhost:3500/customer/myPlan", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        username: localStorage.getItem("username"),
+        user_id: user._id,
         name: userDetail.name,
         phone: userDetail.phone,
         start: start,
@@ -135,7 +157,7 @@ function Payment() {
       let data = await response.json();
       console.log("success :", data);
     }
-    const username = localStorage.getItem("username");
+    // const username = localStorage.getItem("username");
     const {
       data: { key },
     } = await axios.get("http://www.localhost:3500/api/getkey");
@@ -144,7 +166,7 @@ function Payment() {
       data: { order },
     } = await axios.post("http://localhost:3500/api/checkout", {
       amount,
-      username,
+      user_id,
     });
 
     const options = {
@@ -153,7 +175,7 @@ function Payment() {
       currency: "INR",
       name: "EAT FRESH",
       description: "Food Meal Plan Service",
-      image: "../../images/LOGO.png",
+      image: LOGO,
       order_id: order.id,
       callback_url: "http://localhost:3500/api/paymentverification", // check
       prefill: {

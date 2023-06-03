@@ -7,6 +7,7 @@ import getTransactions from "../../getData/getTransactions";
 import getCredits from "../../getData/getCredits";
 import planValidator from "../../daysPlan/planValidator";
 import { canCancel } from "../../getData/updateCancelPlan";
+import getUser from "../../getData/getUser";
 
 let getPrevPlans = getAllPlans.getAllPlans;
 let getLastPlan = getAllPlans.getLastPlan;
@@ -18,8 +19,9 @@ function Settings() {
   // removing allPlans when user comes back to settings page from previous plans page
   let navigate = useNavigate();
   async function handlePlansClick() {
-    if (localStorage.getItem("username")) {
-      let allPlans = await getPrevPlans(localStorage.getItem("username"));
+    if (localStorage.getItem("token")) {
+      let user = await getUser(localStorage.getItem("username"));
+      let allPlans = await getPrevPlans(user._id);
       localStorage.setItem("allPlans", JSON.stringify(allPlans));
       console.log(JSON.parse(localStorage.getItem("allPlans")), " all Plans");
       navigate("/settings/prevplans");
@@ -28,11 +30,14 @@ function Settings() {
     }
   }
   async function handleCancellation() {
-    if (localStorage.getItem("username")) {
-      let credits = await getCredits(localStorage.getItem("username"));
+    if (localStorage.getItem("token")) {
+      let user = await getUser(localStorage.getItem("username"));
+      let credits = await getCredits(user._id);
       localStorage.setItem("credits", credits);
-      let plan = await getLastPlan(localStorage.getItem("username")); //last plan
+      let plan = await getLastPlan(user._id); //last plan
+      console.log(plan.end, "plan-end");
       localStorage.setItem("lastPlan", JSON.stringify(plan));
+      console.log(planValidator(plan.end));
       if (planValidator(plan.end)) {
         if (canCancel(plan)) {
           navigate("/settings/cancellation");
@@ -47,10 +52,9 @@ function Settings() {
     }
   }
   async function handleTransactionsClick() {
-    if (localStorage.getItem("username")) {
-      let allTransactions = await getTransactions(
-        localStorage.getItem("username")
-      );
+    if (localStorage.getItem("token")) {
+      let user = await getUser(localStorage.getItem("username"));
+      let allTransactions = await getTransactions(user._id);
       localStorage.setItem("allTransactions", JSON.stringify(allTransactions));
       // console.log(
       //   JSON.parse(localStorage.getItem("allTransactions")),

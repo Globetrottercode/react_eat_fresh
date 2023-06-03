@@ -1,18 +1,18 @@
-async function getCredits(username) {
+async function getCredits(user_id) {
   // returns -1 if no credits created else returns an integer value of credit
   const response = await fetch(
-    "http://localhost:3500/customer/credits/getCredits",
+    `http://localhost:3500/customer/credits/getCredits/${user_id}`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
 
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams({
-        username: username,
-      }),
+      // body: new URLSearchParams({
+      //   username: username,
+      // }),
     }
   );
   const json = await response.json();

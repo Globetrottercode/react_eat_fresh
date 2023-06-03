@@ -10,9 +10,7 @@ function AboutUs() {
         <div className={aboutUs.aboutUsBody}>
           <p className={aboutUs.aboutUsHeading}>About Us</p>
           <div className={aboutUs.aboutUsContent}>
-            <span
-              style={{ fontWeight: "bold", color: "rgba(81, 153, 56, 0.9)" }}
-            >
+            <span style={{ color: "rgba(81, 153, 56, 0.9)" }}>
               Generally Students Generally Students and Bachelors who get
               relocated from their home town for work or study related purposes,
               These people face a lot of problems  acquiring good quality daily

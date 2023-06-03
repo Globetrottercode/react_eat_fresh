@@ -4,6 +4,7 @@ import dashboard from "../../css/dashboard.module.css";
 import LOGO from "../../images/LOGO_Tagline.png";
 import getAllAddress from "../../getData/getAllAddress";
 import { useNavigate } from "react-router-dom";
+import getUser from "../../getData/getUser";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -89,7 +90,8 @@ function Dashboard() {
       selectedDays
   );
   async function addrBtnClick() {
-    let allAddress = await getAllAddress(localStorage.getItem("username"));
+    let user = await getUser(localStorage.getItem("username"));
+    let allAddress = await getAllAddress(user._id);
     localStorage.setItem("allAddress", JSON.stringify(allAddress));
     console.log(JSON.parse(localStorage.getItem("allAddress")));
     navigate("/dashboard/addresses");

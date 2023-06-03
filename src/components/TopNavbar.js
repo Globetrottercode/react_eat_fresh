@@ -4,6 +4,7 @@ import "../css/styles.css";
 import getPlans from "../getData/getAllPlans";
 import getCredits from "../getData/getCredits";
 import planValidator from "../daysPlan/planValidator";
+import getUser from "../getData/getUser";
 
 let getLastPlan = getPlans.getLastPlan;
 
@@ -19,17 +20,19 @@ function TopNavbar() {
     localStorage.removeItem("selected_days");
     localStorage.removeItem("allAddress");
     localStorage.removeItem("selected_address");
+    localStorage.removeItem("credits");
     navigate("/login");
   }
 
   async function handleDashboardClick() {
-    if (!localStorage.getItem("username")) {
+    if (!localStorage.getItem("token")) {
       alert("Login first");
       return setTimeout(() => {
         navigate("/login");
       }, 2000);
     }
-    let lastPlan = await getLastPlan(localStorage.getItem("username")); // getting last plan
+    let user = await getUser(localStorage.getItem("username"));
+    let lastPlan = await getLastPlan(user._id); // getting last plan
     if (lastPlan.end) {
       localStorage.setItem("lastPlan", JSON.stringify(lastPlan));
       localStorage.setItem(
@@ -43,10 +46,7 @@ function TopNavbar() {
       // console.log("plan valid", JSON.parse(localStorage.getItem("planValid")));
       // console.log("user never had a plan");
     }
-    localStorage.setItem(
-      "credits",
-      await getCredits(localStorage.getItem("username"))
-    );
+    localStorage.setItem("credits", await getCredits(user._id));
     // console.log(localStorage.getItem("credits"));
 
     navigate("/dashboard");

@@ -1,4 +1,4 @@
-async function updateCredits(username, credits) {
+async function updateCredits(user_id, credits) {
   // returns -1 if no credits created else returns an integer value of credit
   const response = await fetch(
     "http://localhost:3500/customer/credits/updateCredits",
@@ -11,7 +11,7 @@ async function updateCredits(username, credits) {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        username: username,
+        user_id: user_id,
         credits: credits,
       }),
     }

@@ -9,8 +9,21 @@ import allAddress from "../../Redux/reducers/storeAllAddress";
 import { all } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import getCredits from "../../getData/getCredits";
+import getUser from "../../getData/getUser";
 
 let i = 0;
+
+function digits_count(n) {
+  var count = 0;
+  if (n >= 1) ++count;
+
+  while (n / 10 >= 1) {
+    n /= 10;
+    ++count;
+  }
+
+  return count;
+}
 
 function CheckoutAddr() {
   let { planType } = useParams();
@@ -34,6 +47,12 @@ function CheckoutAddr() {
         console.log("setting def Bangalore");
         newAddress.city = "Bangalore";
       }
+      if (digits_count(newAddress.pincode) < 6) {
+        alert("enter valid pincode");
+        return;
+      }
+      let user = await getUser(localStorage.getItem("username"));
+      localStorage.setItem("credits", await getCredits(user._id));
       localStorage.setItem("selected_address", JSON.stringify(newAddress));
       newAddress.username = localStorage.getItem("username");
       let response = await fetch("http://localhost:3500/customer/address/", {
@@ -42,7 +61,7 @@ function CheckoutAddr() {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams({
-          username: newAddress.username,
+          user_id: user._id,
           saveAs: newAddress.saveAs,
           city: newAddress.city,
           landmark: newAddress.landmark,
@@ -53,6 +72,7 @@ function CheckoutAddr() {
       });
       if (response.status === 200) {
         let data = await response.json();
+        console.log(data);
         console.log("success :", data.success);
         dispatch(allActions.addAddressActions.SetEmpty());
         console.log("Check if empty", newAddress);
@@ -296,7 +316,7 @@ function CheckoutAddr() {
                   );
                   console.log(newAddress);
                 }}
-                type="text"
+                type="number"
                 placeholder="Pincode"
               />
             </div>
@@ -312,10 +332,8 @@ function CheckoutAddr() {
           </div>
           <div
             onClick={async () => {
-              localStorage.setItem(
-                "credits",
-                await getCredits(localStorage.getItem("username"))
-              );
+              let user = await getUser(localStorage.getItem("username"));
+              localStorage.setItem("credits", await getCredits(user._id));
               // localStorage.setItem(
               //   "tempCredits",
               //   localStorage.getItem("credits")

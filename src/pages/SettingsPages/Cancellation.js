@@ -8,6 +8,7 @@ import "../../css/styles.css";
 import updateCredits from "../../getData/updateCredits";
 import { updateCancelPlan } from "../../getData/updateCancelPlan";
 import { useNavigate } from "react-router-dom";
+import getUser from "../../getData/getUser";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -34,10 +35,8 @@ function Cancellation() {
   async function handleDayProceed() {
     console.log("hello");
     let credits = Number(currCredits) + Number(creditsForDay);
-    let updated = await updateCredits(
-      localStorage.getItem("username"),
-      credits
-    );
+    let user = await getUser(localStorage.getItem("username"));
+    let updated = await updateCredits(user._id, credits);
     localStorage.setItem("credits", updated);
     let result = await updateCancelPlan(plan._id, 1, 0);
     console.log(result);
@@ -49,10 +48,8 @@ function Cancellation() {
   }
   async function handleMealProceed() {
     let credits = Number(currCredits) + Number(creditsForMeal);
-    let updated = await updateCredits(
-      localStorage.getItem("username"),
-      credits
-    );
+    let user = await getUser(localStorage.getItem("username"));
+    let updated = await updateCredits(user._id, credits);
     localStorage.setItem("credits", updated);
     let result = await updateCancelPlan(plan._id, 0, selectedMeal);
     console.log(result);

@@ -7,6 +7,7 @@ import getStartAndEnd from "../../daysPlan/startAndEnd";
 import calculatePrice from "../../daysPlan/calPricing";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../Redux/actions/allActions";
+import getUser from "../../getData/getUser";
 import "../../css/styles.css";
 
 let allPlans = [
@@ -43,19 +44,20 @@ function Checkout() {
   }, [selectedDays, selectedPlan]);
 
   async function handleClick() {
-    if (localStorage.getItem("username")) {
+    if (localStorage.getItem("token")) {
+      let user = await getUser(localStorage.getItem("username"));
       let allAddress = [];
       let response = await fetch(
-        "http://localhost:3500/customer/address/getAddress",
+        `http://localhost:3500/customer/address/getAddress/${user._id}`,
         {
-          method: "POST",
+          method: "GET",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: new URLSearchParams({
-            // what is this ??
-            username: localStorage.getItem("username"),
-          }),
+          // body: new URLSearchParams({
+          //   // what is this ??
+          //   username: localStorage.getItem("username"),
+          // }),
         }
       );
       if (response.status === 200) {

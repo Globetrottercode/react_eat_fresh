@@ -9,6 +9,7 @@ import updateMyPlan from "../../getData/updateMyPlan";
 import getAllPlans from "../../getData/getAllPlans";
 import LOGO from "../../images/LOGO.png";
 import axios from "axios";
+import getUser from "../../getData/getUser";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -126,8 +127,9 @@ function ChangePlanProcess() {
     plan.end
   );
   async function handleCredits() {
+    let user = await getUser(localStorage.getItem("username"));
     let result = await updateCredits(
-      localStorage.getItem("username"),
+      user._id,
       Number(changeDetail.amt) + Number(currCredits)
     );
     let data = await updateMyPlan(
@@ -164,6 +166,8 @@ function ChangePlanProcess() {
     }, 1000);
   }
   async function payOnline(amount) {
+    let user = await getUser(localStorage.getItem("username"));
+    let user_id = user._id;
     console.log(amount, "ok");
     let data = await updateMyPlan(
       plan._id,
@@ -173,7 +177,7 @@ function ChangePlanProcess() {
       changeDetail.addToCredits
     );
     console.log("updated plan : ", await data);
-    let username = localStorage.getItem("username");
+    // let username = localStorage.getItem("username");
     localStorage.setItem("lastPlan", JSON.stringify(data));
 
     const {
@@ -184,7 +188,7 @@ function ChangePlanProcess() {
       data: { order },
     } = await axios.post("http://localhost:3500/api/checkout", {
       amount,
-      username,
+      user_id,
     });
 
     const options = {
@@ -211,7 +215,7 @@ function ChangePlanProcess() {
     const razor = new window.Razorpay(options);
     razor.open();
   }
-  console.log(changeDetail);
+  // console.log(changeDetail);
   return (
     <>
       <TopNavbar />

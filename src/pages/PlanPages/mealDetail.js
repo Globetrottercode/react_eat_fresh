@@ -8,6 +8,7 @@ import pricing from "../../mealsData/pricing";
 import allPlansMealData from "../../mealsData/allPlansMealData";
 import getAllPlans from "../../getData/getAllPlans";
 import planValidator from "../../daysPlan/planValidator";
+import getUser from "../../getData/getUser";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -77,10 +78,11 @@ function MealDetail() {
           <div
             type="button"
             onClick={async () => {
-              if (!localStorage.getItem("username"))
+              if (!localStorage.getItem("token"))
                 navigate(`/plans/${planType}/checkout`);
               else {
-                let plan = await getLastPlan(localStorage.getItem("username"));
+                let user = await getUser(localStorage.getItem("username"));
+                let plan = await getLastPlan(user._id);
                 if (!planValidator(plan.end)) {
                   navigate(`/plans/${planType}/checkout`);
                 } else {

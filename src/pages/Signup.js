@@ -3,6 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../Redux/actions/allActions";
+import getUser from "../getData/getUser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { notifySignUpPassword, notify } from "../alerts/toastify";
+import * as EmailValidator from "email-validator";
 import "../css/styles.css";
 
 function SignUp() {
@@ -20,12 +25,21 @@ function SignUp() {
     setRegister({ ...register, [e.target.name]: e.target.value });
   }
   async function handleClick(e) {
-    if (register.password !== register.repass) {
-      alert("Passwords dont match !");
-      return;
-    }
     //console.log(register);
     e.preventDefault();
+    if (register.name.length < 3) {
+      notify("Enter Full Name !");
+      return;
+    }
+    if (register.password !== register.repass) {
+      // alert("Passwords dont match !");
+      notify("Passwords dont match !!");
+      return;
+    }
+    if (!EmailValidator.validate(register.username)) {
+      notify("Invalid mail-id !");
+      return;
+    }
     //creating user data
     const response = await fetch("http://localhost:3500/signup", {
       // credentials: 'include',
@@ -50,8 +64,13 @@ function SignUp() {
       localStorage.setItem("username", register.username);
       localStorage.setItem("token", json.authToken);
     } else {
-      alert("Email Id already exists");
+      notify("Email Id already exists !");
+      return;
     }
+    let user = await getUser(register.username);
+    console.log(user);
+    localStorage.setItem("user_id", user._id);
+    // console.log(localStorage.getItem("user_id"));
     const result = await fetch(
       "http://localhost:3500/customer/credits/createCredits",
       {
@@ -63,7 +82,7 @@ function SignUp() {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams({
-          username: register.username,
+          user_id: user._id,
         }),
       }
     );
@@ -129,7 +148,7 @@ function SignUp() {
                 placeholder="Email"
                 name="username"
                 value={register.username}
-                type="text"
+                type="email"
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-lg"
@@ -192,6 +211,18 @@ function SignUp() {
           <i className="fab fa-google"></i> Sign Up with Google
         </a>
       </div>
+      {/* <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      /> */}
     </div>
   );
 }
