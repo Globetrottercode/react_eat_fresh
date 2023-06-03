@@ -13,7 +13,7 @@ function AboutUs() {
             <span style={{ color: "rgba(81, 153, 56, 0.9)" }}>
               Generally Students Generally Students and Bachelors who get
               relocated from their home town for work or study related purposes,
-              These people face a lot of problems  acquiring good quality daily
+              These people face a lot of problems acquiring good quality daily
               food , that's healthy and hygienic and also pocket friendly at the
               same time , so that one can have that everyday of the month as
               their staple, usually managing food becomes a big challenge for

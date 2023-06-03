@@ -8,6 +8,7 @@ import getCredits from "../../getData/getCredits";
 import planValidator from "../../daysPlan/planValidator";
 import { canCancel } from "../../getData/updateCancelPlan";
 import getUser from "../../getData/getUser";
+import { notify } from "../../alerts/toastify";
 
 let getPrevPlans = getAllPlans.getAllPlans;
 let getLastPlan = getAllPlans.getLastPlan;
@@ -26,7 +27,7 @@ function Settings() {
       console.log(JSON.parse(localStorage.getItem("allPlans")), " all Plans");
       navigate("/settings/prevplans");
     } else {
-      alert("You need to login");
+      notify("You need to login");
     }
   }
   async function handleCancellation() {
@@ -42,13 +43,13 @@ function Settings() {
         if (canCancel(plan)) {
           navigate("/settings/cancellation");
         } else {
-          alert("Only one cancellation available in a single day");
+          notify("Only one cancellation available in a single day");
         }
       } else {
-        alert("No valid plan to make cancellations");
+        notify("No valid plan to make cancellations");
       }
     } else {
-      alert("You need to login first");
+      notify("You need to login first");
     }
   }
   async function handleTransactionsClick() {
@@ -62,7 +63,7 @@ function Settings() {
       // );
       navigate("/settings/prevtransactions");
     } else {
-      alert("You need to login");
+      notify("You need to login");
     }
   }
   return (

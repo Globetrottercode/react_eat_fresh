@@ -9,6 +9,7 @@ import updateCredits from "../../getData/updateCredits";
 import { updateCancelPlan } from "../../getData/updateCancelPlan";
 import { useNavigate } from "react-router-dom";
 import getUser from "../../getData/getUser";
+import { notify } from "../../alerts/toastify";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -41,7 +42,7 @@ function Cancellation() {
     let result = await updateCancelPlan(plan._id, 1, 0);
     console.log(result);
     console.log(updated);
-    alert(`You credits credited by ${creditsForDay}`);
+    notify(`You credits credited by ${creditsForDay}`);
     setTimeout(() => {
       navigate("/dashboard");
     }, 1500);
@@ -54,7 +55,7 @@ function Cancellation() {
     let result = await updateCancelPlan(plan._id, 0, selectedMeal);
     console.log(result);
     console.log(updated);
-    alert(`You credits credited by ${creditsForMeal}`);
+    notify(`You credits credited by ${creditsForMeal}`);
     setTimeout(() => {
       navigate("/dashboard");
     }, 1500);
