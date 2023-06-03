@@ -63,7 +63,7 @@ function Settings() {
       // );
       navigate("/settings/prevtransactions");
     } else {
-      notify("You need to login");
+      notify("You need to login !");
     }
   }
   return (

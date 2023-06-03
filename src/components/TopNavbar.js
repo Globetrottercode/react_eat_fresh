@@ -5,7 +5,7 @@ import getPlans from "../getData/getAllPlans";
 import getCredits from "../getData/getCredits";
 import planValidator from "../daysPlan/planValidator";
 import getUser from "../getData/getUser";
-
+import { notify } from "../alerts/toastify";
 let getLastPlan = getPlans.getLastPlan;
 
 function TopNavbar() {
@@ -26,7 +26,7 @@ function TopNavbar() {
 
   async function handleDashboardClick() {
     if (!localStorage.getItem("token")) {
-      alert("Login first");
+      notify("You need to Login !");
       return setTimeout(() => {
         navigate("/login");
       }, 2000);

@@ -42,7 +42,7 @@ function Cancellation() {
     let result = await updateCancelPlan(plan._id, 1, 0);
     console.log(result);
     console.log(updated);
-    notify(`You credits credited by ${creditsForDay}`);
+    notify(`Your credits credited by ${creditsForDay}`);
     setTimeout(() => {
       navigate("/dashboard");
     }, 1500);
@@ -55,7 +55,7 @@ function Cancellation() {
     let result = await updateCancelPlan(plan._id, 0, selectedMeal);
     console.log(result);
     console.log(updated);
-    notify(`You credits credited by ${creditsForMeal}`);
+    notify(`Your credits credited by ${creditsForMeal}`);
     setTimeout(() => {
       navigate("/dashboard");
     }, 1500);
