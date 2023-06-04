@@ -8,6 +8,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notifySignUpPassword, notify } from "../alerts/toastify";
 import * as EmailValidator from "email-validator";
+import sendMail from "../getData/sendMail";
+import { signUpMessage } from "../messages/emailMessage";
+import { signUpSubject } from "../messages/emailSubject";
 import "../css/styles.css";
 
 function SignUp() {
@@ -74,6 +77,12 @@ function SignUp() {
     console.log(user);
     localStorage.setItem("user_id", user._id);
     // console.log(localStorage.getItem("user_id"));
+    let emailData = await sendMail(
+      register.username,
+      signUpMessage(register.name),
+      signUpSubject()
+    );
+    console.log(emailData);
     const result = await fetch(
       "http://localhost:3500/customer/credits/createCredits",
       {

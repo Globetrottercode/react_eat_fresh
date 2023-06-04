@@ -22,13 +22,15 @@ async function sendMail(email, html, subject) {
   }
 }
 
-async function check() {
-  console.log(
-    await sendMail(
-      "tinapallab@gmail.com",
-      "<h1>Hello Pallab</h1></br> <h1>Greetings from Eat Fresh</h1>",
-      "Greetings"
-    )
-  );
-}
-check();
+// async function check() {
+//   console.log(
+//     await sendMail(
+//       "tinapallab@gmail.com",
+//       "<h1>Hello Pallab</h1></br> <h1>Greetings from Eat Fresh</h1>",
+//       "Greetings"
+//     )
+//   );
+// }
+// check();
+
+export default sendMail;
