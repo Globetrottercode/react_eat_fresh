@@ -8,4 +8,10 @@ function signUpMessage(user) {
          `;
 }
 
-export { signUpMessage };
+function changePlanMessage(oldPlan, newPlan) {
+  return `<h1>Greetings from EAT FRESH</h1>
+           </br>
+           <p>Your plan has succesfully been changed from ${oldPlan} to ${newPlan}`;
+}
+
+export { signUpMessage, changePlanMessage };

@@ -2,4 +2,8 @@ function signUpSubject() {
   return "Succesfull Registration";
 }
 
-export { signUpSubject };
+function changePlanSubject() {
+  return `Plan Change Success`;
+}
+
+export { signUpSubject, changePlanSubject };

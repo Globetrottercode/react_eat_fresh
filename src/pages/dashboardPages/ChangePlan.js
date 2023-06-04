@@ -11,6 +11,9 @@ import LOGO from "../../images/LOGO.png";
 import axios from "axios";
 import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
+import sendMail from "../../getData/sendMail";
+import { changePlanMessage } from "../../messages/emailMessage";
+import { changePlanSubject } from "../../messages/emailSubject";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -160,7 +163,12 @@ function ChangePlanProcess() {
     );
     console.log("updated plan : ", await data);
     localStorage.setItem("lastPlan", JSON.stringify(data));
-
+    let emailData = await sendMail(
+      localStorage.getItem("username"),
+      changePlanMessage(currentPlan, assignNewPlan),
+      changePlanSubject()
+    );
+    console.log(emailData);
     // toastify
     setTimeout(() => {
       navigate("/dashboard");
