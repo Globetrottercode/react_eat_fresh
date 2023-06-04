@@ -99,7 +99,7 @@ function Login() {
             style={{ borderRadius: "3vh", width: "10vw" }}
             className="btn btn-dark"
           >
-            Check Plans
+            Plans
           </button>
         </div>
         <div

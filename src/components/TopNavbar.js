@@ -54,7 +54,13 @@ function TopNavbar() {
   function handleSettings() {
     navigate("/settings");
   }
-
+  function handleProfileClick() {
+    if (localStorage.getItem("token")) {
+      navigate("/profile");
+    } else {
+      notify("You need to login !");
+    }
+  }
   return (
     <>
       <nav
@@ -133,7 +139,11 @@ function TopNavbar() {
                 ></i>
               </a>
             </li>
-            <li style={{ marginLeft: "4%" }} className="nav-item">
+            <li
+              onClick={handleProfileClick}
+              style={{ marginLeft: "4%" }}
+              className="nav-item"
+            >
               <a type="button" className="nav-link">
                 <i
                   className="fa-regular fa-user "
