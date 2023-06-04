@@ -10,6 +10,8 @@ import updateCredits from "../../getData/updateCredits";
 import getUser from "../../getData/getUser";
 import LOGO from "../../images/LOGO.png";
 import { notify } from "../../alerts/toastify";
+import sendMail from "../../getData/sendMail";
+import { succesfulBuyCOD } from "../../messages/emailMessage";
 
 function digits_count(n) {
   var count = 0;
@@ -115,6 +117,11 @@ function Payment() {
     if (response.status === 200) {
       let data = await response.json();
       console.log("success :", data);
+      await sendMail(
+        localStorage.getItem("username"),
+        succesfulBuyCOD(subtotal),
+        "Cash Payment for New Plan"
+      );
       navigate("/ordersuccess");
     }
   }

@@ -12,7 +12,11 @@ import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
 import sendMail from "../../getData/sendMail";
 import { cancelSubject } from "../../messages/emailSubject";
-import { cancelDayMessge } from "../../messages/emailMessage";
+import {
+  cancelDayMessage,
+  cancelMealMessge,
+} from "../../messages/emailMessage";
+
 let getLastPlan = getAllPlans.getLastPlan;
 
 let pricing = {
@@ -47,7 +51,7 @@ function Cancellation() {
     notify(`Your credits credited by ${creditsForDay}`);
     await sendMail(
       localStorage.getItem("username"),
-      cancelDayMessge(nextDay),
+      cancelDayMessage(nextDay),
       cancelSubject()
     );
     setTimeout(() => {
@@ -63,6 +67,12 @@ function Cancellation() {
     console.log(result);
     console.log(updated);
     notify(`Your credits credited by ${creditsForMeal}`);
+
+    await sendMail(
+      localStorage.getItem("username"),
+      cancelMealMessge(nextDay, selectedMeal),
+      cancelSubject()
+    );
     setTimeout(() => {
       navigate("/dashboard");
     }, 1500);

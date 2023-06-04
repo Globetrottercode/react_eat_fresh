@@ -30,8 +30,9 @@ import PrevoiusPlans from "./pages/SettingsPages/PreviousPlans";
 import PrevoiusTransactions from "./pages/SettingsPages/PreviousTransactions";
 import Cancellation from "./pages/SettingsPages/Cancellation";
 import { ToastContainer } from "react-toastify";
+import Profile from "./pages/Profile";
 
-// function Cancellation() {
+// function Profile() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
 
@@ -73,6 +74,7 @@ export default function App() {
             element={<PrevoiusTransactions />}
           />
           <Route path="/settings/cancellation" element={<Cancellation />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer

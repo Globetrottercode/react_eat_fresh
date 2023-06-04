@@ -12,7 +12,10 @@ import axios from "axios";
 import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
 import sendMail from "../../getData/sendMail";
-import { changePlanMessage } from "../../messages/emailMessage";
+import {
+  changePlanMessage,
+  succesfulBuyCOD,
+} from "../../messages/emailMessage";
 import { changePlanSubject } from "../../messages/emailSubject";
 
 let getLastPlan = getAllPlans.getLastPlan;
@@ -156,6 +159,7 @@ function ChangePlanProcess() {
       changePlanSubject()
     );
     console.log(emailData);
+
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
@@ -170,14 +174,19 @@ function ChangePlanProcess() {
     );
     console.log("updated plan : ", await data);
     localStorage.setItem("lastPlan", JSON.stringify(data));
-    notify(`Plan succesfully changed`);
+
     let emailData = await sendMail(
       localStorage.getItem("username"),
       changePlanMessage(currentPlan, assignNewPlan),
       changePlanSubject()
     );
+    notify(`Plan succesfully changed`);
+    await sendMail(
+      localStorage.getItem("username"),
+      succesfulBuyCOD(changeDetail.amt),
+      "Cash Payment for Plan Change"
+    );
     console.log(emailData);
-    // toastify
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
