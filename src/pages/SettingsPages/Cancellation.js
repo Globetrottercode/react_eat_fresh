@@ -10,7 +10,9 @@ import { updateCancelPlan } from "../../getData/updateCancelPlan";
 import { useNavigate } from "react-router-dom";
 import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
-
+import sendMail from "../../getData/sendMail";
+import { cancelSubject } from "../../messages/emailSubject";
+import { cancelDayMessge } from "../../messages/emailMessage";
 let getLastPlan = getAllPlans.getLastPlan;
 
 let pricing = {
@@ -43,6 +45,11 @@ function Cancellation() {
     console.log(result);
     console.log(updated);
     notify(`Your credits credited by ${creditsForDay}`);
+    await sendMail(
+      localStorage.getItem("username"),
+      cancelDayMessge(nextDay),
+      cancelSubject()
+    );
     setTimeout(() => {
       navigate("/dashboard");
     }, 1500);

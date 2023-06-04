@@ -158,7 +158,7 @@ function Payment() {
       let data = await response.json();
       console.log("success :", data);
     }
-    // const username = localStorage.getItem("username");
+    const username = localStorage.getItem("username");
     const {
       data: { key },
     } = await axios.get("http://www.localhost:3500/api/getkey");
@@ -168,6 +168,7 @@ function Payment() {
     } = await axios.post("http://localhost:3500/api/checkout", {
       amount,
       user_id,
+      username,
     });
 
     const options = {

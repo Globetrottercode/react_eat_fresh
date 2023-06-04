@@ -194,7 +194,7 @@ function ChangePlanProcess() {
       changeDetail.addToCredits
     );
     console.log("updated plan : ", await data);
-    // let username = localStorage.getItem("username");
+    let username = localStorage.getItem("username");
     localStorage.setItem("lastPlan", JSON.stringify(data));
 
     const {
@@ -206,6 +206,7 @@ function ChangePlanProcess() {
     } = await axios.post("http://localhost:3500/api/checkout", {
       amount,
       user_id,
+      username,
     });
 
     const options = {

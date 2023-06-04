@@ -6,4 +6,8 @@ function changePlanSubject() {
   return `Plan Change Success`;
 }
 
-export { signUpSubject, changePlanSubject };
+function cancelSubject() {
+  return `Plan Cancellation`;
+}
+
+export { signUpSubject, changePlanSubject, cancelSubject };
