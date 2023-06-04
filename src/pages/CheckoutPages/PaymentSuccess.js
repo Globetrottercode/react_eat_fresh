@@ -3,18 +3,6 @@ import Footer from "../../components/Footer";
 import checkout from "../../css/checkout.module.css";
 import successLogo from "../../images/succesful.png";
 
-function digits_count(n) {
-  var count = 0;
-  if (n >= 1) ++count;
-
-  while (n / 10 >= 1) {
-    n /= 10;
-    ++count;
-  }
-
-  return count;
-}
-
 function PaymentSuccess() {
   localStorage.removeItem("selected_days");
   localStorage.removeItem("selected_plan");

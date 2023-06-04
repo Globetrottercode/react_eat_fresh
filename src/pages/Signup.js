@@ -11,6 +11,7 @@ import * as EmailValidator from "email-validator";
 import "../css/styles.css";
 
 function SignUp() {
+  console.log(process.env.REACT_APP_ABC, "oo");
   let currentUser = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,6 +28,8 @@ function SignUp() {
   async function handleClick(e) {
     //console.log(register);
     e.preventDefault();
+
+    console.log("mailer function called");
     if (register.name.length < 3) {
       notify("Enter Full Name !");
       return;
@@ -136,7 +139,11 @@ function SignUp() {
       </div>
       <div className="right">
         <div className="rightUpper">
-          <button type="submit" className="btn btn-warning">
+          <button
+            onClick={() => navigate("/plans")}
+            type="submit"
+            className="btn btn-warning"
+          >
             Check Plans
           </button>
         </div>
