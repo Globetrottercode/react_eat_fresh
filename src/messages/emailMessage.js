@@ -14,7 +14,7 @@ function changePlanMessage(oldPlan, newPlan) {
            <p>Your plan has succesfully been changed from ${oldPlan} to ${newPlan}</p>`;
 }
 
-function cancelDayMessge(day) {
+function cancelDayMessage(day) {
   return `<h2>Greetings from<span style="color:green;"> EAT</span><span style="color:orange;"> FRESH</span> </h2>
     </br>
     <p>Your plan has succesfully been cancelled on  ${day}  ,Check your dashboard to see your updated credits</p>`;
@@ -26,4 +26,17 @@ function cancelMealMessge(day, meal) {
       <p>Your ${meal} has succesfully been cancelled on  ${day}  ,Check your dashboard to see your updated credits</p>`;
 }
 
-export { signUpMessage, changePlanMessage, cancelDayMessge, cancelMealMessge };
+function succesfulBuyCOD(amount) {
+  return `<h2>Greetings from<span style="color:green;"> EAT</span><span style="color:orange;"> FRESH</span> </h2>
+    </br>
+    <p>Your request has succesfully been processed , Kindly pay the ammount of INR ${amount} at your doorstep to our delivery agent.</p>`;
+}
+
+export {
+  signUpMessage,
+  changePlanMessage,
+  cancelDayMessage,
+  cancelMealMessge,
+  succesfulBuyCOD,
+};
+// console.log(cancelDayMessage("1-2-3", "breakfast"));
