@@ -149,6 +149,13 @@ function ChangePlanProcess() {
 
     localStorage.setItem("credits", result);
     //toastify
+    notify(`Plan succesfully changed`);
+    let emailData = await sendMail(
+      localStorage.getItem("username"),
+      changePlanMessage(currentPlan, assignNewPlan),
+      changePlanSubject()
+    );
+    console.log(emailData);
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
@@ -163,6 +170,7 @@ function ChangePlanProcess() {
     );
     console.log("updated plan : ", await data);
     localStorage.setItem("lastPlan", JSON.stringify(data));
+    notify(`Plan succesfully changed`);
     let emailData = await sendMail(
       localStorage.getItem("username"),
       changePlanMessage(currentPlan, assignNewPlan),

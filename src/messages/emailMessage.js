@@ -9,9 +9,9 @@ function signUpMessage(user) {
 }
 
 function changePlanMessage(oldPlan, newPlan) {
-  return `<h1>Greetings from EAT FRESH</h1>
+  return `<h2>Greetings from<span style="color:green;"> EAT</span><span style="color:orange;"> FRESH</span> </h2>
            </br>
-           <p>Your plan has succesfully been changed from ${oldPlan} to ${newPlan}`;
+           <p>Your plan has succesfully been changed from ${oldPlan} to ${newPlan}</p>`;
 }
 
 export { signUpMessage, changePlanMessage };
