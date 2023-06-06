@@ -33,6 +33,7 @@ import { ToastContainer } from "react-toastify";
 import Profile from "./pages/profilePages/Profile";
 import ResetName from "./pages/profilePages/resetName";
 import ResetEmail from "./pages/profilePages/resetEmail";
+import ResetPassword from "./pages/profilePages/resetPassword";
 // function Profile() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
@@ -78,6 +79,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/resetName" element={<ResetName />} />
           <Route path="/profile/resetEmail" element={<ResetEmail />} />
+          <Route path="/profile/resetPassword" element={<ResetPassword />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer

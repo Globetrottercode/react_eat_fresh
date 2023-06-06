@@ -52,7 +52,12 @@ function Profile() {
               <div className="profileLabels">
                 <p>Reset Password</p>
               </div>{" "}
-              <div className="profileEdit">
+              <div
+                onClick={() => {
+                  navigate("resetPassword");
+                }}
+                className="profileEdit"
+              >
                 <i class="fa-regular fa-pen-to-square fa-2x"></i>
               </div>
             </div>
