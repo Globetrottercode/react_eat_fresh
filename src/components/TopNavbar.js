@@ -54,8 +54,12 @@ function TopNavbar() {
   function handleSettings() {
     navigate("/settings");
   }
-  function handleProfileClick() {
+  async function handleProfileClick() {
     if (localStorage.getItem("token")) {
+      localStorage.setItem(
+        "user",
+        JSON.stringify(await getUser(localStorage.getItem("username")))
+      );
       navigate("/profile");
     } else {
       notify("You need to login !");

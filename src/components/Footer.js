@@ -11,9 +11,9 @@ export default function Footer() {
       <div className="footerCopyRight">
         <span
           style={{
-            fontWeight: "bolder",
+            // fontWeight: "bolder",
             fontSize: "2vh",
-            color: "rgba(46, 114, 22, 1)",
+            // color: "rgba(46, 114, 22, 1)",
           }}
         >
           <i class="fa-regular fa-copyright fa-1x"></i> COPYRIGHT EATFRESH

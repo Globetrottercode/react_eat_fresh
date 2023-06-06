@@ -1,8 +1,9 @@
-import TopNavbar from "../components/TopNavbar";
-import Footer from "../components/Footer";
-import "../css/styles.css";
+import TopNavbar from "../../components/TopNavbar";
+import Footer from "../../components/Footer";
+import "../../css/styles.css";
 
 function Profile() {
+  let user = JSON.parse(localStorage.getItem("user"));
   return (
     <>
       <TopNavbar />
@@ -18,7 +19,7 @@ function Profile() {
             <div>
               <div className="profileLabels">
                 <p>Email ID</p>
-                <p>dassouvik180@gmail.com</p>
+                <p>{localStorage.getItem("username")}</p>
               </div>{" "}
               <div className="profileEdit">
                 <i class="fa-regular fa-pen-to-square fa-2x"></i>
@@ -28,7 +29,7 @@ function Profile() {
               {" "}
               <div className="profileLabels">
                 <p>Name</p>
-                <p>Souvik Das</p>
+                <p>{user.name}</p>
               </div>{" "}
               <div className="profileEdit">
                 <i class="fa-regular fa-pen-to-square fa-2x"></i>

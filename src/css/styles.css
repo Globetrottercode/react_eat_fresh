@@ -111,13 +111,8 @@ body {
   justify-content: space-around;
 }
 
-.f_icon {
-  font-weight: bolder;
-  color: rgba(46, 114, 22, 1);
-}
-
 .f_icon:hover {
-  color: black;
+  color: white;
 }
 
 .plansDropDown {
