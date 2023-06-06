@@ -1,7 +1,7 @@
 import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 
-function ResetName() {
+function ResetEmail() {
   return (
     <>
       <TopNavbar />
@@ -11,4 +11,4 @@ function ResetName() {
   );
 }
 
-export default ResetName;
+export default ResetEmail;

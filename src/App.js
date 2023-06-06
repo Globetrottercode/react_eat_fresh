@@ -31,7 +31,7 @@ import PrevoiusTransactions from "./pages/SettingsPages/PreviousTransactions";
 import Cancellation from "./pages/SettingsPages/Cancellation";
 import { ToastContainer } from "react-toastify";
 import Profile from "./pages/profilePages/Profile";
-import ResetName from "./pages/profilePages/resetEmail";
+import ResetName from "./pages/profilePages/resetName";
 
 // function Profile() {
 //   return <h1>Hello Duniya eat ()</h1>;
