@@ -247,7 +247,7 @@ body {
   align-items: center;
 }
 
-/* //////// resetName.js////////////// */
+/* //////// resetName.js // resetEmail.js////////////// */
 
 .resetBody {
   margin-top: 1vh;
@@ -304,5 +304,5 @@ body {
   align-items: center;
 }
 .resetButton > p {
-  margin-top: 10%;
+  margin-top: 12%;
 }
