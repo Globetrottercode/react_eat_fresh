@@ -246,6 +246,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.profileEdit:hover {
+  border: 2px solid white;
+}
 
 /* //////// resetName.js // resetEmail.js////////////// */
 

@@ -1,9 +1,11 @@
 import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import "../../css/styles.css";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   let user = JSON.parse(localStorage.getItem("user"));
+  let navigate = useNavigate();
   return (
     <>
       <TopNavbar />
@@ -21,7 +23,12 @@ function Profile() {
                 <p>Email ID</p>
                 <p>{localStorage.getItem("username")}</p>
               </div>{" "}
-              <div className="profileEdit">
+              <div
+                onClick={() => {
+                  navigate("resetEmail");
+                }}
+                className="profileEdit"
+              >
                 <i class="fa-regular fa-pen-to-square fa-2x"></i>
               </div>
             </div>
@@ -31,7 +38,12 @@ function Profile() {
                 <p>Name</p>
                 <p>{user.name}</p>
               </div>{" "}
-              <div className="profileEdit">
+              <div
+                onClick={() => {
+                  navigate("resetName");
+                }}
+                className="profileEdit"
+              >
                 <i class="fa-regular fa-pen-to-square fa-2x"></i>
               </div>
             </div>
