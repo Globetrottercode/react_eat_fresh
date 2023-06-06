@@ -76,6 +76,7 @@ export default function App() {
           />
           <Route path="/settings/cancellation" element={<Cancellation />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/resetName" element={<ResetName />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer
