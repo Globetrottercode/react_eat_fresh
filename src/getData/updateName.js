@@ -20,10 +20,10 @@ async function updateName(username, name) {
   }
 }
 
-async function check() {
-  console.log(await updateName("dasbiplob023@gmail.com", "Biplob Das"));
-}
+// async function check() {
+//   console.log(await updateName("dasbiplob023@gmail.com", "Biplob Das"));
+// }
 
-check();
+// check();
 
-// export default updateName;
+export default updateName;
