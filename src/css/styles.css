@@ -309,3 +309,7 @@ body {
 .resetButton > p {
   margin-top: 12%;
 }
+
+.resetButton:hover {
+  border: 2px solid white;
+}
