@@ -32,7 +32,7 @@ import Cancellation from "./pages/SettingsPages/Cancellation";
 import { ToastContainer } from "react-toastify";
 import Profile from "./pages/profilePages/Profile";
 import ResetName from "./pages/profilePages/resetName";
-
+import ResetEmail from "./pages/profilePages/resetEmail";
 // function Profile() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
@@ -77,6 +77,7 @@ export default function App() {
           <Route path="/settings/cancellation" element={<Cancellation />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/resetName" element={<ResetName />} />
+          <Route path="/profile/resetEmail" element={<ResetEmail />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer
