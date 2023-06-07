@@ -96,7 +96,7 @@ function PlanDetail() {
           {/* <div type="button" className={infoStyles.addAddr}>
             <h3>Add Address</h3>
           </div> */}
-          <div
+          {/* <div
             type="button"
             onClick={async () => {
               if (!localStorage.getItem("token"))
@@ -119,7 +119,7 @@ function PlanDetail() {
             className={infoStyles.checkout}
           >
             <p>Proceed to Checkout</p>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

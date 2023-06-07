@@ -34,10 +34,10 @@ function Plans() {
                 navigate("/plans/nonVegBasic");
               }}
               type="button"
-              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
+              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
               className={styles.planType}
             >
-              <h3>NON-VEG BASIC</h3>
+              <p>NON-VEG BASIC</p>
             </div>
 
             <div
@@ -48,17 +48,17 @@ function Plans() {
               style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
               className={styles.planType}
             >
-              <h3>VEG BASIC</h3>
+              <p>VEG BASIC</p>
             </div>
             <div
               onClick={() => {
                 navigate("/plans/nonVegPremium");
               }}
               type="button"
-              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
+              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
               className={styles.planType}
             >
-              <h3>NON-VEG PREMIUM</h3>
+              <p>NON-VEG PREMIUM</p>
             </div>
             <div
               onClick={() => {
@@ -70,7 +70,7 @@ function Plans() {
               }}
               className={styles.planType}
             >
-              <h3>VEG PREMIUM</h3>
+              <p>VEG PREMIUM</p>
             </div>
           </div>
           {/* <div

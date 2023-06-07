@@ -188,7 +188,11 @@ function Checkout() {
             className={checkout.checkoutPayment}
           >
             <div type="button">
-              <p style={{ marginTop: "3%", fontSize: "3vh" }}>Continue</p>
+              <p
+                style={{ marginTop: "6%", fontSize: "3vh", fontWeight: "300" }}
+              >
+                Continue
+              </p>
             </div>
           </div>
         </div>

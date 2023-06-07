@@ -12,18 +12,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: aqua; */
 }
 
 .dashRight {
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: rgba(217, 217, 217, 0.6);
+  /* background-color: rgba(217, 217, 217, 0.6); */
   height: 47vh;
-  width: 58vw;
-  border-radius: 8vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 30vw;
+  /* border-radius: 8vh; */
+
   /* border: 1px solid orange; */
 }
 
@@ -35,13 +37,17 @@
 }
 
 .mealPlans {
-  height: 55%;
-  width: 92%;
-
+  height: 70%;
+  width: 90%;
+  background-color: rgba(217, 217, 217, 0.6);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: space-around;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 2vh;
+  border: 2px solid rgba(48, 47, 107, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* .customPlan {
@@ -61,9 +67,9 @@
 } */
 
 .planType {
-  height: 40%;
-  width: 48%;
-  border-radius: 3vh;
+  height: 16%;
+  width: 80%;
+  border-radius: 1vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,15 +77,21 @@
   color: white;
 }
 
+.planType > p {
+  font-weight: 300;
+  font-size: 2vh;
+  margin-top: 5%;
+}
+
 .planType:hover {
-  border: 2px solid red;
+  border: 2px solid white;
 }
 
 .mealPlansLabel {
-  height: 20%;
-  width: 30%;
+  height: 10%;
+  width: 40%;
   border-radius: 2vh;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(48, 47, 107, 0.8);
   color: white;
   display: flex;
   justify-content: center;
@@ -87,7 +99,8 @@
 }
 
 .mealPlansLabel > p {
-  margin-top: 4%;
-  font-size: 4vh;
+  margin-top: 7%;
+  font-size: 2.5vh;
+  font-weight: 300;
 }
 /* 22 percent buttons */
