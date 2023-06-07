@@ -147,9 +147,10 @@ body {
   display: flex;
   color: white;
   font-size: 2vh;
-  font-weight: bolder;
+  font-weight: 300;
   text-align-last: center;
-  background-color: rgba(99, 47, 107, 0.8);
+  background-color: rgba(99, 47, 107, 0.5);
+  border: 2px solid rgba(99, 47, 107, 0.8);
 }
 
 .mealsDropDown {

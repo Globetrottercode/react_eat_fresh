@@ -125,7 +125,7 @@ function CheckoutAddr() {
       <div className={checkout.body}>
         <div className={checkout.checkoutAddrLeft}>
           <div className={checkout.checkoutChooseAddress}>
-            <p>CHOOSE ADDRESS</p>
+            <p>Choose Address</p>
           </div>
           <div className={checkout.checkoutAddressCard}>
             {localStorage.getItem("allAddress") ? (
@@ -231,6 +231,26 @@ function CheckoutAddr() {
               <label for="age3">61 - 100</label>
             </div> */}
           </div>
+          <div
+            onClick={async () => {
+              let user = await getUser(localStorage.getItem("username"));
+              localStorage.setItem("credits", await getCredits(user._id));
+              // localStorage.setItem(
+              //   "tempCredits",
+              //   localStorage.getItem("credits")
+              // );
+              console.log(localStorage.getItem("credits"), "credits");
+              if (localStorage.getItem("selected_address")) {
+                navigate("payment");
+              } else {
+                notify("Choose Address field");
+              }
+            }}
+            type="button"
+            className={checkout.checkoutContinue}
+          >
+            <p>Continue</p>
+          </div>
         </div>
         <div className={checkout.checkoutAddrRight}>
           <div className={checkout.checkoutAddAddressCard}>
@@ -329,26 +349,6 @@ function CheckoutAddr() {
             onClick={handleClickAdd}
             type="button"
             className={checkout.checkoutAddBtn}
-          >
-            <p>Add and Continue</p>
-          </div>
-          <div
-            onClick={async () => {
-              let user = await getUser(localStorage.getItem("username"));
-              localStorage.setItem("credits", await getCredits(user._id));
-              // localStorage.setItem(
-              //   "tempCredits",
-              //   localStorage.getItem("credits")
-              // );
-              console.log(localStorage.getItem("credits"), "credits");
-              if (localStorage.getItem("selected_address")) {
-                navigate("payment");
-              } else {
-                notify("Choose Address field");
-              }
-            }}
-            type="button"
-            className={checkout.checkoutContinue}
           >
             <p>Continue</p>
           </div>
