@@ -158,26 +158,26 @@ function Checkout() {
         <div className={checkout.checkoutRight}>
           <div className={checkout.checkoutPricingCard}>
             <div>
-              <h3>Start Date :</h3>
-              <h3>{start}</h3>
+              <p>Start Date :</p>
+              <p>{start}</p>
             </div>
             <div>
               {" "}
-              <h3>End Date :</h3>
-              <h3>{end}</h3>
+              <p>End Date :</p>
+              <p>{end}</p>
             </div>
             <div>
               {" "}
-              <h3>Total Pricing :</h3>
-              <h3>{charges.total}</h3>
+              <p>Total Pricing :</p>
+              <p>{charges.total}</p>
             </div>
             <div>
-              <h3>Additional :</h3>
-              <h3>{charges.additional}</h3>
+              <p>Additional :</p>
+              <p>{charges.additional}</p>
             </div>
             <div style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
-              <h3>Sub Total Pricing :</h3>
-              <h3>{charges.subtotal}</h3>
+              <p>Sub Total Pricing :</p>
+              <p>{charges.subtotal}</p>
             </div>
           </div>
           <div
@@ -188,7 +188,7 @@ function Checkout() {
             className={checkout.checkoutPayment}
           >
             <div type="button">
-              <h3>Continue</h3>
+              <p style={{ marginTop: "3%", fontSize: "3vh" }}>Continue</p>
             </div>
           </div>
         </div>

@@ -118,12 +118,12 @@ body {
 .plansDropDown {
   height: 30%;
   width: 90%;
-  background-color: rgba(81, 153, 56, 0.8);
+  background-color: rgba(48, 47, 107, 0.69);
   border-radius: 3vh;
   display: flex;
   color: white;
   font-size: 3vh;
-  font-weight: bolder;
+  font-weight: 100;
   text-align-last: center;
 }
 
@@ -134,10 +134,10 @@ body {
   display: flex;
   color: white;
   font-size: 3vh;
-  font-weight: bolder;
+  font-weight: 100;
   text-align-last: center;
   margin-right: 38%;
-  background-color: rgba(255, 165, 0, 0.9);
+  background-color: rgba(99, 47, 107, 0.8);
 }
 
 .cityDropDown {

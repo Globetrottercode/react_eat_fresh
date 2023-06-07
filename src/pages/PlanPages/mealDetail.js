@@ -28,7 +28,9 @@ function MealDetail() {
       <div className={infoStyles.body}>
         <div className={infoStyles.cardMealDetail}>
           <div className={infoStyles.dayBar}>
-            <h3>{meal.toUpperCase()}</h3>
+            <p style={{ marginTop: "2%", fontSize: "2.5vh" }}>
+              {meal.toUpperCase()}
+            </p>
           </div>
           <div className={infoStyles.cardInnerMeals}>
             {dishes.map((dish, i) => {

@@ -25,7 +25,9 @@ function PlanDays() {
       <div className={infoStyles.body}>
         <div className={infoStyles.cardDays}>
           <div className={infoStyles.dayBar}>
-            <h3>{day.toUpperCase()}</h3>
+            <p style={{ marginTop: "2.5%", fontSize: "3vh" }}>
+              {day.toUpperCase()}
+            </p>
           </div>
 
           {mealType.map((meal) => {
@@ -37,7 +39,7 @@ function PlanDays() {
                 type="button"
                 className={infoStyles.mealTypeBar}
               >
-                <h3>{meal}</h3>
+                <p style={{ marginTop: "3%", fontSize: "2.5vh" }}>{meal}</p>
               </div>
             );
           })}
