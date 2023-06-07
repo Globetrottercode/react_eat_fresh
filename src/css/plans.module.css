@@ -1,7 +1,7 @@
 .plansBody {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 1vh;
   height: 65vh;
 }
@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 10%;
   /* background-color: aqua; */
 }
 

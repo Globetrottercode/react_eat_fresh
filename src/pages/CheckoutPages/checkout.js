@@ -189,7 +189,11 @@ function Checkout() {
           >
             <div type="button">
               <p
-                style={{ marginTop: "6%", fontSize: "3vh", fontWeight: "300" }}
+                style={{
+                  marginTop: "6%",
+                  fontSize: "2.5vh",
+                  fontWeight: "300",
+                }}
               >
                 Continue
               </p>

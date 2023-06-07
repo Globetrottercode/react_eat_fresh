@@ -81,7 +81,7 @@
 .checkoutPayment > div {
   height: 60%;
   width: 40%;
-  background-color: rgba(99, 47, 107, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 3vh;
   display: flex;
@@ -89,9 +89,9 @@
   align-items: center;
 }
 
-.checkoutPayment > div > h3 {
+/* .checkoutPayment > div > h3 {
   margin-top: 4%;
-}
+} */
 
 .checkoutPayment > div:hover {
   border: 2px solid white;
