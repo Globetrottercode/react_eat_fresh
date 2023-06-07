@@ -86,7 +86,7 @@ function PlanDays() {
             }}
             className={infoStyles.checkout}
           >
-            <h3>Proceed to Checkout</h3>
+            <p>Proceed to Checkout</p>
           </div>
         </div>
       </div>

@@ -18,8 +18,9 @@ function Addresses() {
             return (
               <div>
                 <span style={{ fontSize: "2vh" }}>
-                  {address.saveAs} , {address.floor} ,{address.detailed} ,{" "}
-                  {address.landmark} {address.city} , {address.pincode}
+                  {address.saveAs} {address.floor ? ", " + address.floor : ""} ,{" "}
+                  {address.detailed} , {address.landmark} {address.city} ,{" "}
+                  {address.pincode}
                 </span>
               </div>
             );

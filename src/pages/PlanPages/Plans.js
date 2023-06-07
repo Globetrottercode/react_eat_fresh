@@ -25,13 +25,16 @@ function Plans() {
           </div>
         </div>
         <div className={styles.dashRight}>
+          <div className={styles.mealPlansLabel}>
+            <p>Plans</p>
+          </div>
           <div className={styles.mealPlans}>
             <div
               onClick={() => {
                 navigate("/plans/nonVegBasic");
               }}
               type="button"
-              style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
+              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
               className={styles.planType}
             >
               <h3>NON-VEG BASIC</h3>
@@ -42,7 +45,7 @@ function Plans() {
                 navigate("/plans/vegBasic");
               }}
               type="button"
-              style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
+              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
               className={styles.planType}
             >
               <h3>VEG BASIC</h3>
@@ -52,7 +55,7 @@ function Plans() {
                 navigate("/plans/nonVegPremium");
               }}
               type="button"
-              style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
+              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
               className={styles.planType}
             >
               <h3>NON-VEG PREMIUM</h3>
@@ -63,14 +66,14 @@ function Plans() {
               }}
               type="button"
               style={{
-                backgroundColor: "rgba(81, 153, 56, 0.8)",
+                backgroundColor: "rgba(99, 47, 107, 0.8)",
               }}
               className={styles.planType}
             >
               <h3>VEG PREMIUM</h3>
             </div>
           </div>
-          <div
+          {/* <div
             onClick={() => {
               navigate("/plans/customize");
             }}
@@ -78,7 +81,7 @@ function Plans() {
             className={styles.customPlan}
           >
             <h3> CUSTOMIZE </h3>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

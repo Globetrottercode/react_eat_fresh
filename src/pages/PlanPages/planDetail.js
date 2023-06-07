@@ -26,44 +26,44 @@ function PlanDetail() {
             <div
               onClick={() => navigate(`/plans/${planType}/monday`)}
               type="button"
-              style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
+              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
             >
-              <h3> MON</h3>
+              <p> MON</p>
             </div>
             <div
               onClick={() => navigate(`/plans/${planType}/tuesday`)}
               type="button"
-              style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
+              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
             >
-              <h3>TUES</h3>
+              <p>TUES</p>
             </div>
             <div
               onClick={() => navigate(`/plans/${planType}/wednesday`)}
               type="button"
-              style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
+              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
             >
-              <h3>WED</h3>
+              <p>WED</p>
             </div>
             <div
               onClick={() => navigate(`/plans/${planType}/thursday`)}
               type="button"
-              style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
+              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
             >
-              <h3>THURS</h3>
+              <p>THURS</p>
             </div>
             <div
               onClick={() => navigate(`/plans/${planType}/friday`)}
               type="button"
-              style={{ backgroundColor: "rgba(255, 165, 0, 0.9)" }}
+              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
             >
-              <h3>FRI</h3>
+              <p>FRI</p>
             </div>
             <div
               onClick={() => navigate(`/plans/${planType}/saturday`)}
               type="button"
-              style={{ backgroundColor: "rgba(81, 153, 56, 0.8)" }}
+              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
             >
-              <h3> SAT </h3>
+              <p> SAT </p>
             </div>
           </div>
           <div
@@ -71,7 +71,7 @@ function PlanDetail() {
             type="button"
             className={infoStyles.innerCard2}
           >
-            <h3> SUNDAY </h3>
+            <p> SUNDAY </p>
           </div>
         </div>
         <div className={infoStyles.details}>
@@ -118,7 +118,7 @@ function PlanDetail() {
             }}
             className={infoStyles.checkout}
           >
-            <h3>Proceed to Checkout</h3>
+            <p>Proceed to Checkout</p>
           </div>
         </div>
       </div>

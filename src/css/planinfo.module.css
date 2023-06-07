@@ -8,7 +8,7 @@
   width: 50vw;
   border-radius: 8vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 }
 
 .cardDays {
@@ -17,7 +17,7 @@
   width: 50vw;
   border-radius: 8vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -58,12 +58,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 900;
+  font-weight: 100;
   color: white;
 }
 
+.innerCard1 > div > p {
+  margin-top: 7%;
+  font-size: 3vh;
+}
+
 .innerCard1 > div:hover {
-  border: 2px solid red;
+  border: 2px solid white;
 }
 
 .innerCard2 {
@@ -74,12 +79,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 900;
+  font-weight: 100;
   color: white;
 }
 
 .innerCard2:hover {
-  border: 1px solid red;
+  border: 1px solid white;
+}
+.innerCard2 > p {
+  font-size: 3vh;
+  margin-top: 2%;
 }
 
 .pricing {
@@ -119,6 +128,11 @@
   align-items: center;
 }
 
+.checkout > p {
+  margin-top: 3%;
+  font-size: 2vh;
+}
+
 .checkout:hover {
   border: 2px solid red;
 }
@@ -129,16 +143,17 @@
   background-color: rgba(0, 0, 0, 0.35);
   border-radius: 3vh;
   color: white;
-  font-weight: bolder;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .pricing > div > p {
+  font-size: 1.5vh;
   padding-top: 5%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .dayBar {
@@ -155,7 +170,7 @@
 .mealTypeBar {
   height: 17%;
   width: 90%;
-  background-color: rgba(255, 165, 0, 0.9);
+  background-color: rgba(99, 47, 107, 0.8);
   border-radius: 3vh;
   color: white;
   display: flex;
@@ -194,7 +209,7 @@
 .cardInnerMeals > div {
   width: 30%;
   height: 30%;
-  background-color: rgba(255, 165, 0, 0.9);
+  /* background-color: rgba(255, 165, 0, 0.9); */
   border-radius: 3vh;
   color: white;
   display: flex;

@@ -31,12 +31,20 @@ function MealDetail() {
             <h3>{meal.toUpperCase()}</h3>
           </div>
           <div className={infoStyles.cardInnerMeals}>
-            {dishes.map((dish) => {
-              return (
-                <div>
-                  <p style={{ fontWeight: "bolder" }}>{dish}</p>
-                </div>
-              );
+            {dishes.map((dish, i) => {
+              if (i % 2 === 0) {
+                return (
+                  <div style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}>
+                    <p>{dish}</p>
+                  </div>
+                );
+              } else {
+                return (
+                  <div style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}>
+                    <p>{dish}</p>
+                  </div>
+                );
+              }
             })}
           </div>
 
@@ -98,7 +106,7 @@ function MealDetail() {
             }}
             className={infoStyles.checkout}
           >
-            <h3>Proceed to Checkout</h3>
+            <p>Proceed to Checkout</p>
           </div>
         </div>
       </div>

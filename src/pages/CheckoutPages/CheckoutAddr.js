@@ -147,8 +147,10 @@ function CheckoutAddr() {
                       value={index}
                     />
                     <label style={{ fontSize: "2vh" }} for={index}>
-                      {address.saveAs} , {address.floor} ,{address.detailed} ,{" "}
-                      {address.landmark} {address.city} , {address.pincode}
+                      {address.saveAs}{" "}
+                      {address.floor ? ", " + address.floor : ""} ,{" "}
+                      {address.detailed} , {address.landmark} {address.city} ,{" "}
+                      {address.pincode}
                     </label>
                   </div>
                 );
