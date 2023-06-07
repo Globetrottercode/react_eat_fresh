@@ -160,8 +160,9 @@
   align-items: center;
   color: white;
 }
-.checkoutChooseAddress > h3 {
+.checkoutChooseAddress > p {
   margin-top: 1.5%;
+  font-size: 2.5vh;
 }
 
 .checkoutAddrRight {
@@ -177,8 +178,9 @@
   height: 75%;
   width: 100%;
   background-color: rgba(217, 217, 217, 0.6);
-  border-radius: 2vh;
-  border: 1px solid orange;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3vh;
+  border: 3px solid rgba(99, 47, 107, 0.8);
   overflow-y: scroll;
 }
 
@@ -222,7 +224,7 @@
 .checkoutAddBtn {
   height: 15%;
   width: 70%;
-  background-color: rgba(255, 165, 0, 0.9);
+  background-color: rgba(48, 47, 107, 0.8);
   border-radius: 3vh;
   color: white;
   display: flex;
@@ -232,8 +234,9 @@
 .checkoutAddBtn:hover {
   border: 2px solid white;
 }
-.checkoutAddBtn > h3 {
-  margin-top: 2%;
+.checkoutAddBtn > p {
+  margin-top: 3%;
+  font-size: 2.3vh;
 }
 
 .checkoutContinue {
@@ -250,8 +253,9 @@
   border: 2px solid white;
 }
 
-.checkoutContinue > h3 {
-  margin-top: 2%;
+.checkoutContinue > p {
+  margin-top: 3%;
+  font-size: 2.3vh;
 }
 
 .checkoutAddAddressCardLine1 {
@@ -350,6 +354,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .rightPayment {
@@ -365,40 +370,41 @@
 }
 
 .orderSummary {
-  width: 100%;
+  width: 70%;
   height: 8vh;
-  background-color: rgba(0, 0, 0, 0.65);
-  border-radius: 1vh;
+  background-color: rgba(48, 47, 107, 0.8);
+  border-radius: 3vh;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.orderSummary > h3 {
-  margin-top: 1%;
+.orderSummary > p {
+  margin-top: 2%;
+  font-size: 2.5vh;
 }
 
 .summaryCard {
   width: 100%;
   height: 32vh;
-  background-color: rgba(217, 217, 217, 0.6);
+  background-color: rgba(99, 47, 107, 0.2);
   border-radius: 2vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .summaryCard > div {
-  height: 16%;
+  height: 14%;
   width: 95%;
   border-radius: 1vh;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(99, 47, 107, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bolder;
+  font-weight: 300;
   color: white;
 }
 
@@ -414,7 +420,7 @@
   height: 12vh;
   background-color: white;
   border-radius: 2vh;
-  border: 1px solid;
+  border: 2px solid rgba(99, 47, 107, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -429,7 +435,7 @@
   height: 20vh;
   width: 90%;
   background-color: rgba(217, 217, 217, 0.6);
-  border: 1px solid orange;
+  border: 1px solid rgba(99, 47, 107, 0.8);
   border-radius: 2vh;
   display: flex;
   flex-direction: column;
@@ -445,34 +451,37 @@
 }
 
 .COD {
-  height: 9vh;
-  width: 90%;
-  background-color: rgba(255, 165, 0, 0.9);
-  border-radius: 2vh;
+  height: 7vh;
+  width: 60%;
+  background-color: rgba(99, 47, 107, 0.8);
+  border-radius: 4vh;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.COD > h3 {
-  margin-top: 2%;
-  font-size: 3vh;
+.COD > p {
+  margin-top: 5%;
+  font-size: 2vh;
+  font-weight: 300;
 }
 
 .Online {
-  height: 9vh;
-  width: 90%;
-  background-color: rgba(0, 0, 0, 0.65);
-  border-radius: 2vh;
+  margin-bottom: 2%;
+  height: 7vh;
+  width: 60%;
+  background-color: rgba(99, 47, 107, 0.8);
+  border-radius: 4vh;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Online > h3 {
-  margin-top: 2%;
-  font-size: 3vh;
+.Online > p {
+  margin-top: 5%;
+  font-size: 2vh;
+  font-weight: 300;
 }
 
 .inputPaymentLabel {
@@ -482,7 +491,7 @@
   border-radius: 1vh;
   color: white;
   font-size: 2vh;
-  font-weight: bolder;
+  font-weight: 300;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -493,6 +502,8 @@
   width: 65%;
   background-color: white;
   border-radius: 1vh;
+  border: 1px solid rgba(99, 47, 107, 0.8);
+  text-align: center;
 }
 .creditsCheckout {
   height: 10%;
@@ -523,8 +534,8 @@
 }
 
 .creditsUse > span {
-  font-size: 2vh;
-  font-weight: bolder;
+  font-size: 2.4vh;
+  font-weight: 300;
 }
 .creditsLabel {
   height: 100%;
@@ -539,8 +550,9 @@
 }
 
 .creditsLabel > span {
-  font-size: 2vh;
-  font-weight: bolder;
+  font-size: 2.5vh;
+  font-weight: 300;
+  /* font-weight: bolder; */
 }
 
 .creditsDisplay {
@@ -555,8 +567,8 @@
   align-items: center;
 }
 .creditsDisplay > span {
-  font-size: 2vh;
-  font-weight: bolder;
+  font-size: 2.5vh;
+  font-weight: 300;
 }
 
 /* ////////// PaymentSuccess.js ////////////////// */

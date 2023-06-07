@@ -210,7 +210,7 @@ function Payment() {
       <div className={checkout.body}>
         <div className={checkout.leftPayment}>
           <div className={checkout.orderSummary}>
-            <h3>ORDER SUMMARY</h3>
+            <p>Order Summary</p>
           </div>
           <div className={checkout.summaryCard}>
             <div>
@@ -229,7 +229,7 @@ function Payment() {
 
               <p>{selectedDays}</p>
             </div>
-            <div style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
+            <div style={{ backgroundColor: "rgba(99, 47, 107, 0.5)" }}>
               <p>Sub Total :</p>
               <p>{subtotal}</p>
             </div>
@@ -287,14 +287,14 @@ function Payment() {
             </div>
           </div>
           <div onClick={handleCOD} type="button" className={checkout.COD}>
-            <h3>Cash On Delivery</h3>
+            <p>Cash On Delivery</p>
           </div>
           <div
             onClick={() => checkoutHandler(subtotal)}
             type="button"
             className={checkout.Online}
           >
-            <h3>Pay via Online</h3>
+            <p>Pay via Online</p>
           </div>
         </div>
       </div>

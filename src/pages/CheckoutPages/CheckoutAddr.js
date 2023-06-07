@@ -125,7 +125,7 @@ function CheckoutAddr() {
       <div className={checkout.body}>
         <div className={checkout.checkoutAddrLeft}>
           <div className={checkout.checkoutChooseAddress}>
-            <h3>CHOOSE ADDRESS</h3>
+            <p>CHOOSE ADDRESS</p>
           </div>
           <div className={checkout.checkoutAddressCard}>
             {localStorage.getItem("allAddress") ? (
@@ -330,7 +330,7 @@ function CheckoutAddr() {
             type="button"
             className={checkout.checkoutAddBtn}
           >
-            <h3>Add and Continue</h3>
+            <p>Add and Continue</p>
           </div>
           <div
             onClick={async () => {
@@ -350,7 +350,7 @@ function CheckoutAddr() {
             type="button"
             className={checkout.checkoutContinue}
           >
-            <h3>Continue</h3>
+            <p>Continue</p>
           </div>
         </div>
       </div>
