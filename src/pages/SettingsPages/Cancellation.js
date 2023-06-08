@@ -22,7 +22,7 @@ let getLastPlan = getAllPlans.getLastPlan;
 let pricing = {
   vegBasic: 130,
   vegPremium: 170,
-  nonVegBaisc: 150,
+  nonVegBasic: 150,
   nonVegPremium: 200,
 };
 
@@ -30,18 +30,26 @@ function Cancellation() {
   let navigate = useNavigate();
   let [selectedMeal, setSelectedMeal] = useState("Breakfast");
   let currCredits = localStorage.getItem("credits");
-  console.log(currCredits);
+  // console.log("currCredits", currCredits);
   let date = new Date();
   date.setDate(date.getDate() + 1);
   let nextDay =
     date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
   let plan = JSON.parse(localStorage.getItem("lastPlan"));
+  // console.log("plan", plan);
   let selectedPlan = plan.selectedPlan;
-  let creditsForDay = pricing[selectedPlan];
+  // console.log(selectedPlan, "selectedPlan");
+  let creditsForDay = pricing[`${selectedPlan}`];
+  // console.log(creditsForDay, "creditsForday");
   let creditsForMeal = Math.trunc(pricing[selectedPlan] / 3);
+  // console.log(creditsForMeal, "creditsForDay");
   async function handleDayProceed() {
     console.log("hello");
     let credits = Number(currCredits) + Number(creditsForDay);
+    //
+    console.log(credits, "credits");
+    console.log(creditsForDay);
+    //
     let user = await getUser(localStorage.getItem("username"));
     let updated = await updateCredits(user._id, credits);
     localStorage.setItem("credits", updated);

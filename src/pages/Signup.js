@@ -14,7 +14,10 @@ import { signUpSubject } from "../messages/emailSubject";
 import "../css/styles.css";
 
 function SignUp() {
-  console.log(process.env.REACT_APP_ABC, "oo");
+  let [isOn, setIsOn] = useState(false);
+  function handleEye() {
+    setIsOn(!isOn);
+  }
   let currentUser = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -186,7 +189,24 @@ function SignUp() {
                 onChange={onChange}
               />
             </div>
-            <div className="input-group input-group-lg ">
+            {isOn ? (
+              ""
+            ) : (
+              <div className="input-group input-group-lg ">
+                <input
+                  value={register.password}
+                  name="password"
+                  style={{ borderColor: "orange" }}
+                  placeholder="Password"
+                  type="password"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  onChange={onChange}
+                />
+              </div>
+            )}
+            {/* <div className="input-group input-group-lg ">
               <input
                 value={register.password}
                 name="password"
@@ -198,7 +218,7 @@ function SignUp() {
                 aria-describedby="inputGroup-sizing-lg"
                 onChange={onChange}
               />
-            </div>
+            </div> */}
             <div className="input-group input-group-lg ">
               <input
                 value={register.repass}

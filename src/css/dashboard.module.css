@@ -195,7 +195,7 @@ flex-direction: column; */
 }
 
 .creditValue > p {
-  font-weight: bolder;
+  font-weight: 300;
   font-size: 2vh;
   margin-top: 7%;
 }

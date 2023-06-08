@@ -9,6 +9,7 @@ import { notify } from "../alerts/toastify";
 import "../css/styles.css";
 
 function Login() {
+  let [isOn, setIsOn] = useState(false);
   let currentUser = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,6 +18,9 @@ function Login() {
     password: "",
   });
   //
+  function handleEye() {
+    setIsOn(!isOn);
+  }
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -120,7 +124,42 @@ function Login() {
                 onChange={onChange}
               />
             </div>
-            <div className="input-group input-group-lg ">
+            {isOn ? (
+              <div className="input-group input-group-lg ">
+                <input
+                  style={{ borderColor: "orange" }}
+                  value={credentials.password}
+                  name="password"
+                  type="text"
+                  placeholder="Password"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  onChange={onChange}
+                />
+                <div onClick={handleEye} className="eye">
+                  <i class="fa-sharp fa-regular fa-eye"></i>
+                </div>
+              </div>
+            ) : (
+              <div className="input-group input-group-lg ">
+                <input
+                  style={{ borderColor: "orange" }}
+                  value={credentials.password}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  onChange={onChange}
+                />
+                <div onClick={handleEye} className="eye">
+                  <i class="fa-sharp fa-regular fa-eye-slash"></i>
+                </div>
+              </div>
+            )}
+            {/* <div className="input-group input-group-lg ">
               <input
                 style={{ borderColor: "orange" }}
                 value={credentials.password}
@@ -132,7 +171,7 @@ function Login() {
                 aria-describedby="inputGroup-sizing-lg"
                 onChange={onChange}
               />
-            </div>
+            </div> */}
             <button
               onClick={handleClick}
               type="submit"
