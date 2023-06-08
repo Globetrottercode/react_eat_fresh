@@ -15,8 +15,12 @@ import "../css/styles.css";
 
 function SignUp() {
   let [isOn, setIsOn] = useState(false);
+  let [isRepassOn, setIsRepassOn] = useState(false);
   function handleEye() {
     setIsOn(!isOn);
+  }
+  function handleRepass() {
+    setIsRepassOn(!isRepassOn);
   }
   let currentUser = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
@@ -190,7 +194,22 @@ function SignUp() {
               />
             </div>
             {isOn ? (
-              ""
+              <div className="input-group input-group-lg ">
+                <input
+                  value={register.password}
+                  name="password"
+                  style={{ borderColor: "orange" }}
+                  placeholder="Password"
+                  type="text"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  onChange={onChange}
+                />
+                <div onClick={handleEye} className="eye">
+                  <i class="fa-sharp fa-regular fa-eye"></i>
+                </div>
+              </div>
             ) : (
               <div className="input-group input-group-lg ">
                 <input
@@ -204,22 +223,47 @@ function SignUp() {
                   aria-describedby="inputGroup-sizing-lg"
                   onChange={onChange}
                 />
+                <div onClick={handleEye} className="eye">
+                  <i class="fa-sharp fa-regular fa-eye-slash"></i>
+                </div>
+              </div>
+            )}
+            {isRepassOn ? (
+              <div className="input-group input-group-lg ">
+                <input
+                  value={register.repass}
+                  name="repass"
+                  style={{ borderColor: "orange" }}
+                  type="text"
+                  placeholder="Re-enter Password"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  onChange={onChange}
+                />
+                <div onClick={handleRepass} className="eye">
+                  <i class="fa-sharp fa-regular fa-eye"></i>
+                </div>
+              </div>
+            ) : (
+              <div className="input-group input-group-lg ">
+                <input
+                  value={register.repass}
+                  name="repass"
+                  style={{ borderColor: "orange" }}
+                  type="password"
+                  placeholder="Re-enter Password"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  onChange={onChange}
+                />
+                <div onClick={handleRepass} className="eye">
+                  <i class="fa-sharp fa-regular fa-eye-slash"></i>
+                </div>
               </div>
             )}
             {/* <div className="input-group input-group-lg ">
-              <input
-                value={register.password}
-                name="password"
-                style={{ borderColor: "orange" }}
-                placeholder="Password"
-                type="password"
-                className="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-lg"
-                onChange={onChange}
-              />
-            </div> */}
-            <div className="input-group input-group-lg ">
               <input
                 value={register.repass}
                 name="repass"
@@ -231,7 +275,7 @@ function SignUp() {
                 aria-describedby="inputGroup-sizing-lg"
                 onChange={onChange}
               />
-            </div>
+            </div> */}
             <button
               onClick={handleClick}
               type="submit"
