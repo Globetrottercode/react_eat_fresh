@@ -35,14 +35,14 @@ async function createCredits(user_id) {
   );
   const json = await response.json();
   if (response.status === 200) {
-    return json;
+    return json.credits.credits;
   }
 }
 
-async function check() {
-  console.log(await createCredits("64818035b632c80101911688"));
-}
+// async function check() {
+//   console.log(await createCredits("64818035b632c80101911688"));
+// }
 
-check();
+// check();
 
-// export default createCredits;
+export default createCredits;

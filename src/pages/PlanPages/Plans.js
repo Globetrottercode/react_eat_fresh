@@ -3,6 +3,8 @@ import TopNavbar from "../../components/TopNavbar";
 import styles from "../../css/plans.module.css";
 import logoTagline from "../../images/LOGO_Tagline.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import createCredits from "../../getData/createCredits";
+import getCredits from "../../getData/getCredits";
 
 function Plans() {
   let { username, token, id } = useParams();
@@ -10,6 +12,17 @@ function Plans() {
   if (username !== undefined && token !== undefined && token !== undefined) {
     localStorage.setItem("username", username);
     localStorage.setItem("token", token);
+    localStorage.setItem("user_id", id);
+    async function create() {
+      let credits = await getCredits(id);
+      if (credits === -1) {
+        let data = await createCredits(id);
+        console.log("created credits: " + data);
+      } else {
+        console.log("existing credits : " + credits);
+      }
+    }
+    create();
   }
   console.log(localStorage.getItem("token"), "token");
   console.log(localStorage.getItem("username"), "token");
