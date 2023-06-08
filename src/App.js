@@ -47,6 +47,10 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/plans" element={<Plans />} />
+          <Route
+            path="/plans/google/:username/:token/:id"
+            element={<Plans />}
+          />
           <Route path="/plans/:planType" element={<PlanDetail />} />
           <Route path="/plans/:planType/:day" element={<PlanDays />} />
           <Route path="/plans/:planType/:day/:meal" element={<MealDetail />} />

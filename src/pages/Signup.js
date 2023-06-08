@@ -73,10 +73,12 @@ function SignUp() {
       notify("Email Id already exists !");
       return;
     }
+    notify("Registration succesful !!!");
     let user = await getUser(register.username);
     console.log(user);
     localStorage.setItem("user_id", user._id);
     // console.log(localStorage.getItem("user_id"));
+
     let emailData = await sendMail(
       register.username,
       signUpMessage(register.name),

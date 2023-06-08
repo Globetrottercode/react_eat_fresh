@@ -2,9 +2,15 @@ import Footer from "../../components/Footer";
 import TopNavbar from "../../components/TopNavbar";
 import styles from "../../css/plans.module.css";
 import logoTagline from "../../images/LOGO_Tagline.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function Plans() {
+  let { username, token, id } = useParams();
+  console.log("username and token : " + username, token, id);
+  if (username !== undefined && token !== undefined && token !== undefined) {
+    localStorage.setItem("username", username);
+    localStorage.setItem("token", token);
+  }
   console.log(localStorage.getItem("token"), "token");
   console.log(localStorage.getItem("username"), "token");
   const navigate = useNavigate();

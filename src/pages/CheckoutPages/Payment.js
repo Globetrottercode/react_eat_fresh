@@ -89,6 +89,7 @@ function Payment() {
       notify("Please enter the input fields");
       return;
     }
+    notify("Your order has been placed succesfully !!!");
 
     let user = await getUser(localStorage.getItem("username"));
     let updated = await updateCredits(user._id, credits);
@@ -106,7 +107,9 @@ function Payment() {
         end: end,
         selectedPlan: selectedPlan,
         selectedDays: selectedDays,
-        address: `${address.saveAs} , ${address.floor}, ${address.detailed} , ${address.landmark}
+        address: `${address.saveAs}  ${
+          address.floor ? ", " + address.floor : ""
+        }, ${address.detailed} , ${address.landmark}
       , ${address.city} - ${address.pincode}`,
         total: charges.total,
         additional: charges.additional,
@@ -153,7 +156,9 @@ function Payment() {
         end: end,
         selectedPlan: selectedPlan,
         selectedDays: selectedDays,
-        address: `${address.saveAs} , ${address.floor}, ${address.detailed} , ${address.landmark}
+        address: `${address.saveAs} ${
+          address.floor ? ", " + address.floor : ""
+        }, ${address.detailed} , ${address.landmark}
       , ${address.city} - ${address.pincode}`,
         total: charges.total,
         additional: charges.additional,

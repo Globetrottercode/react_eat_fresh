@@ -75,8 +75,8 @@ function ChangePlan() {
             </div>
           </div>
           <div className={change.changeText}>
-            <h3 style={{ fontWeight: "bolder" }}> Let food be thy medicine </h3>
-            <h3 style={{ fontWeight: "bolder" }}>
+            <h3 style={{ fontWeight: "bold" }}> Let food be thy medicine </h3>
+            <h3 style={{ fontWeight: "bold" }}>
               {" "}
               thy <span style={{ color: "#519938" }}>medicine</span> shall be
               thy
@@ -139,6 +139,7 @@ function ChangePlanProcess() {
       user._id,
       Number(changeDetail.amt) + Number(currCredits)
     );
+    notify(`${changeDetail.amt} credits added !!`);
     let data = await updateMyPlan(
       plan._id,
       plan.selectedPlan,

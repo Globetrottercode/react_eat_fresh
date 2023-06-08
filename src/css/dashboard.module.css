@@ -359,7 +359,7 @@ flex-direction: column; */
 .changeCurrPlanDisplay > p {
   margin-top: 4%;
   font-size: 3vh;
-  font-weight: bolder;
+  font-weight: 300;
 }
 
 .changeCurrPlanLabel {
@@ -378,7 +378,7 @@ flex-direction: column; */
 .changeCurrPlanLabel > p {
   margin-top: 4%;
   font-size: 3vh;
-  font-weight: bolder;
+  font-weight: 300;
 }
 
 .changechoosePlanLabel {
@@ -394,7 +394,7 @@ flex-direction: column; */
 .changechoosePlanLabel > p {
   margin-top: 3%;
   font-size: 3vh;
-  font-weight: bolder;
+  font-weight: 300;
 }
 
 .changeAvlPlans {
@@ -414,7 +414,7 @@ flex-direction: column; */
 .changeAvlPlans > label {
   margin: auto auto;
   margin-top: 2%;
-  font-weight: bolder;
+  font-weight: 300;
 }
 
 .changeProceed {
@@ -435,7 +435,7 @@ flex-direction: column; */
 .changeProceed > p {
   margin-top: 3%;
   font-size: 3vh;
-  font-weight: bolder;
+  font-weight: 300;
 }
 
 /* ////////////////// changePlanProcess ///////////////////////// */
@@ -452,7 +452,7 @@ flex-direction: column; */
 }
 
 .changeAmt > p {
-  font-weight: bolder;
+  font-weight: 300;
   font-size: 3vh;
   margin-top: 3.5%;
   margin-left: 4%;
@@ -471,7 +471,7 @@ flex-direction: column; */
 }
 
 .newChangedPlan > p {
-  font-weight: bolder;
+  font-weight: 300;
   font-size: 4vh;
   margin-top: 3.5%;
 }
@@ -520,6 +520,6 @@ flex-direction: column; */
 
 .changePayment > div > p {
   margin-top: 6%;
-  font-weight: bolder;
+  font-weight: 300;
   font-size: 2.5vh;
 }
