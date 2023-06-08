@@ -84,7 +84,7 @@ function SignUp() {
       signUpMessage(register.name),
       signUpSubject()
     );
-    console.log(emailData);
+    console.log("emaildata ", emailData);
     const result = await fetch(
       "http://localhost:3500/customer/credits/createCredits",
       {

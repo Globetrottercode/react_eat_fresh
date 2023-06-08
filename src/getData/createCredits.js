@@ -36,6 +36,8 @@ async function createCredits(user_id) {
   const json = await response.json();
   if (response.status === 200) {
     return json.credits.credits;
+  } else {
+    return null;
   }
 }
 

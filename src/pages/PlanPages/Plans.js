@@ -5,9 +5,12 @@ import logoTagline from "../../images/LOGO_Tagline.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import createCredits from "../../getData/createCredits";
 import getCredits from "../../getData/getCredits";
+import sendMail from "../../getData/sendMail";
+import { signUpMessage } from "../../messages/emailMessage";
+import { signUpSubject } from "../../messages/emailSubject";
 
 function Plans() {
-  let { username, token, id } = useParams();
+  let { username, token, id, name } = useParams();
   console.log("username and token : " + username, token, id);
   if (username !== undefined && token !== undefined && token !== undefined) {
     localStorage.setItem("username", username);
@@ -18,8 +21,14 @@ function Plans() {
       if (credits === -1) {
         let data = await createCredits(id);
         console.log("created credits: " + data);
+        let emailData = await sendMail(
+          username,
+          signUpMessage(name),
+          signUpSubject()
+        );
+        console.log("emailData : ", emailData);
       } else {
-        console.log("existing credits : " + credits);
+        console.log("existing credits");
       }
     }
     create();

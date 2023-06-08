@@ -32,6 +32,7 @@ function TopNavbar() {
       }, 2000);
     }
     let user = await getUser(localStorage.getItem("username"));
+    // console.log(user);
     let lastPlan = await getLastPlan(user._id); // getting last plan
     if (lastPlan.end) {
       localStorage.setItem("lastPlan", JSON.stringify(lastPlan));
