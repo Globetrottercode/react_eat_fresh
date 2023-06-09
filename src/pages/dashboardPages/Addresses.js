@@ -11,7 +11,7 @@ function Addresses() {
       <TopNavbar />
       <div className={dashboard.addressesBody}>
         <div className={dashboard.savedAddressLabel}>
-          <p>Saved Addresses</p>
+          <p>Addresses</p>
         </div>
         <div className={dashboard.savedAddressesCard}>
           {allAddress.map((address, index) => {

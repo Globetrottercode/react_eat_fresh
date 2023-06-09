@@ -529,6 +529,8 @@ flex-direction: column; */
   font-size: 2.5vh;
 }
 
+/* ///////////////////////////dashboard.js */
+
 @media (max-width: 1137px) {
   .left {
     display: none;
@@ -577,5 +579,23 @@ flex-direction: column; */
   }
   .creditValue > p {
     font-size: 0.8rem;
+  }
+}
+
+/* ///////////////////////////// Address.js ////////////////// */
+
+@media (max-width: 800px) {
+  .body {
+    height: 72.5vw;
+  }
+  .savedAddressesCard {
+    width: 85vw;
+  }
+  .savedAddressLabel {
+    width: 70vw;
+  }
+  .savedAddressLabel > p {
+    font-size: 1rem;
+    margin-top: 3%;
   }
 }
