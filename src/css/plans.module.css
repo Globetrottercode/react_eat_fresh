@@ -105,3 +105,28 @@
   font-weight: 300;
 }
 /* 22 percent buttons */
+
+@media (max-width: 989px) {
+  .dashLeft {
+    display: none;
+  }
+  .dashRight {
+    width: 70vw;
+    height: 70vh;
+  }
+}
+@media (max-width: 700px) {
+  .mealPlansLabel > p {
+    margin-top: 8%;
+  }
+}
+
+@media (max-width: 500px) {
+  .mealPlansLabel {
+    width: 60%;
+  }
+  .dashRight {
+    width: 75vw;
+    height: 60vh;
+  }
+}
