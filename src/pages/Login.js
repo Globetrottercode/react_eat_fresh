@@ -95,16 +95,13 @@ function Login() {
       </div>
       <div className="right">
         <div className="rightUpper">
-          <button
+          <span
             onClick={() => {
               navigate("/plans");
             }}
-            type="submit"
-            style={{ borderRadius: "3vh", width: "10vw" }}
-            className="btn btn-dark"
           >
             Plans
-          </button>
+          </span>
         </div>
         <div
           style={{ flexDirection: "column", alignItems: "center" }}

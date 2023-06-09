@@ -33,14 +33,15 @@ function Home() {
         </Link> */}
       </div>
       <div className={styles.mid}>
-        <h2 style={{ fontWeight: "bolder", fontSize: "6vh" }}>
-          <span style={{ color: "#519938" }}> Need Fresh </span> ,{" "}
+        <h2 className={styles.homeTagline}>
+          <span style={{ color: "#519938" }}> Need Fresh </span>,{" "}
           <span style={{ color: "orange" }}> Hygienic Food ? </span>
         </h2>
-        <h3> Get hassle free breakfast, lunch and dinner. </h3>
-        <form className={styles.form}>
+        <h3 className={styles.home2Tagline}>
           {" "}
-          {/* <div class="input-group input-group-lg ">
+          Get hassle free breakfast, lunch and dinner.{" "}
+        </h3>{" "}
+        {/* <div class="input-group input-group-lg ">
             <input
               style={{ borderColor: "orange" }}
               value={city}
@@ -59,17 +60,16 @@ function Home() {
               Check Plans{" "}
             </button>
           </div> */}
-          <div
-            type="button"
-            onClick={() => {
-              navigate("/plans");
-            }}
-            className={styles.homeCheckPlansButton}
-          >
-            <h3 style={{ fontSize: "3vh" }}>Check Plans</h3>
-          </div>
-        </form>
-        <h5 style={{ fontSize: "2vh" }}>
+        <div
+          type="button"
+          onClick={() => {
+            navigate("/plans");
+          }}
+          className={styles.homeCheckPlansButton}
+        >
+          <p className={styles.homeBtnTxt}>Check Plans</p>
+        </div>
+        <h5 className={styles.popCities}>
           {" "}
           Popular Cities: Bangalore, Hyderabad, Mumbai, Pune, Delhi, Noida,
           Chennai, Kolkata, Gurgaon, Ahmedabad.{" "}
