@@ -242,7 +242,8 @@ function Payment() {
           <div className={checkout.addressCard}>
             <span>{address.saveAs}</span>
             <span>
-              {address.floor} , {address.detailed} ,
+              {address.floor === undefined ? "" : address.floor + " , "}
+              {address.detailed} ,
             </span>
             <span>
               {address.landmark} , {address.city} - {address.pincode}

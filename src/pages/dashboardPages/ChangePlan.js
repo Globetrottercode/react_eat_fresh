@@ -283,7 +283,7 @@ function ChangePlanProcess() {
               <p>{assignNewPlan}</p>
             </div>
             <div className={change.changeAmt}>
-              <p>Ammount : </p>
+              <p>Amount : </p>
               <p>{changeDetail.amt}</p>
             </div>
             {changeDetail.pay === 0 ? (

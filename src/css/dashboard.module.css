@@ -425,7 +425,7 @@ flex-direction: column; */
 .changeProceed {
   height: 18%;
   width: 50%;
-  border-radius: 3vh;
+  border-radius: 2vh;
   background-color: rgba(81, 153, 56, 0.9);
   color: white;
   display: flex;
@@ -657,6 +657,9 @@ flex-direction: column; */
   .changeRightParent {
     width: 85%;
     height: 60vh;
+  }
+  .changeProceed > p {
+    margin-top: 5%;
   }
 }
 

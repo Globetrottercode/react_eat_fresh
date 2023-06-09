@@ -689,3 +689,28 @@
     border-radius: 2vh;
   } */
 }
+
+/* /////////////////////// Payment.js ////////////////// */
+
+@media (max-width: 500px) {
+  .leftPayment {
+    width: 90vw;
+  }
+  .orderSummary > p {
+    margin-top: 7%;
+  }
+  .addressCard {
+    align-items: flex-start;
+  }
+  .rightPayment {
+    margin-top: 10vh;
+    width: 90vw;
+    margin-bottom: 10vh;
+  }
+  .summaryCard {
+    height: 27vh;
+  }
+  .summaryCard > div > p {
+    margin-top: 4%;
+  }
+}
