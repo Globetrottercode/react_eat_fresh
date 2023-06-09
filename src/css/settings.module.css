@@ -343,3 +343,60 @@
   font-size: 2.5vh;
   font-weight: 300;
 }
+/* ///////////////////// Settings.js ///////////////////// */
+
+@media (max-width: 913px) {
+  .settingCard {
+    width: 90%;
+  }
+  .settingsLabel {
+    width: 50%;
+    height: 70%;
+  }
+  .settingsLabel > p {
+    font-size: 2rem;
+    /* margin-top: 10%; */
+  }
+  .settingsAboutUs {
+    width: 30%;
+    height: 60%;
+    border-radius: 2vh;
+  }
+
+  .settingsAboutUs > p {
+    /* margin-top: 12%; */
+    font-size: 1.5rem;
+  }
+  .settingCardBody > div > p {
+    margin-top: 5%;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .settingCard {
+    width: 90%;
+  }
+  .settingsLabel {
+    width: 50%;
+    height: 70%;
+  }
+  .settingsLabel > p {
+    font-size: 1.3rem;
+    margin-top: 10%;
+  }
+  .settingsAboutUs {
+    width: 30%;
+    height: 60%;
+    border-radius: 2vh;
+  }
+
+  .settingsAboutUs > p {
+    margin-top: 12%;
+    font-size: 0.8rem;
+  }
+  .settingCardBody > div > p {
+    margin-top: 5%;
+    font-size: 1.3rem;
+  }
+}
