@@ -418,3 +418,29 @@
     height: 25vh;
   }
 }
+
+/* ////////////////////////////PlanDays.js////////////// */
+
+@media (max-width: 912px) {
+  .cardDays {
+    margin-top: 10vh;
+    width: 75vw;
+    height: 40vh;
+    border-radius: 4vh;
+  }
+  .checkout {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .cardDays {
+    margin-top: 10vh;
+    width: 85vw;
+    height: 40vh;
+    border-radius: 4vh;
+  }
+  .checkout {
+    width: 50vw;
+  }
+}
