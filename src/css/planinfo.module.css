@@ -442,6 +442,7 @@
   }
   .checkout {
     width: 50vw;
+    border-radius: 2vh;
   }
 }
 

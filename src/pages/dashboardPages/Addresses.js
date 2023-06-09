@@ -14,17 +14,23 @@ function Addresses() {
           <p>Addresses</p>
         </div>
         <div className={dashboard.savedAddressesCard}>
-          {allAddress.map((address, index) => {
-            return (
-              <div>
-                <span style={{ fontSize: "2vh" }}>
-                  {address.saveAs} {address.floor ? ", " + address.floor : ""} ,{" "}
-                  {address.detailed} , {address.landmark} {address.city} ,{" "}
-                  {address.pincode}
-                </span>
-              </div>
-            );
-          })}
+          {allAddress[0] ? (
+            allAddress.map((address, index) => {
+              return (
+                <div>
+                  <span style={{ fontSize: "2vh" }}>
+                    {address.saveAs} {address.floor ? ", " + address.floor : ""}{" "}
+                    , {address.detailed} , {address.landmark} {address.city} ,{" "}
+                    {address.pincode}
+                  </span>
+                </div>
+              );
+            })
+          ) : (
+            <div>
+              <span style={{ fontSize: "2vh" }}>No saved Addresses</span>
+            </div>
+          )}
         </div>
       </div>
 

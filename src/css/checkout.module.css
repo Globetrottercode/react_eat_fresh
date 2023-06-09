@@ -622,34 +622,70 @@
     border-radius: 2vh;
   }
 }
+/* ///////////////////////////// CheckoutAddr.js///////////////// */
 
-/* @media (max-width: 500px) {
-  .body {
-    display: block;
-    text-align: -webkit-center;
-    overflow-y: scroll;
-  }
-  .planSelectCard {
-    width: 92vw;
-    height: 20vh;
+@media (max-width: 913px) {
+  .checkoutAddrLeft {
     margin-top: 10vh;
-  }
-  .checkoutLeft {
     width: 100vw;
-    height: 40vh;
-    display: block;
   }
-  .checkoutRight {
-    width: 80vw;
-    display: block;
+  .checkoutChooseAddress {
+    width: 70vw;
+    height: 7vh;
+    border-radius: 1vh;
   }
-  .checkoutPricingCard {
-    width: 80vw;
-    height: 30vh;
-    margin-bottom: 5vh;
+  .checkoutChooseAddress > p {
+    margin-top: 4%;
+    font-size: 1rem;
   }
-  .checkoutPayment > div {
-    width: 50vw;
+  .checkoutContinue {
+    width: 60vw;
     border-radius: 2vh;
   }
-} */
+  .checkoutContinue > p {
+    font-size: 1rem;
+    border-radius: 10vh;
+    margin-bottom: 6%;
+  }
+  .checkoutAddrRight {
+    margin-top: 5vh;
+    width: 90vw;
+  }
+  .checkoutAddBtn {
+    border-radius: 2vh;
+  }
+  .checkoutAddBtn > p {
+    margin-bottom: 7%;
+  }
+}
+
+@media (max-width: 500px) {
+  /* .checkoutAddrLeft {
+    margin-top: 10vh;
+    width: 100vw;
+  }
+  .checkoutChooseAddress {
+    width: 70vw;
+    height: 7vh;
+    border-radius: 1vh;
+  }
+  .checkoutChooseAddress > p {
+    margin-top: 4%;
+    font-size: 1rem;
+  } */
+  .checkoutContinue {
+    width: 60vw;
+    border-radius: 2vh;
+  }
+  /* .checkoutContinue > p {
+    font-size: 1rem;
+    border-radius: 10vh;
+  }
+  .checkoutAddrRight {
+    margin-top: 5vh;
+    width: 90vw;
+  }
+  .checkoutAddBtn {
+    border-radius: 2vh;
+  } */
+}
