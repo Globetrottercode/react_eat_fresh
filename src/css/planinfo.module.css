@@ -360,14 +360,61 @@
   background-color: rgba(0, 0, 0, 0.65);
 } */
 
+/* /////////////////// planDetail.js //////////////// */
+
 @media (max-width: 1220px) {
   .pricing > div > p {
     margin-top: 1.5%;
   }
 }
-/* @media (max-width: 1000px) {
+@media (max-width: 912px) {
   .body {
-    display: flex;
-    flex-direction: column;
+    height: 72.5vh;
+    width: 100%;
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
   }
-} */
+  .card {
+    margin-top: 10vh;
+    width: 85vw;
+    height: 40vh;
+    border-radius: 4vh;
+  }
+  .card > div > p {
+    font-size: 1rem;
+  }
+  .card > div > div > p {
+    font-size: 1rem;
+  }
+  .pricing {
+    width: 60vw;
+    height: 20vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .body {
+    height: 72.5vh;
+    width: 100%;
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
+  }
+  .card {
+    margin-top: 10vh;
+    width: 85vw;
+    height: 40vh;
+    border-radius: 4vh;
+  }
+  .card > div > p {
+    font-size: 1rem;
+  }
+  .card > div > div > p {
+    font-size: 1rem;
+  }
+  .pricing {
+    width: 80vw;
+    height: 25vh;
+  }
+}
