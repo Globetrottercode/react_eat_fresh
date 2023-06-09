@@ -127,7 +127,7 @@
 /* ///////// PreviousPlans.js //////////////// */
 
 .prevbody {
-  height: 65vh;
+  height: 72.5vh;
   margin-top: 1vh;
   display: flex;
   flex-direction: column;
@@ -174,7 +174,33 @@
   border: 2px solid rgba(99, 47, 107, 0.8);
 }
 
+.previousTransCard {
+  height: 75%;
+  width: 60%;
+  background-color: rgba(217, 217, 217, 0.6);
+  border-radius: 2vh;
+  border: 1px solid rgba(99, 47, 107, 0.8);
+  overflow-y: scroll;
+}
+
+.previousTransCard > div {
+  height: 30%;
+  width: 95%;
+  background-color: white;
+  border-radius: 3vh;
+  margin-left: 2.5%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid rgba(99, 47, 107, 0.8);
+}
+
 .previousPlansCard > div > span {
+  margin-left: 4%;
+}
+
+.previousTransCard > div > span {
   margin-left: 4%;
 }
 /* /////////// Cancellation.js //////////////////////// */
@@ -374,29 +400,69 @@
 }
 
 @media (max-width: 500px) {
-  .settingCard {
+  /* .settingCard {
     width: 90%;
   }
   .settingsLabel {
     width: 50%;
     height: 70%;
-  }
+  } */
   .settingsLabel > p {
     font-size: 1.3rem;
     margin-top: 10%;
   }
-  .settingsAboutUs {
+  /* .settingsAboutUs {
     width: 30%;
     height: 60%;
     border-radius: 2vh;
-  }
+  } */
 
   .settingsAboutUs > p {
     margin-top: 12%;
     font-size: 0.8rem;
   }
-  .settingCardBody > div > p {
+  /* .settingCardBody > div > p {
     margin-top: 5%;
     font-size: 1.3rem;
+  } */
+}
+
+/* //////////////////////////PreviousPlans.js //////////*/
+@media (max-width: 913px) {
+  .previousPlanLabel {
+    width: 60%;
   }
+  .previousPlanLabel > p {
+    /* margin-top: 7%; */
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  .previousPlansCard {
+    width: 80%;
+  }
+  .previousPlansCard > div {
+    height: 50%;
+  }
+  #prevTransacDet {
+    height: 30%;
+  }
+  .previousTransCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  /* .previousPlanLabel {
+    width: 60%;
+  } */
+  .previousPlanLabel > p {
+    margin-top: 7%;
+    font-size: 1.25rem;
+  }
+  /* .previousPlansCard {
+    width: 80%;
+  }
+  .previousPlansCard > div {
+    height: 50%;
+  } */
 }

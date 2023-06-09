@@ -12,11 +12,11 @@ function PrevoiusTransactions() {
         <div className={previous.previousPlanLabel}>
           <p>Previous Transactions</p>
         </div>
-        <div className={previous.previousPlansCard}>
+        <div className={previous.previousTransCard}>
           {allTransactions[0] ? (
             allTransactions.map((transaction, index) => {
               return (
-                <div>
+                <div id={previous.prevTransacDet}>
                   <span style={{ fontSize: "2vh" }}>
                     Razorpay Order Id : {transaction.razorpay_order_id}
                     <br />
