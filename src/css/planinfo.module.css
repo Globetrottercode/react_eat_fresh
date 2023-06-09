@@ -444,3 +444,35 @@
     width: 50vw;
   }
 }
+
+/* //////////////////////////////////// mealDetail.js ///////////////// */
+@media (max-width: 912px) {
+  .cardMealDetail {
+    margin-top: 10vh;
+    width: 70vw;
+    height: 40vh;
+    border-radius: 4vh;
+  }
+  .cardInnerMeals > div > p {
+    margin-top: 10%;
+    font-size: 1rem;
+  }
+  .cardInnerMeals > div {
+    border-radius: 2vh;
+  }
+}
+@media (max-width: 500px) {
+  .cardMealDetail {
+    margin-top: 10vh;
+    width: 85vw;
+    height: 40vh;
+    border-radius: 4vh;
+  }
+  .cardInnerMeals > div > p {
+    margin-top: 10%;
+    font-size: 0.6rem;
+  }
+  .cardInnerMeals > div {
+    border-radius: 2vh;
+  }
+}

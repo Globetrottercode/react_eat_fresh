@@ -367,4 +367,12 @@ body {
     width: 85%;
     height: 40vh;
   }
+
+  /* ////////////////////  checkout.js ////////// */
+  .daysDropDown {
+    font-size: 2vh;
+  }
+  .plansDropDown {
+    font-size: 2vh;
+  }
 }

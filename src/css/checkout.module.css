@@ -590,3 +590,66 @@
   font-size: 2vh;
   background-color: rgba(217, 217, 217, 0.2);
 }
+
+/* ////////////////////////////// Checkout.js ///////////////////////*/
+@media (max-width: 912px) {
+  .body {
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
+  }
+  .planSelectCard {
+    width: 92vw;
+    height: 20vh;
+    margin-top: 10vh;
+  }
+  .checkoutLeft {
+    width: 100vw;
+    height: 40vh;
+    display: block;
+  }
+  .checkoutRight {
+    width: 80vw;
+    display: block;
+  }
+  .checkoutPricingCard {
+    width: 80vw;
+    height: 30vh;
+    margin-bottom: 5vh;
+  }
+  .checkoutPayment > div {
+    width: 50vw;
+    border-radius: 2vh;
+  }
+}
+
+/* @media (max-width: 500px) {
+  .body {
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
+  }
+  .planSelectCard {
+    width: 92vw;
+    height: 20vh;
+    margin-top: 10vh;
+  }
+  .checkoutLeft {
+    width: 100vw;
+    height: 40vh;
+    display: block;
+  }
+  .checkoutRight {
+    width: 80vw;
+    display: block;
+  }
+  .checkoutPricingCard {
+    width: 80vw;
+    height: 30vh;
+    margin-bottom: 5vh;
+  }
+  .checkoutPayment > div {
+    width: 50vw;
+    border-radius: 2vh;
+  }
+} */
