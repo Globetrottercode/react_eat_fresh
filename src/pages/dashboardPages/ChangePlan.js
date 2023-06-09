@@ -305,7 +305,7 @@ function ChangePlanProcess() {
                   }}
                   type="button"
                 >
-                  <p>Pay Online</p>
+                  <p>Online</p>
                 </div>
               </div>
             )}

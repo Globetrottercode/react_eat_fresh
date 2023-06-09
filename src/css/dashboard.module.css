@@ -639,3 +639,19 @@ flex-direction: column; */
     font-size: 0.8rem;
   }
 }
+
+/* ///////ChangePlanProcess */
+
+@media (max-width: 913px) {
+  .changeRightParent {
+    width: 85%;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .changeRightParent {
+    width: 85%;
+    height: 45vh;
+  }
+}
