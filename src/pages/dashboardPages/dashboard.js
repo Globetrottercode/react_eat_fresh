@@ -104,7 +104,7 @@ function Dashboard() {
       <div className={dashboard.body}>
         <div className={dashboard.left}>
           <img style={{ height: "38.5vh" }} src={LOGO} />
-          <div>
+          <div style={{ textAlign: "center" }}>
             <h3 style={{ fontWeight: "bolder" }}> Let food be thy medicine </h3>
             <h3 style={{ fontWeight: "bolder" }}>
               {" "}
@@ -117,36 +117,38 @@ function Dashboard() {
         <div className={dashboard.right}>
           <div className={dashboard.myPlanCard}>
             <div className={dashboard.myPlanLabel}>
-              <p>My Plans</p>
+              <p className={dashboard.text}>My Plans</p>
             </div>
             {planValid ? (
               <div className={dashboard.planType}>
                 {" "}
-                <p>{selectedPlan}</p>
+                <p className={dashboard.text}>{selectedPlan}</p>
               </div>
             ) : (
               <div className={dashboard.planType}>
                 {" "}
-                <p>No Plans</p>
+                <p className={dashboard.text}>No Plans</p>
               </div>
             )}
             {planValid ? (
               <div className={dashboard.planDays}>
-                <p>{selectedDays}</p>
+                <p className={dashboard.text}>{selectedDays}</p>
               </div>
             ) : (
               ""
             )}
             {planValid ? (
               <div className={dashboard.start}>
-                <p>Start :</p> <p>{plan.start}</p>
+                <p className={dashboard.text}>Start :</p>{" "}
+                <p className={dashboard.text}>{plan.start}</p>
               </div>
             ) : (
               ""
             )}
             {planValid ? (
               <div className={dashboard.end}>
-                <p>End :</p> <p>{plan.end}</p>
+                <p className={dashboard.text}>End :</p>{" "}
+                <p className={dashboard.text}>{plan.end}</p>
               </div>
             ) : (
               ""
@@ -155,10 +157,10 @@ function Dashboard() {
           <div className={dashboard.cardRight}>
             <div className={dashboard.creditsCard}>
               <div className={dashboard.creditLabel}>
-                <p>Credits</p>
+                <p className={dashboard.text}>Credits</p>
               </div>
               <div className={dashboard.creditValue}>
-                <p>INR {credits}</p>
+                <p className={dashboard.text}>INR {credits}</p>
               </div>
             </div>
             <div
@@ -166,7 +168,7 @@ function Dashboard() {
               type="button"
               className={dashboard.addressBtn}
             >
-              <p>Addresses</p>
+              <p className={dashboard.text}>Addresses</p>
             </div>
             <div
               onClick={() => {
@@ -183,7 +185,7 @@ function Dashboard() {
               type="button"
               className={dashboard.changePlanBtn}
             >
-              <p>Change Plan</p>
+              <p className={dashboard.text}>Change Plan</p>
             </div>
           </div>
         </div>

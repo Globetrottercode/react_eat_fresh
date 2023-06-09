@@ -346,6 +346,7 @@ body {
 }
 
 @media (max-width: 900px) {
+  /* ////////////////////  login.js ////////// */
   .left {
     display: none;
   }
@@ -361,6 +362,7 @@ body {
   }
 }
 @media (max-width: 600px) {
+  /* ////////////////////  login.js ////////// */
   .card1 {
     width: 85%;
     height: 40vh;

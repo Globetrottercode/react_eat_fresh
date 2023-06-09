@@ -97,6 +97,7 @@ p {
 }
 
 @media (max-width: 1000px) {
+  /* ///////////////////////////home.js////////////// */
   .login {
     display: none;
   }
