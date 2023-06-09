@@ -599,3 +599,43 @@ flex-direction: column; */
     margin-top: 3%;
   }
 }
+
+/* //////////////////////////////// ChangePlan.js /////////////// */
+@media (max-width: 1060px) {
+  .changeBody {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: 72.5vh;
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
+  }
+  .changeText {
+    display: none;
+  }
+}
+
+@media (max-width: 913px) {
+  .changeCurrPlan {
+    width: 70vw;
+    height: 25vh;
+  }
+  .changeRight {
+    width: 85%;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .changeCurrPlan {
+    width: 85vw;
+    height: 20vh;
+  }
+  .changeRight {
+    width: 85%;
+    height: 45vh;
+  }
+  .changeCurrPlanLabel > p {
+    font-size: 0.8rem;
+  }
+}
