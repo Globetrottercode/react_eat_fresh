@@ -607,6 +607,7 @@
   }
   .checkBack {
     margin-top: 5%;
+    margin-bottom: 5%;
     margin-right: 55%;
     display: block;
     border-radius: 1vh;
@@ -712,13 +713,11 @@
 
 /* /////////////////////// Payment.js ////////////////// */
 
-@media (max-width: 500px) {
+@media (max-width: 913px) {
   .leftPayment {
     width: 90vw;
   }
-  .orderSummary > p {
-    margin-top: 7%;
-  }
+
   .addressCard {
     align-items: flex-start;
   }
@@ -731,6 +730,29 @@
     height: 27vh;
   }
   .summaryCard > div > p {
-    margin-top: 4%;
+    margin-bottom: 4%;
   }
+}
+
+@media (max-width: 500px) {
+  /* .leftPayment {
+    width: 90vw;
+  } */
+  .orderSummary > p {
+    margin-top: 7%;
+  }
+  /* .addressCard {
+    align-items: flex-start;
+  }
+  .rightPayment {
+    margin-top: 10vh;
+    width: 90vw;
+    margin-bottom: 10vh;
+  }
+  .summaryCard {
+    height: 27vh;
+  }
+  .summaryCard > div > p {
+    margin-top: 4%;
+  } */
 }

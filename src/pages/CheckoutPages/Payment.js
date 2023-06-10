@@ -90,7 +90,16 @@ function Payment() {
       return;
     }
     notify("Your order has been placed succesfully !!!");
-
+    if (localStorage.getItem("clicked")) {
+      // console.log(
+      //   "clicked value :",
+      //   JSON.parse(localStorage.getItem("clicked")),
+      //   localStorage.getItem("clicked")
+      // );
+      // console.log("returned");
+      return;
+    }
+    localStorage.setItem("clicked", true);
     let user = await getUser(localStorage.getItem("username"));
     let updated = await updateCredits(user._id, credits);
     console.log(updated);
@@ -143,6 +152,16 @@ function Payment() {
     let updated = await updateCredits(user._id, credits);
     console.log(updated);
     let user_id = user._id;
+    if (localStorage.getItem("clicked")) {
+      // console.log(
+      //   "clicked value :",
+      //   JSON.parse(localStorage.getItem("clicked")),
+      //   localStorage.getItem("clicked")
+      // );
+      // console.log("returned");
+      return;
+    }
+    localStorage.setItem("clicked", true);
     let response = await fetch("http://localhost:3500/customer/myPlan", {
       method: "POST",
       headers: {
@@ -213,6 +232,14 @@ function Payment() {
     <>
       <TopNavbar />
       <div className={checkout.body}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={checkout.checkBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={checkout.leftPayment}>
           <div className={checkout.orderSummary}>
             <p>Order Summary</p>

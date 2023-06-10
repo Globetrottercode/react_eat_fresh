@@ -455,7 +455,12 @@ flex-direction: column; */
   justify-content: space-between;
   align-items: center;
 }
-
+.changeBack {
+  height: 10%;
+  width: 10%;
+  background-color: blue;
+  display: none;
+}
 .changeAmt > p {
   font-weight: 300;
   font-size: 3vh;
@@ -660,6 +665,20 @@ flex-direction: column; */
   }
   .changeProceed > p {
     margin-top: 5%;
+  }
+  .changeBack {
+    /* margin-top: 5%; */
+    margin-bottom: 5%;
+    margin-right: 55%;
+    display: block;
+    border-radius: 1vh;
+    height: 7%;
+    width: 12%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

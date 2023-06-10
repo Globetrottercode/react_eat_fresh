@@ -123,6 +123,14 @@ function CheckoutAddr() {
     <>
       <TopNavbar />
       <div className={checkout.body}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={checkout.checkBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={checkout.checkoutAddrLeft}>
           <div className={checkout.checkoutChooseAddress}>
             <p>Choose Address</p>

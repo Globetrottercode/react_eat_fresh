@@ -51,6 +51,9 @@ function assignSelectedDays(plan) {
 }
 
 function Dashboard() {
+  console.log("clicked", JSON.parse(localStorage.getItem("clicked")));
+  localStorage.removeItem("clicked"); // removing clicks made for payments
+  console.log("clicked", JSON.parse(localStorage.getItem("clicked")));
   let date = new Date();
   let curr =
     date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();

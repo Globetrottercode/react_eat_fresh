@@ -135,6 +135,16 @@ function ChangePlanProcess() {
   );
   async function handleCredits() {
     let user = await getUser(localStorage.getItem("username"));
+    if (localStorage.getItem("clicked")) {
+      console.log(
+        "clicked value :",
+        JSON.parse(localStorage.getItem("clicked")),
+        localStorage.getItem("clicked")
+      );
+      console.log("returned");
+      return;
+    }
+    localStorage.setItem("clicked", true);
     let result = await updateCredits(
       user._id,
       Number(changeDetail.amt) + Number(currCredits)
@@ -166,6 +176,16 @@ function ChangePlanProcess() {
     }, 1000);
   }
   async function handleCOD() {
+    if (localStorage.getItem("clicked")) {
+      console.log(
+        "clicked value :",
+        JSON.parse(localStorage.getItem("clicked")),
+        localStorage.getItem("clicked")
+      );
+      console.log("returned");
+      return;
+    }
+    localStorage.setItem("clicked", true);
     let data = await updateMyPlan(
       plan._id,
       plan.selectedPlan,
@@ -193,6 +213,16 @@ function ChangePlanProcess() {
     }, 1000);
   }
   async function payOnline(amount) {
+    if (localStorage.getItem("clicked")) {
+      console.log(
+        "clicked value :",
+        JSON.parse(localStorage.getItem("clicked")),
+        localStorage.getItem("clicked")
+      );
+      console.log("returned");
+      return;
+    }
+    localStorage.setItem("clicked", true);
     let user = await getUser(localStorage.getItem("username"));
     let user_id = user._id;
     console.log(amount, "ok");
@@ -248,6 +278,14 @@ function ChangePlanProcess() {
     <>
       <TopNavbar />
       <div className={change.changeBody}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={change.changeBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={change.changeLeft}>
           <div className={change.changeCurrPlan}>
             <div className={change.changeCurrPlanLabel}>
