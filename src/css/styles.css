@@ -345,6 +345,8 @@ body {
   display: flex;
 }
 
+/* ////////////////////////////// media query //////////////////////*/
+
 @media (max-width: 900px) {
   /* ////////////////////  login.js ////////// */
   .left {
@@ -374,5 +376,17 @@ body {
   }
   .plansDropDown {
     font-size: 2vh;
+  }
+  /* /////////////////// Cancellation.js */
+  /* .mealsDropDown {
+    font-size: 1rem;
+    border-radius: 1.5vh;
+  } */
+}
+/* /////////////////// Cancellation.js */
+@media (max-width: 913px) {
+  .mealsDropDown {
+    font-size: 1rem;
+    border-radius: 1.5vh;
   }
 }
