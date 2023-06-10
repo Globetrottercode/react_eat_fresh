@@ -222,20 +222,30 @@ function ChangePlanProcess() {
       console.log("returned");
       return;
     }
-    localStorage.setItem("clicked", true);
+    localStorage.setItem("clicked", true); // to avoid multiple user clicks
     let user = await getUser(localStorage.getItem("username"));
     let user_id = user._id;
     console.log(amount, "ok");
-    let data = await updateMyPlan(
-      plan._id,
-      plan.selectedPlan,
-      newChangedPlan,
-      changeDetail.pay,
-      changeDetail.addToCredits
-    );
-    console.log("updated plan : ", await data);
+    let changeObject = {
+      id: plan._id,
+      selectedPlan: plan.selectedPlan,
+      newChangedPlan: newChangedPlan,
+      pay: changeDetail.pay,
+      addToCredits: changeDetail.addToCredits,
+    };
+    // let data = await updateMyPlan(
+    //   plan._id,
+    //   plan.selectedPlan,
+    //   newChangedPlan,
+    //   changeDetail.pay,
+    //   changeDetail.addToCredits
+    // );
+    // console.log("updated plan : ", await data);
+    localStorage.setItem("changeObject", JSON.stringify(changeObject));
+    localStorage.setItem("changePlan", true);
+    // console.log("done done", JSON.parse(localStorage.getItem("changePlan")));
     let username = localStorage.getItem("username");
-    localStorage.setItem("lastPlan", JSON.stringify(data));
+    // localStorage.setItem("lastPlan", JSON.stringify(data));
 
     const {
       data: { key },
