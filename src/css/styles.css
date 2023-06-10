@@ -390,3 +390,92 @@ body {
     border-radius: 1.5vh;
   }
 }
+/* /////////////////////////////// Profile.js ////////////////*/
+
+@media (max-width: 913px) {
+  .profileDiv {
+    /* background-color: #ffb039; */
+    width: 90%;
+  }
+  .profileLabel {
+    width: 33%;
+    border-radius: 1vh;
+  }
+  .profileLabels > p {
+    font-size: 1.2rem;
+    margin-top: 5%;
+  }
+  .profileLabel > p {
+    font-size: 1.5rem;
+    margin-top: 10%;
+  }
+  .profileEdit {
+    border-radius: 1vh;
+    width: 14%;
+  }
+  .profileEdit > i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  /* .profileDiv { */
+  /* background-color: #ffb039; */
+  /* width: 90%;
+  } */
+  /* .profileLabel {
+    width: 33%;
+    border-radius: 1vh;
+  } */
+  .profileLabels > p {
+    font-size: 0.7rem;
+    margin-top: 5%;
+  }
+  .profileLabel > p {
+    font-size: 1rem;
+    margin-top: 10%;
+  }
+  /* .profileEdit {
+    border-radius: 1vh;
+    width: 14%;
+  } */
+  .profileEdit > i {
+    font-size: 1rem;
+  }
+}
+
+/* ////////////////////////// ResetEmail.js /////////////////*/
+
+@media (max-width: 913px) {
+  .resetCard {
+    width: 70%;
+  }
+  .resetButton {
+    border-radius: 1vh;
+  }
+  .resetButton > p {
+    font-size: 1.2rem;
+    margin-top: 8%;
+  }
+  .resetLabel > p {
+    font-size: 1.2rem;
+    margin-top: 6%;
+  }
+}
+
+@media (max-width: 500px) {
+  /* .resetCard {
+    width: 70%;
+  }
+  .resetButton {
+    border-radius: 1vh;
+  } */
+  .resetButton > p {
+    font-size: 0.7rem;
+    margin-top: 15%;
+  }
+  .resetLabel > p {
+    font-size: 0.7rem;
+    margin-top: 12%;
+  }
+}

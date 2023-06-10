@@ -518,6 +518,63 @@
 }
 
 /* /////////////////////////////// AboutUs.js //////////////////*/
+@media (max-width: 1025px) {
+  .aboutUsBody {
+    display: block;
+    /* margin-top: 15vh; */
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    /* background-color: aqua; */
+    text-align: -webkit-center;
+  }
+  .aboutLabelDiv {
+    margin-bottom: 5px;
+    /* background-color: green; */
+  }
+  .aboutUsHeading {
+    margin-top: 5vh;
+    /* margin-bottom: 5vh; */
+  }
+  .aboutUsContent {
+    display: flex;
+    align-items: flex-start;
+    /* background-color: yellow; */
+    width: 80%;
+    height: 70%;
+    /* margin-top: 10%; */
+    margin-bottom: 20vh;
+  }
+}
 
 @media (max-width: 500px) {
+  /* .aboutUsBody { */
+  /* display: block; */
+  /* margin-top: 15vh; */
+  /* height: 100%; */
+  /* width: 100%; */
+  /* overflow-y: scroll; */
+  /* background-color: aqua; */
+  /* text-align: -webkit-center; */
+  /* } */
+  /* .aboutLabelDiv {
+    margin-bottom: 5px;
+    background-color: green;
+  } */
+  /* .aboutUsHeading {
+    margin-top: 5vh; */
+  /* margin-bottom: 5vh; */
+  /* } */
+  .aboutUsContent {
+    display: flex;
+    align-items: flex-start;
+    /* background-color: yellow; */
+    width: 85%;
+    height: 100%;
+    /* margin-top: 10%; */
+    margin-bottom: 20vh;
+  }
+  .aboutUsContent > span {
+    font-size: 0.8rem;
+  }
 }

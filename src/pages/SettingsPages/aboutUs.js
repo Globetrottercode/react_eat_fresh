@@ -8,7 +8,10 @@ function AboutUs() {
       <TopNavbar />
       <div className={aboutUs.body}>
         <div className={aboutUs.aboutUsBody}>
-          <p className={aboutUs.aboutUsHeading}>About Us</p>
+          <div className={aboutUs.aboutLabelDiv}>
+            {" "}
+            <p className={aboutUs.aboutUsHeading}>About Us</p>{" "}
+          </div>
           <div className={aboutUs.aboutUsContent}>
             <span style={{ color: "rgba(81, 153, 56, 0.9)" }}>
               Generally Students Generally Students and Bachelors who get
