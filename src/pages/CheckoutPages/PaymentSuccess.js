@@ -2,6 +2,7 @@ import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import checkout from "../../css/checkout.module.css";
 import successLogo from "../../images/succesful.png";
+import createPlan from "../../getData/createPlan";
 
 function PaymentSuccess() {
   localStorage.removeItem("selected_days");
@@ -10,11 +11,23 @@ function PaymentSuccess() {
   localStorage.removeItem("credits");
   localStorage.removeItem("selected_address");
 
-  // console.log(localStorage.getItem("selected_days"), "l0");
-  // console.log(localStorage.getItem("selected_plan"), "l0");
-  // console.log(localStorage.getItem("allAddress"), "l0");
-  // console.log(localStorage.getItem("credits"), "l0");
-  // console.log(localStorage.getItem("selected_address"), "l0");
+  if (localStorage.getItem("buyPlan")) {
+    console.log("Buy Plan :", JSON.parse(localStorage.getItem("buyPlan")));
+    localStorage.removeItem("buyPlan");
+    console.log("Buy Plan :", JSON.parse(localStorage.getItem("buyPlan")));
+    async function planCreation() {
+      let plan = JSON.parse(localStorage.getItem("planObject"));
+      console.log("okok plan ", plan);
+      let data = await createPlan(localStorage.getItem("user_id"), plan);
+      console.log("payment succes plan creation check : ", data);
+    }
+    planCreation();
+  } else {
+    console.log(
+      "Buy Plan in else :",
+      JSON.parse(localStorage.getItem("buyPlan"))
+    );
+  }
   return (
     <>
       <TopNavbar />

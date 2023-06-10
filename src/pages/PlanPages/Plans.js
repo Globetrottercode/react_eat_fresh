@@ -34,7 +34,7 @@ function Plans() {
     create();
   }
   console.log(localStorage.getItem("token"), "token");
-  console.log(localStorage.getItem("username"), "token");
+  console.log(localStorage.getItem("username"), "username");
   const navigate = useNavigate();
   return (
     <>

@@ -12,6 +12,7 @@ import LOGO from "../../images/LOGO.png";
 import { notify } from "../../alerts/toastify";
 import sendMail from "../../getData/sendMail";
 import { succesfulBuyCOD } from "../../messages/emailMessage";
+import createPlan from "../../getData/createPlan";
 
 function digits_count(n) {
   var count = 0;
@@ -179,33 +180,37 @@ function Payment() {
       subtotal: subtotal,
       creditsUsed: charges.total + charges.additional - subtotal,
     };
-    let response = await fetch("http://localhost:3500/customer/myPlan", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        user_id: user._id,
-        name: userDetail.name,
-        phone: userDetail.phone,
-        start: start,
-        end: end,
-        selectedPlan: selectedPlan,
-        selectedDays: selectedDays,
-        address: `${address.saveAs} ${
-          address.floor ? ", " + address.floor : ""
-        }, ${address.detailed} , ${address.landmark}
-      , ${address.city} - ${address.pincode}`,
-        total: charges.total,
-        additional: charges.additional,
-        subtotal: subtotal,
-        creditsUsed: charges.total + charges.additional - subtotal,
-      }),
-    });
-    if (response.status === 200) {
-      let data = await response.json();
-      console.log("success :", data);
-    }
+    // let data = await createPlan(localStorage.getItem("user_id"), planObject);
+    // console.log("check for plan creation : ", data);
+    localStorage.setItem("buyPlan", true);
+    localStorage.setItem("planObject", JSON.stringify(planObject));
+    // let response = await fetch("http://localhost:3500/customer/myPlan", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/x-www-form-urlencoded",
+    //   },
+    //   body: new URLSearchParams({
+    //     user_id: user._id,
+    //     name: userDetail.name,
+    //     phone: userDetail.phone,
+    //     start: start,
+    //     end: end,
+    //     selectedPlan: selectedPlan,
+    //     selectedDays: selectedDays,
+    //     address: `${address.saveAs} ${
+    //       address.floor ? ", " + address.floor : ""
+    //     }, ${address.detailed} , ${address.landmark}
+    //   , ${address.city} - ${address.pincode}`,
+    //     total: charges.total,
+    //     additional: charges.additional,
+    //     subtotal: subtotal,
+    //     creditsUsed: charges.total + charges.additional - subtotal,
+    //   }),
+    // });
+    // if (response.status === 200) {
+    //   let data = await response.json();
+    //   console.log("success :", data);
+    // }
     const username = localStorage.getItem("username");
     const {
       data: { key },
