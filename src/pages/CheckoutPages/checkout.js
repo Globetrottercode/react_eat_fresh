@@ -91,6 +91,14 @@ function Checkout() {
     <>
       <TopNavbar />
       <div className={checkout.body}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={checkout.checkBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={checkout.checkoutLeft}>
           <div className={checkout.planSelectCard}>
             <select

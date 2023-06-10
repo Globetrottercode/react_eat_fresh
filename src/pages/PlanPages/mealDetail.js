@@ -26,6 +26,14 @@ function MealDetail() {
     <>
       <TopNavbar className="bg-sky-700 text-lg" />
       <div className={infoStyles.body}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={infoStyles.pdBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={infoStyles.cardMealDetail}>
           <div className={infoStyles.dayBar}>
             <p style={{ marginTop: "2%", fontSize: "2.5vh" }}>

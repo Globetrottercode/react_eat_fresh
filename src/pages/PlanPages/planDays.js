@@ -23,6 +23,14 @@ function PlanDays() {
     <>
       <TopNavbar className="bg-sky-700 text-lg" />
       <div className={infoStyles.body}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={infoStyles.pdBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={infoStyles.cardDays}>
           <div className={infoStyles.dayBar}>
             <p style={{ marginTop: "2.5%", fontSize: "3vh" }}>

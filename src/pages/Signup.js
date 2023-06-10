@@ -161,6 +161,7 @@ function SignUp() {
             onClick={() => navigate("/plans")}
             type="submit"
             className="btn btn-warning"
+            style={{ backgroundColor: "black", border: "0" }}
           >
             Check Plans
           </button>

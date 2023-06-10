@@ -8,6 +8,13 @@
   height: 72vh;
   /* background-color: aqua; */
 }
+
+.checkBack {
+  height: 10%;
+  width: 10%;
+  background-color: blue;
+  display: none;
+}
 .checkoutLeft {
   height: 52vh;
   width: 40vw;
@@ -597,6 +604,19 @@
     display: block;
     text-align: -webkit-center;
     overflow-y: scroll;
+  }
+  .checkBack {
+    margin-top: 5%;
+    margin-right: 55%;
+    display: block;
+    border-radius: 1vh;
+    height: 7%;
+    width: 12%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .planSelectCard {
     width: 92vw;
