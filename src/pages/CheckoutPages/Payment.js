@@ -162,6 +162,23 @@ function Payment() {
       return;
     }
     localStorage.setItem("clicked", true);
+    let planObject = {
+      user_id: user._id,
+      name: userDetail.name,
+      phone: userDetail.phone,
+      start: start,
+      end: end,
+      selectedPlan: selectedPlan,
+      selectedDays: selectedDays,
+      address: `${address.saveAs} ${
+        address.floor ? ", " + address.floor : ""
+      }, ${address.detailed} , ${address.landmark}
+      , ${address.city} - ${address.pincode}`,
+      total: charges.total,
+      additional: charges.additional,
+      subtotal: subtotal,
+      creditsUsed: charges.total + charges.additional - subtotal,
+    };
     let response = await fetch("http://localhost:3500/customer/myPlan", {
       method: "POST",
       headers: {

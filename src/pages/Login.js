@@ -7,6 +7,7 @@ import allActions from "../Redux/actions/allActions";
 import { notify } from "../alerts/toastify";
 
 import "../css/styles.css";
+import getUser from "../getData/getUser";
 
 function Login() {
   let [isOn, setIsOn] = useState(false);
@@ -56,6 +57,9 @@ function Login() {
         console.log(currentUser); // for testing
         localStorage.setItem("username", credentials.username);
         localStorage.setItem("token", json.authToken);
+        let loginUser = await getUser(credentials.username);
+        localStorage.setItem("user_id", loginUser._id);
+        // console.log("CHECK CHECK :", localStorage.getItem("user_id")); // for testing
         navigate("/plans");
       } else {
         notify("Check email and password");

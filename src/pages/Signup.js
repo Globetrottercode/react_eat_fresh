@@ -114,18 +114,18 @@ function SignUp() {
       navigate(`/plans`);
     }
   }
-  async function HandleGoogle() {
-    console.log("hello");
-    const response = await fetch("http://localhost:3500/auth/google", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
+  // async function HandleGoogle() {
+  //   console.log("hello");
+  // const response = await fetch("http://localhost:3500/auth/google", {
+  //   // credentials: 'include',
+  //   // Origin:"http://localhost:3000/login",
 
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // });
+  // }
   return (
     <div className="logincontain">
       <div className="left">
