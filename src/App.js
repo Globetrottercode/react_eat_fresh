@@ -1,11 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  NavLink,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
@@ -35,9 +28,6 @@ import ResetName from "./pages/profilePages/resetName";
 import ResetEmail from "./pages/profilePages/resetEmail";
 import ResetPassword from "./pages/profilePages/resetPassword";
 import Failure from "./pages/CheckoutPages/failure";
-// function Profile() {
-//   return <h1>Hello Duniya eat ()</h1>;
-// }
 
 export default function App() {
   return (
@@ -85,6 +75,7 @@ export default function App() {
           <Route path="/profile/resetName" element={<ResetName />} />
           <Route path="/profile/resetEmail" element={<ResetEmail />} />
           <Route path="/profile/resetPassword" element={<ResetPassword />} />
+          <Route path="/failure" element={<Failure />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer

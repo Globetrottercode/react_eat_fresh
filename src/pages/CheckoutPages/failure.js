@@ -20,8 +20,14 @@ function Failure() {
           src={failLogo}
           alt="failImage"
         />
-        <p style={{ marginTop: "1vh" }}>Your transaction has failed.</p>
-        <p>You can try again !.</p>
+        <p
+          style={{ marginTop: "1vh", fontSize: "1.5rem", textAlign: "center" }}
+        >
+          Your transaction has failed.
+        </p>
+        <p style={{ fontSize: "1.5rem", textAlign: "center" }}>
+          You can try again !
+        </p>
       </div>
       <Footer />
     </>
