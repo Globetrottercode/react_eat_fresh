@@ -11,7 +11,21 @@ function Failure() {
   localStorage.removeItem("selected_address");
   localStorage.removeItem("buyPlan");
   localStorage.removeItem("changePlan");
-  return <></>;
+  return (
+    <>
+      <TopNavbar />
+      <div className={checkout.paymentSuccessBody}>
+        <img
+          style={{ height: "20vh", marginBottom: "2vh" }}
+          src={failLogo}
+          alt="failImage"
+        />
+        <p style={{ marginTop: "1vh" }}>Your transaction has failed.</p>
+        <p>You can try again !.</p>
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default Failure;
