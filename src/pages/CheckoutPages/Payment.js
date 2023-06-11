@@ -153,16 +153,17 @@ function Payment() {
     let updated = await updateCredits(user._id, credits);
     console.log(updated);
     let user_id = user._id;
-    if (localStorage.getItem("clicked")) {
-      // console.log(
-      //   "clicked value :",
-      //   JSON.parse(localStorage.getItem("clicked")),
-      //   localStorage.getItem("clicked")
-      // );
-      // console.log("returned");
-      return;
-    }
-    localStorage.setItem("clicked", true);
+    // if (localStorage.getItem("clicked")) {
+    // console.log(
+    //   "clicked value :",
+    //   JSON.parse(localStorage.getItem("clicked")),
+    //   localStorage.getItem("clicked")
+    // );
+    // console.log("returned");
+    //   return;
+    // }
+    // localStorage.setItem("clicked", true);
+    // removing only single clicks from online payment
     let planObject = {
       user_id: user._id,
       name: userDetail.name,

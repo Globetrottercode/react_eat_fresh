@@ -213,16 +213,17 @@ function ChangePlanProcess() {
     }, 1000);
   }
   async function payOnline(amount) {
-    if (localStorage.getItem("clicked")) {
-      console.log(
-        "clicked value :",
-        JSON.parse(localStorage.getItem("clicked")),
-        localStorage.getItem("clicked")
-      );
-      console.log("returned");
-      return;
-    }
-    localStorage.setItem("clicked", true); // to avoid multiple user clicks
+    // if (localStorage.getItem("clicked")) {
+    //   console.log(
+    //     "clicked value :",
+    //     JSON.parse(localStorage.getItem("clicked")),
+    //     localStorage.getItem("clicked")
+    //   );
+    //   console.log("returned");
+    //   return;
+    // }
+    // localStorage.setItem("clicked", true);
+    // removing only single clicks from online payment
     let user = await getUser(localStorage.getItem("username"));
     let user_id = user._id;
     console.log(amount, "ok");

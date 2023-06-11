@@ -34,6 +34,7 @@ import Profile from "./pages/profilePages/Profile";
 import ResetName from "./pages/profilePages/resetName";
 import ResetEmail from "./pages/profilePages/resetEmail";
 import ResetPassword from "./pages/profilePages/resetPassword";
+import Failure from "./pages/CheckoutPages/failure";
 // function Profile() {
 //   return <h1>Hello Duniya eat ()</h1>;
 // }
