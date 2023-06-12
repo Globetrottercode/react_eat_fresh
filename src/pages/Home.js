@@ -17,17 +17,17 @@ function Home() {
   return (
     <div className={styles.homecontain}>
       <div className={styles.top}>
-        <img className={styles.homelogo} src={Logo} alt="React Logo" />
-        <Link to="/login" reloadDocument className={styles.login}>
+        <img className={styles.homelogo} src={Logo} alt="React Logo" />{" "}
+        <button
+          onClick={() => {
+            navigate("/signup");
+          }}
+          style={{ width: "10vw", borderRadius: "3vh" }}
+          className="btn btn-dark btn-lg"
+        >
           {" "}
-          <button
-            style={{ width: "10vw", borderRadius: "3vh" }}
-            className="btn btn-dark btn-lg"
-          >
-            {" "}
-            Login{" "}
-          </button>{" "}
-        </Link>
+          Login{" "}
+        </button>{" "}
         {/* <Link to="/signup" reloadDocument className={styles.signup}>
           <button className="btn btn-dark btn-lg"> SignUp</button>
         </Link> */}
