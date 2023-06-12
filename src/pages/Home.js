@@ -18,16 +18,18 @@ function Home() {
     <div className={styles.homecontain}>
       <div className={styles.top}>
         <img className={styles.homelogo} src={Logo} alt="React Logo" />{" "}
-        <button
-          onClick={() => {
-            navigate("/signup");
-          }}
-          style={{ width: "10vw", borderRadius: "3vh" }}
-          className="btn btn-dark btn-lg"
-        >
-          {" "}
-          Login{" "}
-        </button>{" "}
+        <div>
+          <button
+            onClick={() => {
+              navigate("/signup");
+            }}
+            style={{ width: "10vw", borderRadius: "3vh" }}
+            className="btn btn-dark btn-lg"
+          >
+            {" "}
+            Login{" "}
+          </button>{" "}
+        </div>
         {/* <Link to="/signup" reloadDocument className={styles.signup}>
           <button className="btn btn-dark btn-lg"> SignUp</button>
         </Link> */}
