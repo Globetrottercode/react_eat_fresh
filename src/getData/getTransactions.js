@@ -1,7 +1,7 @@
 async function getTransactions(user_id) {
   // return empty array if no plan else returns an array of plans
   const response = await fetch(
-    `http://localhost:3500/api/getTransactions/${user_id}`,
+    `https://backend-eat-fresh.onrender.com/api/getTransactions/${user_id}`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

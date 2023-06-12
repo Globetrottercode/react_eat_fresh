@@ -49,7 +49,7 @@ function Checkout() {
       let user = await getUser(localStorage.getItem("username"));
       let allAddress = [];
       let response = await fetch(
-        `http://localhost:3500/customer/address/getAddress/${user._id}`,
+        `https://backend-eat-fresh.onrender.com/customer/address/getAddress/${user._id}`,
         {
           method: "GET",
           headers: {

@@ -153,29 +153,32 @@ function Payment() {
     let user = await getUser(localStorage.getItem("username"));
     let updated = await updateCredits(user._id, credits);
     console.log(updated);
-    let response = await fetch("http://localhost:3500/customer/myPlan", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        user_id: user._id,
-        name: userDetail.name,
-        phone: userDetail.phone,
-        start: start,
-        end: end,
-        selectedPlan: selectedPlan,
-        selectedDays: selectedDays,
-        address: `${address.saveAs}  ${
-          address.floor ? ", " + address.floor : ""
-        }, ${address.detailed} , ${address.landmark}
+    let response = await fetch(
+      "https://backend-eat-fresh.onrender.com/customer/myPlan",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          user_id: user._id,
+          name: userDetail.name,
+          phone: userDetail.phone,
+          start: start,
+          end: end,
+          selectedPlan: selectedPlan,
+          selectedDays: selectedDays,
+          address: `${address.saveAs}  ${
+            address.floor ? ", " + address.floor : ""
+          }, ${address.detailed} , ${address.landmark}
       , ${address.city} - ${address.pincode}`,
-        total: charges.total,
-        additional: charges.additional,
-        subtotal: subtotal,
-        creditsUsed: charges.total + charges.additional - subtotal,
-      }),
-    });
+          total: charges.total,
+          additional: charges.additional,
+          subtotal: subtotal,
+          creditsUsed: charges.total + charges.additional - subtotal,
+        }),
+      }
+    );
     if (response.status === 200) {
       let data = await response.json();
       console.log("success :", data);
@@ -264,15 +267,18 @@ function Payment() {
     const username = localStorage.getItem("username");
     const {
       data: { key },
-    } = await axios.get("http://www.localhost:3500/api/getkey");
+    } = await axios.get("https://backend-eat-fresh.onrender.com/api/getkey");
 
     const {
       data: { order },
-    } = await axios.post("http://localhost:3500/api/checkout", {
-      amount,
-      user_id,
-      username,
-    });
+    } = await axios.post(
+      "https://backend-eat-fresh.onrender.com/api/checkout",
+      {
+        amount,
+        user_id,
+        username,
+      }
+    );
 
     const options = {
       key,
@@ -282,7 +288,8 @@ function Payment() {
       description: "Food Meal Plan Service",
       image: LOGO,
       order_id: order.id,
-      callback_url: "http://localhost:3500/api/paymentverification", // check
+      callback_url:
+        "https://backend-eat-fresh.onrender.com/api/paymentverification", // check
       prefill: {
         name: userDetail.name,
         email: localStorage.getItem("username"),

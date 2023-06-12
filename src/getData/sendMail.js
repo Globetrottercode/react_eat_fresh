@@ -1,19 +1,22 @@
 async function sendMail(email, html, subject) {
   // meal - (Lunch/Breakfast/Dinner) & day - 0  || meal - 0(no meal change) & day - 1
-  const response = await fetch("http://localhost:3500/email/", {
-    // credentials: 'include',
-    // Origin:"http://localhost:3000/login",
+  const response = await fetch(
+    "https://backend-eat-fresh.onrender.com/email/",
+    {
+      // credentials: 'include',
+      // Origin:"http://localhost:3000/login",
 
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({
-      email: email,
-      html: html,
-      subject: subject,
-    }),
-  });
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        email: email,
+        html: html,
+        subject: subject,
+      }),
+    }
+  );
   const json = await response.json();
   //   console.log(json);
   if (response.status === 200) {

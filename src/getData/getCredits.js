@@ -1,7 +1,7 @@
 async function getCredits(user_id) {
   // returns -1 if no credits created else returns an integer value of credit
   const response = await fetch(
-    `http://localhost:3500/customer/credits/getCredits/${user_id}`,
+    `https://backend-eat-fresh.onrender.com/customer/credits/getCredits/${user_id}`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

@@ -1,7 +1,7 @@
 async function getAllAddress(user_id) {
   // return empty array if no saved addresses else returns an array of addresses
   const response = await fetch(
-    `http://localhost:3500/customer/address/getAddress/${user_id}`,
+    `https://backend-eat-fresh.onrender.com/customer/address/getAddress/${user_id}`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

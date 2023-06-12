@@ -1,7 +1,7 @@
 async function getUser(username) {
   // return empty array if no plan else returns an array of plans
   const response = await fetch(
-    `http://localhost:3500/customer/getUsers/${username}`,
+    `https://backend-eat-fresh.onrender.com/customer/getUsers/${username}`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

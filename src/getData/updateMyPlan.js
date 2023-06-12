@@ -1,7 +1,7 @@
 async function updateMyPlan(id, oldPlan, changePlan, pay, addToCredits) {
   // returns {} if no plans  else returns an object of update plan
   const response = await fetch(
-    "http://localhost:3500/customer/myPlan/updatePlan",
+    "https://backend-eat-fresh.onrender.com/customer/myPlan/updatePlan",
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

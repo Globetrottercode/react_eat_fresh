@@ -251,15 +251,18 @@ function ChangePlanProcess() {
 
     const {
       data: { key },
-    } = await axios.get("http://www.localhost:3500/api/getkey");
+    } = await axios.get("https://backend-eat-fresh.onrender.com/api/getkey");
 
     const {
       data: { order },
-    } = await axios.post("http://localhost:3500/api/checkout", {
-      amount,
-      user_id,
-      username,
-    });
+    } = await axios.post(
+      "https://backend-eat-fresh.onrender.com/api/checkout",
+      {
+        amount,
+        user_id,
+        username,
+      }
+    );
 
     const options = {
       key,

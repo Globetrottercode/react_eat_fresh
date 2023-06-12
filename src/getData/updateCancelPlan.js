@@ -1,7 +1,7 @@
 async function updateCancelPlan(id, day, meal) {
   // meal - (Lunch/Breakfast/Dinner) & day - 0  || meal - 0(no meal change) & day - 1
   const response = await fetch(
-    "http://localhost:3500/customer/myPlan/updateCancelPlan",
+    "https://backend-eat-fresh.onrender.com/customer/myPlan/updateCancelPlan",
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

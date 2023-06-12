@@ -19,7 +19,7 @@
 async function createCredits(user_id) {
   // return empty array if no plan else returns an array of plans
   const response = await fetch(
-    `http://localhost:3500/customer/credits/createCredits`,
+    `https://backend-eat-fresh.onrender.com/customer/credits/createCredits`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

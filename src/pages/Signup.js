@@ -54,20 +54,23 @@ function SignUp() {
       return;
     }
     //creating user data
-    const response = await fetch("http://localhost:3500/signup", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
+    const response = await fetch(
+      "https://backend-eat-fresh.onrender.com/signup",
+      {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
 
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        username: register.username,
-        name: register.name,
-        password: register.password,
-      }),
-    });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          username: register.username,
+          name: register.name,
+          password: register.password,
+        }),
+      }
+    );
     const json = await response.json();
     console.log(json); // for testing
     if (json.success) {
@@ -93,7 +96,7 @@ function SignUp() {
     );
     console.log("emaildata ", emailData);
     const result = await fetch(
-      "http://localhost:3500/customer/credits/createCredits",
+      "https://backend-eat-fresh.onrender.com/customer/credits/createCredits",
       {
         // credentials: 'include',
         // Origin:"http://localhost:3000/login",
@@ -288,7 +291,7 @@ function SignUp() {
         </div>
         <a
           type="button"
-          href="http://localhost:3500/auth/google"
+          href="https://backend-eat-fresh.onrender.com/auth/google"
           className="btn btn-danger btn-block mb-4 "
         >
           <i className="fab fa-google"></i> Sign Up with Google

@@ -21,6 +21,16 @@ function TopNavbar() {
     localStorage.removeItem("allAddress");
     localStorage.removeItem("selected_address");
     localStorage.removeItem("credits");
+    localStorage.removeItem("allPlans");
+    localStorage.removeItem("lastPlan");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("clicked");
+    localStorage.removeItem("user");
+    localStorage.removeItem("allTransactions");
+    localStorage.removeItem("buyPlan");
+    localStorage.removeItem("planObject");
+    localStorage.removeItem("changePlan");
+    localStorage.removeItem("changeObject");
     navigate("/login");
   }
 

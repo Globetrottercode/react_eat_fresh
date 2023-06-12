@@ -55,21 +55,24 @@ function CheckoutAddr() {
       localStorage.setItem("credits", await getCredits(user._id));
       localStorage.setItem("selected_address", JSON.stringify(newAddress));
       newAddress.username = localStorage.getItem("username");
-      let response = await fetch("http://localhost:3500/customer/address/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          user_id: user._id,
-          saveAs: newAddress.saveAs,
-          city: newAddress.city,
-          landmark: newAddress.landmark,
-          detailed: newAddress.detailed,
-          pincode: newAddress.pincode,
-          floor: newAddress.floor,
-        }),
-      });
+      let response = await fetch(
+        "https://backend-eat-fresh.onrender.com/customer/address/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            user_id: user._id,
+            saveAs: newAddress.saveAs,
+            city: newAddress.city,
+            landmark: newAddress.landmark,
+            detailed: newAddress.detailed,
+            pincode: newAddress.pincode,
+            floor: newAddress.floor,
+          }),
+        }
+      );
       if (response.status === 200) {
         let data = await response.json();
         console.log(data);

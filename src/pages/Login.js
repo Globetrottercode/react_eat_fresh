@@ -28,26 +28,29 @@ function Login() {
   async function handleClick(e) {
     console.log(credentials);
     e.preventDefault();
-    const response = await fetch("http://localhost:3500/customer/login", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
+    const response = await fetch(
+      "https://backend-eat-fresh.onrender.com/customer/login",
+      {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
 
-      method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      // body: JSON.stringify({
-      //   username: credentials.username,
-      //   password: credentials.password,
-      // }),
-      body: new URLSearchParams({
-        username: credentials.username,
-        password: credentials.password,
-      }),
-    });
+        method: "POST",
+        // headers: {
+        //   "Content-Type": "application/json",
+        // },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        // body: JSON.stringify({
+        //   username: credentials.username,
+        //   password: credentials.password,
+        // }),
+        body: new URLSearchParams({
+          username: credentials.username,
+          password: credentials.password,
+        }),
+      }
+    );
     if (response.status === 200) {
       const json = await response.json();
       console.log(json); // for testing
@@ -191,7 +194,7 @@ function Login() {
         </div>
         <a
           type="button"
-          href="http://localhost:3500/auth/google"
+          href="https://backend-eat-fresh.onrender.com/auth/google"
           className="btn btn-danger btn-block mb-4 "
         >
           <i className="fab fa-google"></i> Sign In with Google

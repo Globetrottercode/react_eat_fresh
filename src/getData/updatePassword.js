@@ -1,7 +1,7 @@
 async function resetPassword(username, oldPassword, newPassword) {
   // returns -1 if no credits created else returns an integer value of credit
   const response = await fetch(
-    "http://localhost:3500/customer/changePassword",
+    "https://backend-eat-fresh.onrender.com/customer/changePassword",
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",

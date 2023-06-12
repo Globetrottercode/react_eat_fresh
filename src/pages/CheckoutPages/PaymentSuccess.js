@@ -25,22 +25,19 @@ function PaymentSuccess() {
     }
     planCreation();
   } else {
-    console.log(
-      "Buy Plan in else :",
-      JSON.parse(localStorage.getItem("buyPlan"))
-    );
+    console.log("Buy Plan in else :", localStorage.getItem("buyPlan"));
   }
 
   if (localStorage.getItem("changePlan")) {
-    console.log(
-      "Change Plan :",
-      JSON.parse(localStorage.getItem("changePlan"))
-    );
+    // console.log(
+    //   "Change Plan :",
+    //   JSON.parse(localStorage.getItem("changePlan"))
+    // );
     localStorage.removeItem("changePlan");
-    console.log(
-      "Change Plan :",
-      JSON.parse(localStorage.getItem("changePlan"))
-    );
+    // console.log(
+    //   "Change Plan :",
+    //   JSON.parse(localStorage.getItem("changePlan"))
+    // );
     async function planUpdate() {
       let changeObject = JSON.parse(localStorage.getItem("changeObject"));
       localStorage.removeItem("changeObject");
@@ -59,10 +56,7 @@ function PaymentSuccess() {
     }
     planUpdate();
   } else {
-    console.log(
-      "Change Plan in else :",
-      JSON.parse(localStorage.getItem("changePlan"))
-    );
+    console.log("Change Plan in else :", localStorage.getItem("changePlan"));
   }
 
   return (
