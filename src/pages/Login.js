@@ -187,9 +187,13 @@ function Login() {
           <div style={{ marginBottom: "4%" }}>
             <span style={{ fontWeight: "bolder" }}>Not a Member ? </span>
 
-            <Link to="/signup" reloadDocument>
-              <span> SignUp</span>
-            </Link>
+            <span
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              SignUp
+            </span>
           </div>
         </div>
         <a
