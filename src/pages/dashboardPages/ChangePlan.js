@@ -17,6 +17,7 @@ import {
   succesfulBuyCOD,
 } from "../../messages/emailMessage";
 import { changePlanSubject } from "../../messages/emailSubject";
+import Plans from "../PlanPages/Plans";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -287,82 +288,91 @@ function ChangePlanProcess() {
   // console.log(changeDetail);
   return (
     <>
-      <TopNavbar />
-      <div className={change.changeBody}>
-        <div
-          onClick={() => {
-            navigate(-1);
-          }}
-          className={change.changeBack}
-        >
-          <i class="fa-solid fa-backward"></i>
-        </div>
-        <div className={change.changeLeft}>
-          <div className={change.changeCurrPlan}>
-            <div className={change.changeCurrPlanLabel}>
-              <p>Current Plan</p>
+      {newChangedPlan ? (
+        <>
+          <TopNavbar />
+          <div className={change.changeBody}>
+            <div
+              onClick={() => {
+                navigate(-1);
+              }}
+              className={change.changeBack}
+            >
+              <i class="fa-solid fa-backward"></i>
             </div>
-            <div className={change.changeCurrPlanDisplay}>
-              <p>{currentPlan}</p>
+            <div className={change.changeLeft}>
+              <div className={change.changeCurrPlan}>
+                <div className={change.changeCurrPlanLabel}>
+                  <p>Current Plan</p>
+                </div>
+                <div className={change.changeCurrPlanDisplay}>
+                  <p>{currentPlan}</p>
+                </div>
+              </div>
+              <div className={change.changeText}>
+                <h3 style={{ fontWeight: "bolder" }}>
+                  {" "}
+                  Let food be thy medicine{" "}
+                </h3>
+                <h3 style={{ fontWeight: "bolder" }}>
+                  {" "}
+                  thy <span style={{ color: "#519938" }}>medicine</span> shall
+                  be thy
+                  <span style={{ color: "orange" }}> food</span>{" "}
+                </h3>
+              </div>
             </div>
-          </div>
-          <div className={change.changeText}>
-            <h3 style={{ fontWeight: "bolder" }}> Let food be thy medicine </h3>
-            <h3 style={{ fontWeight: "bolder" }}>
-              {" "}
-              thy <span style={{ color: "#519938" }}>medicine</span> shall be
-              thy
-              <span style={{ color: "orange" }}> food</span>{" "}
-            </h3>
-          </div>
-        </div>
-        <div className={change.changeRightParent}>
-          <div className={change.changeProcessRight}>
-            {changeDetail.pay === 0 ? (
-              <div className={change.changechoosePlanLabel}>
-                <p>Plan Downgrade</p>
-              </div>
-            ) : (
-              <div className={change.changechoosePlanLabel}>
-                <p>Plan Upgrade</p>
-              </div>
-            )}
+            <div className={change.changeRightParent}>
+              <div className={change.changeProcessRight}>
+                {changeDetail.pay === 0 ? (
+                  <div className={change.changechoosePlanLabel}>
+                    <p>Plan Downgrade</p>
+                  </div>
+                ) : (
+                  <div className={change.changechoosePlanLabel}>
+                    <p>Plan Upgrade</p>
+                  </div>
+                )}
 
-            <div className={change.newChangedPlan}>
-              <p>{assignNewPlan}</p>
-            </div>
-            <div className={change.changeAmt}>
-              <p>Amount : </p>
-              <p>{changeDetail.amt}</p>
-            </div>
-            {changeDetail.pay === 0 ? (
-              <div
-                onClick={handleCredits}
-                type="button"
-                className={change.changeProceed}
-              >
-                <p>Add to Credits</p>
-              </div>
-            ) : (
-              <div className={change.changePayment}>
-                <div onClick={handleCOD} type="button">
-                  <p>Cash</p>
+                <div className={change.newChangedPlan}>
+                  <p>{assignNewPlan}</p>
                 </div>
-                <div
-                  onClick={() => {
-                    payOnline(changeDetail.amt);
-                  }}
-                  type="button"
-                >
-                  <p>Online</p>
+                <div className={change.changeAmt}>
+                  <p>Amount : </p>
+                  <p>{changeDetail.amt}</p>
                 </div>
+                {changeDetail.pay === 0 ? (
+                  <div
+                    onClick={handleCredits}
+                    type="button"
+                    className={change.changeProceed}
+                  >
+                    <p>Add to Credits</p>
+                  </div>
+                ) : (
+                  <div className={change.changePayment}>
+                    <div onClick={handleCOD} type="button">
+                      <p>Cash</p>
+                    </div>
+                    <div
+                      onClick={() => {
+                        payOnline(changeDetail.amt);
+                      }}
+                      type="button"
+                    >
+                      <p>Online</p>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
+              <i>*Note : Credits can't be used for change plan payments</i>
+            </div>
           </div>
-          <i>*Note : Credits can't be used for change plan payments</i>
-        </div>
-      </div>
-      <Footer />
+          <Footer />{" "}
+        </>
+      ) : (
+        <Plans />
+      )}
     </>
   );
 }

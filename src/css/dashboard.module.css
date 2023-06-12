@@ -554,12 +554,14 @@ flex-direction: column; */
   .end > p {
     margin-top: 5%;
   }
-  .myPlanCard {
+  .myPlanCard{
     justify-content: flex-start;
   }
   .myPlanCard > div {
     margin-top: 4%;
   }
+
+  
 }
 
 @media (max-width: 769px) {

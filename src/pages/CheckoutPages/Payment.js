@@ -1,10 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import getStartAndEnd from "../../daysPlan/startAndEnd";
 import calculatePrice from "../../daysPlan/calPricing";
 import checkout from "../../css/checkout.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import updateCredits from "../../getData/updateCredits";
 import getUser from "../../getData/getUser";
@@ -13,6 +13,51 @@ import { notify } from "../../alerts/toastify";
 import sendMail from "../../getData/sendMail";
 import { succesfulBuyCOD } from "../../messages/emailMessage";
 import createPlan from "../../getData/createPlan";
+import Plans from "../PlanPages/Plans";
+
+let allPlans = [
+  ["vegBasic", "Veg Basic"],
+  ["vegPremium", "Veg Premium"],
+  ["nonVegBasic", "Non Veg Basic"],
+  ["nonVegPremium", "Non Veg Premium"],
+];
+
+let allSchemes = [
+  ["1", "Custom 1 Day"],
+  ["2", "Custom 2 Day"],
+  ["3", "Custom 3 Day"],
+  ["4", "Custom 4 Day"],
+  ["5", "Custom 5 Day"],
+  ["6", "Custom 6 Day"],
+  ["7", "7 Day Plan"],
+  ["14", "14 Day Plan"],
+  ["28", "28 Day Plan"],
+];
+
+function assignSelectedPlan(plan) {
+  let selectedPlan;
+  for (let i = 0; i < allPlans.length; i++) {
+    if (plan !== allPlans[i][0]) {
+      continue;
+    }
+    selectedPlan = allPlans[i][1];
+    break;
+  }
+
+  return selectedPlan;
+}
+
+function assignSelectedDays(days) {
+  let selectedDays;
+  for (let i = 0; i < allSchemes.length; i++) {
+    if (days !== allSchemes[i][0]) {
+      continue;
+    }
+    selectedDays = allSchemes[i][1];
+    break;
+  }
+  return selectedDays;
+}
 
 function digits_count(n) {
   var count = 0;
@@ -27,9 +72,11 @@ function digits_count(n) {
 }
 
 function Payment() {
-  let [credits, setCredits] = useState(localStorage.getItem("credits"));
-  // console.log(localStorage.getItem("tempCredits"), "tempCredits");
   let navigate = useNavigate();
+  let [credits, setCredits] = useState(localStorage.getItem("credits"));
+
+  // console.log(localStorage.getItem("tempCredits"), "tempCredits");
+
   let [userDetail, setuserDetail] = useState({
     name: "",
     phone: "",
@@ -41,6 +88,8 @@ function Payment() {
   }
   let selectedPlan, selectedDays;
   let { planType } = useParams();
+  console.log("outside here");
+
   let address = JSON.parse(localStorage.getItem("selected_address"));
   console.log("selected Address :", address);
 
@@ -250,111 +299,120 @@ function Payment() {
     razor.open();
     // razor.createPayment(options);
   };
+  let displayPlan = assignSelectedPlan(selectedPlan);
+  let displayDays = assignSelectedDays(selectedDays);
 
   return (
     <>
-      <TopNavbar />
-      <div className={checkout.body}>
-        <div
-          onClick={() => {
-            navigate(-1);
-          }}
-          className={checkout.checkBack}
-        >
-          <i class="fa-solid fa-backward"></i>
-        </div>
-        <div className={checkout.leftPayment}>
-          <div className={checkout.orderSummary}>
-            <p>Order Summary</p>
-          </div>
-          <div className={checkout.summaryCard}>
-            <div>
-              <p>Start Date :</p> <p>{start}</p>
-            </div>
-            <div>
-              <p>End Date :</p>
-              <p>{end}</p>
-            </div>
-            <div>
-              <p>Selected Plan :</p>
-              <p>{selectedPlan} </p>
-            </div>
-            <div>
-              <p>Selected Days :</p>
-
-              <p>{selectedDays}</p>
-            </div>
-            <div style={{ backgroundColor: "rgba(99, 47, 107, 0.5)" }}>
-              <p>Sub Total :</p>
-              <p>{subtotal}</p>
-            </div>
-          </div>
-          <div className={checkout.addressCard}>
-            <span>{address.saveAs}</span>
-            <span>
-              {address.floor === undefined ? "" : address.floor + " , "}
-              {address.detailed} ,
-            </span>
-            <span>
-              {address.landmark} , {address.city} - {address.pincode}
-            </span>
-          </div>
-        </div>
-        <div className={checkout.rightPayment}>
-          <div className={checkout.creditsCheckout}>
-            <div className={checkout.credits}>
-              <div className={checkout.creditsLabel}>
-                <span>Credits</span>
-              </div>
-              <div className={checkout.creditsDisplay}>
-                <span>INR {credits}</span>
-              </div>
-            </div>
+      {address ? (
+        <>
+          {" "}
+          <TopNavbar />
+          <div className={checkout.body}>
             <div
-              onClick={handleCreditsUse}
-              type="button"
-              className={checkout.creditsUse}
+              onClick={() => {
+                navigate(-1);
+              }}
+              className={checkout.checkBack}
             >
-              <span>Use</span>
+              <i class="fa-solid fa-backward"></i>
             </div>
-          </div>
-          <div className={checkout.NameAndPhone}>
-            <div>
-              <div className={checkout.inputPaymentLabel}>
-                <span> Name : </span>
+            <div className={checkout.leftPayment}>
+              <div className={checkout.orderSummary}>
+                <p>Order Summary</p>
               </div>
-              <input
-                onChange={handleChange}
-                name="name"
-                className={checkout.inputPayment}
-                type="text"
-              />
-            </div>
-            <div>
-              <div className={checkout.inputPaymentLabel}>
-                <span> Contact : </span>
+              <div className={checkout.summaryCard}>
+                <div>
+                  <p>Start Date :</p> <p>{start}</p>
+                </div>
+                <div>
+                  <p>End Date :</p>
+                  <p>{end}</p>
+                </div>
+                <div>
+                  <p>Selected Plan :</p>
+                  <p>{displayPlan} </p>
+                </div>
+                <div>
+                  <p>Selected Days :</p>
+
+                  <p>{displayDays}</p>
+                </div>
+                <div style={{ backgroundColor: "rgba(99, 47, 107, 0.5)" }}>
+                  <p>Sub Total :</p>
+                  <p>{subtotal}</p>
+                </div>
               </div>
-              <input
-                onChange={handleChange}
-                name="phone"
-                className={checkout.inputPayment}
-                type="number"
-              />
+              <div className={checkout.addressCard}>
+                <span>{address.saveAs}</span>
+                <span>
+                  {address.floor === undefined ? "" : address.floor + " , "}
+                  {address.detailed} ,
+                </span>
+                <span>
+                  {address.landmark} , {address.city} - {address.pincode}
+                </span>
+              </div>
+            </div>
+            <div className={checkout.rightPayment}>
+              <div className={checkout.creditsCheckout}>
+                <div className={checkout.credits}>
+                  <div className={checkout.creditsLabel}>
+                    <span>Credits</span>
+                  </div>
+                  <div className={checkout.creditsDisplay}>
+                    <span>INR {credits}</span>
+                  </div>
+                </div>
+                <div
+                  onClick={handleCreditsUse}
+                  type="button"
+                  className={checkout.creditsUse}
+                >
+                  <span>Use</span>
+                </div>
+              </div>
+              <div className={checkout.NameAndPhone}>
+                <div>
+                  <div className={checkout.inputPaymentLabel}>
+                    <span> Name : </span>
+                  </div>
+                  <input
+                    onChange={handleChange}
+                    name="name"
+                    className={checkout.inputPayment}
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <div className={checkout.inputPaymentLabel}>
+                    <span> Contact : </span>
+                  </div>
+                  <input
+                    onChange={handleChange}
+                    name="phone"
+                    className={checkout.inputPayment}
+                    type="number"
+                  />
+                </div>
+              </div>
+              <div onClick={handleCOD} type="button" className={checkout.COD}>
+                <p>Cash On Delivery</p>
+              </div>
+              <div
+                onClick={() => checkoutHandler(subtotal)}
+                type="button"
+                className={checkout.Online}
+              >
+                <p>Pay via Online</p>
+              </div>
             </div>
           </div>
-          <div onClick={handleCOD} type="button" className={checkout.COD}>
-            <p>Cash On Delivery</p>
-          </div>
-          <div
-            onClick={() => checkoutHandler(subtotal)}
-            type="button"
-            className={checkout.Online}
-          >
-            <p>Pay via Online</p>
-          </div>
-        </div>
-      </div>
-      <Footer />
+          <Footer />
+        </>
+      ) : (
+        <Plans />
+      )}
     </>
   );
 }
