@@ -272,7 +272,8 @@ function ChangePlanProcess() {
       description: "Food Meal Plan Service",
       image: LOGO,
       order_id: order.id,
-      callback_url: "http://localhost:3500/api/paymentverification", // check
+      callback_url:
+        "https://backend-eat-fresh.onrender.com/api/paymentverification", // check
       prefill: {
         name: plan.name,
         email: localStorage.getItem("username"),
