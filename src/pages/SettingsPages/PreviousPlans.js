@@ -1,6 +1,7 @@
 import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import previous from "../../css/settings.module.css";
+import AltFooter from "../../components/altfooter";
 
 let array = [1, 2, 3, 4, 5, 6, 7];
 
@@ -96,6 +97,7 @@ function PrevoiusPlans() {
             </div>
           )}
         </div>
+        {/* <AltFooter text="Food that makes your soul happy" /> */}
       </div>
       <Footer />
     </>

@@ -458,15 +458,11 @@
     /* PreviousTransactions.js */
     width: 80%;
   }
-  .prevbody {
-    /* background-color: aqua; */
-    height: 88vh;
-  }
 }
 
 @media (max-width: 500px) {
   /* .previousPlanLabel {
-    width: 60%;
+    margin-bottom: 3vh;
   } */
   .previousPlanLabel > p {
     margin-top: 7%;
@@ -478,6 +474,13 @@
   .previousPlansCard > div {
     height: 50%;
   } */
+  .prevbody {
+    /* background-color: aqua; */
+    height: 80vh;
+    /* display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll; */
+  }
 }
 
 /* /////////////////////// Cancellation.js  /////////////*/
