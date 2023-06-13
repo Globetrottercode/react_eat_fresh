@@ -125,6 +125,13 @@
 
 @media (max-width: 500px) {
   /* /////////////////// Plans.js////////// */
+  .plansBody {
+    text-align: -webkit-center;
+    height: 88vh;
+    display: block;
+    overflow-y: scroll;
+    /* background-color: green; */
+  }
   .mealPlansLabel {
     width: 60%;
   }

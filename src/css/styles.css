@@ -15,6 +15,45 @@ body {
   display: flex;
 }
 
+.altFooter {
+  display: none;
+}
+.phoneFooter {
+  width: 100%;
+  height: 40vh;
+  background-color: rgba(99, 47, 107, 0.8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.altfooterIcons {
+  height: 20vh;
+  width: 100%;
+  /* background-color: #ffb039; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.phoneFooter > span {
+  font-size: 2.5rem;
+  margin: 10% 10% 10% 10%;
+  font-size: bold;
+}
+
+.altfooterCopyRight {
+  background-color: rgba(48, 47, 107, 0.69);
+  height: 10vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .left {
   width: 50vw;
   display: flex;
@@ -113,7 +152,7 @@ body {
   width: 100%;
   height: 15vh;
   margin-bottom: 0vh;
-  background-color: rgba(136, 80, 180, 0.35);
+  background-color: rgba(136, 80, 180, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -442,6 +481,10 @@ body {
   .profileEdit > i {
     font-size: 1rem;
   }
+  .profileBody {
+    height: 88vh;
+    /* background-color: aqua; */
+  }
 }
 
 /* ////////////////////////// ResetEmail.js /////////////////*/
@@ -477,5 +520,35 @@ body {
   .resetLabel > p {
     font-size: 0.7rem;
     margin-top: 12%;
+  }
+  .resetBody {
+    height: 88vh;
+    /* background-color: aqua; */
+  }
+}
+
+/* //////////////// Footer.js /////////////////*/
+
+@media (max-width: 500px) {
+  .lowerFooter {
+    border-top-right-radius: 0.5vh;
+    border-top-left-radius: 0.5vh;
+    padding-top: 2.5%;
+    position: static;
+    height: 10vh;
+    margin-bottom: 0px;
+    padding-bottom: 2.5%;
+    display: none;
+  }
+  .footerIcons {
+    font-size: 0.6rem;
+  }
+  .footerCopyRight {
+    font-size: 0.4rem;
+  }
+  .altFooter {
+    margin-top: 15vh;
+    display: block;
+    margin-bottom: 10vh;
   }
 }

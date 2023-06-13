@@ -9,6 +9,7 @@ import getAllPlans from "../../getData/getAllPlans";
 import planValidator from "../../daysPlan/planValidator";
 import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
+import AltFooter from "../../components/altfooter";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -99,6 +100,7 @@ function PlanDays() {
             <p>Proceed to Checkout</p>
           </div>
         </div>
+        <AltFooter text="Food That Makes You Feel At Home!" />
       </div>
       <Footer />
     </>

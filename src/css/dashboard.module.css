@@ -246,7 +246,7 @@ flex-direction: column; */
 }
 
 .addressesBody {
-  height: 65vh;
+  height: 72.5vh;
   margin-top: 1vh;
   /* background-color: aqua; */
   display: flex;
@@ -533,7 +533,29 @@ flex-direction: column; */
   font-weight: 300;
   font-size: 2.5vh;
 }
+/* ///////////////////////////// Address.js ////////////////// */
 
+@media (max-width: 800px) {
+  .body {
+    height: 72.5vw;
+  }
+  .savedAddressesCard {
+    width: 85vw;
+  }
+  .savedAddressLabel {
+    width: 70vw;
+  }
+  .savedAddressLabel > p {
+    font-size: 1rem;
+    margin-top: 3%;
+  }
+}
+@media (max-width: 500px) {
+  .addressesBody {
+    /* background-color: aqua; */
+    height: 88vh;
+  }
+}
 /* ///////////////////////////dashboard.js ////////////////*/
 
 @media (max-width: 1137px) {
@@ -554,14 +576,12 @@ flex-direction: column; */
   .end > p {
     margin-top: 5%;
   }
-  .myPlanCard{
+  .myPlanCard {
     justify-content: flex-start;
   }
   .myPlanCard > div {
     margin-top: 4%;
   }
-
-  
 }
 
 @media (max-width: 769px) {
@@ -571,8 +591,17 @@ flex-direction: column; */
   }
 }
 @media (max-width: 500px) {
+  .body {
+    /* background-color: aqua; */
+    height: 88vh;
+    display: block;
+    overflow-y: scroll;
+    text-align: -webkit-center;
+    /* flex-direction: column;
+    justify-content: center; */
+  }
   .right {
-    margin-top: 35vh;
+    margin-top: 10vh;
     width: 90vw;
     height: 50vh;
     /* flex-direction: column; */
@@ -604,23 +633,6 @@ flex-direction: column; */
   .right {
     height: 45vh;
     /* flex-direction: column; */
-  }
-}
-/* ///////////////////////////// Address.js ////////////////// */
-
-@media (max-width: 800px) {
-  .body {
-    height: 72.5vw;
-  }
-  .savedAddressesCard {
-    width: 85vw;
-  }
-  .savedAddressLabel {
-    width: 70vw;
-  }
-  .savedAddressLabel > p {
-    font-size: 1rem;
-    margin-top: 3%;
   }
 }
 
@@ -661,6 +673,14 @@ flex-direction: column; */
   }
   .changeCurrPlanLabel > p {
     font-size: 0.8rem;
+  }
+  .changeBody {
+    display: block;
+    text-align: -webkit-center;
+    height: 88vh;
+    overflow-y: scroll;
+    padding-bottom: 0vh;
+    /* background-color: blue; */
   }
 }
 

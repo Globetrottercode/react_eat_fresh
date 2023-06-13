@@ -601,6 +601,7 @@
 /* ////////////////////////////// Checkout.js ///////////////////////*/
 @media (max-width: 912px) {
   .body {
+    height: 88vh;
     display: block;
     text-align: -webkit-center;
     overflow-y: scroll;
@@ -755,4 +756,11 @@
   .summaryCard > div > p {
     margin-top: 4%;
   } */
+}
+/* ///////////////////// PaymentSucces.js /////*/
+
+@media (max-width: 500px) {
+  .paymentSuccessBody {
+    height: 88vh;
+  }
 }

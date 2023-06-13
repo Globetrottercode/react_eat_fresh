@@ -18,6 +18,7 @@ import {
 } from "../../messages/emailMessage";
 import { changePlanSubject } from "../../messages/emailSubject";
 import Plans from "../PlanPages/Plans";
+import AltFooter from "../../components/altfooter";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -116,6 +117,7 @@ function ChangePlan() {
             <p>Proceed</p>
           </div>
         </div>
+        <AltFooter text="Ours Users Always Have Options" />
       </div>
       <Footer />
     </>
@@ -371,6 +373,7 @@ function ChangePlanProcess() {
               </div>
               <i>*Note : Credits can't be used for change plan payments</i>
             </div>
+            <AltFooter text="Good Food Equals Good Mood" />
           </div>
           <Footer />{" "}
         </>

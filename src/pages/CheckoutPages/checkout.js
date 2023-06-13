@@ -10,6 +10,7 @@ import allActions from "../../Redux/actions/allActions";
 import getUser from "../../getData/getUser";
 import "../../css/styles.css";
 import { notify } from "../../alerts/toastify";
+import AltFooter from "../../components/altfooter";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -208,6 +209,7 @@ function Checkout() {
             </div>
           </div>
         </div>
+        <AltFooter text="Let Food be Thy Medicine, Thy Medicine Shall Be Thy Food" />
       </div>
       <Footer />
     </>

@@ -6,6 +6,7 @@ import getAllAddress from "../../getData/getAllAddress";
 import { useNavigate } from "react-router-dom";
 import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
+import AltFooter from "../../components/altfooter";
 
 let allPlans = [
   ["vegBasic", "Veg Basic"],
@@ -192,6 +193,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
+        <AltFooter text="Focus, On Your Goals , We Have Got Yours Meals Covered" />
       </div>
       <Footer />
     </>

@@ -427,6 +427,10 @@
     margin-top: 5%;
     font-size: 1.3rem;
   } */
+  .body {
+    /* background-color: aqua; */
+    height: 88vh;
+  }
 }
 
 /* //////////////////////////PreviousPlans.js //////////*/
@@ -453,6 +457,10 @@
   .previousTransCard {
     /* PreviousTransactions.js */
     width: 80%;
+  }
+  .prevbody {
+    /* background-color: aqua; */
+    height: 88vh;
   }
 }
 
@@ -514,6 +522,13 @@
   .cancelMealProceed > p {
     font-size: 1rem;
     margin-top: 8%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cancelBody {
+    height: 88vh;
+    /* background-color: aqua; */
   }
 }
 

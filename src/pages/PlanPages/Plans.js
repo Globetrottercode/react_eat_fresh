@@ -8,6 +8,7 @@ import getCredits from "../../getData/getCredits";
 import sendMail from "../../getData/sendMail";
 import { signUpMessage } from "../../messages/emailMessage";
 import { signUpSubject } from "../../messages/emailSubject";
+import AltFooter from "../../components/altfooter";
 
 function Plans() {
   let { username, token, id, name } = useParams();
@@ -111,7 +112,9 @@ function Plans() {
             <h3> CUSTOMIZE </h3>
           </div> */}
         </div>
+        <AltFooter text="Solving Your Day to Day Health Needs" />
       </div>
+
       <Footer />
     </>
   );

@@ -28,6 +28,7 @@ import ResetName from "./pages/profilePages/resetName";
 import ResetEmail from "./pages/profilePages/resetEmail";
 import ResetPassword from "./pages/profilePages/resetPassword";
 import Failure from "./pages/CheckoutPages/failure";
+import AltFooter from "./components/altfooter";
 
 export default function App() {
   return (
