@@ -11,6 +11,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import getCredits from "../../getData/getCredits";
 import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
+import AltFooter from "../../components/altfooter";
+
 let i = 0;
 
 function digits_count(n) {
@@ -364,6 +366,7 @@ function CheckoutAddr() {
             <p>Continue</p>
           </div>
         </div>
+        <AltFooter text="Serving you good health and happiness" />
       </div>
       <Footer />
     </>
