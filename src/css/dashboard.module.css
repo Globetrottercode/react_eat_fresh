@@ -554,6 +554,12 @@ flex-direction: column; */
   .addressesBody {
     /* background-color: aqua; */
     height: 88vh;
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
+  }
+  .savedAddressLabel {
+    margin-bottom: 2vh;
   }
 }
 /* ///////////////////////////dashboard.js ////////////////*/

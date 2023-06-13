@@ -2,6 +2,7 @@ import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import dashboard from "../../css/dashboard.module.css";
 import checkout from "../../css/checkout.module.css";
+import AltFooter from "../../components/altfooter";
 
 function Addresses() {
   let allAddress = JSON.parse(localStorage.getItem("allAddress"));
@@ -32,9 +33,9 @@ function Addresses() {
             </div>
           )}
         </div>
+        <AltFooter text="We deliver happiness and satisfaction" />
       </div>
 
-      <div></div>
       <Footer />
     </>
   );
