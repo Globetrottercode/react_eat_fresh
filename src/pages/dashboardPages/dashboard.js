@@ -193,7 +193,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <AltFooter text="Focus, On Your Goals , We Have Got Yours Meals Covered" />
+        <AltFooter text="Focus, On Your Goals , We Have Got Your Meals Covered" />
       </div>
       <Footer />
     </>
