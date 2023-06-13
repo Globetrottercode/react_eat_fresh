@@ -25,7 +25,7 @@ async function getAllPlans(user_id) {
 async function getLastPlan(user_id) {
   // return empty object if no plans else returns last plan in object
   const response = await fetch(
-    `http://localhost:3500/customer/myPlan/getMyPlan/${user_id}`,
+    `https://backend-eat-fresh.onrender.com/customer/myPlan/getMyPlan/${user_id}`,
     {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
