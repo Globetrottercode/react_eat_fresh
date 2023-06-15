@@ -95,8 +95,8 @@ function Dashboard() {
       selectedDays
   );
   async function addrBtnClick() {
-    let user = await getUser(localStorage.getItem("username"));
-    let allAddress = await getAllAddress(user._id);
+    // let user = await getUser(localStorage.getItem("username"));
+    let allAddress = await getAllAddress(localStorage.getItem("user_id"));
     localStorage.setItem("allAddress", JSON.stringify(allAddress));
     console.log(JSON.parse(localStorage.getItem("allAddress")));
     navigate("/dashboard/addresses");

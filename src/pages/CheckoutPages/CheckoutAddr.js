@@ -53,8 +53,11 @@ function CheckoutAddr() {
         notify("enter valid pincode");
         return;
       }
-      let user = await getUser(localStorage.getItem("username"));
-      localStorage.setItem("credits", await getCredits(user._id));
+      // let user = await getUser(localStorage.getItem("username"));
+      localStorage.setItem(
+        "credits",
+        await getCredits(localStorage.getItem("user_id"))
+      );
       localStorage.setItem("selected_address", JSON.stringify(newAddress));
       newAddress.username = localStorage.getItem("username");
       let response = await fetch(
@@ -65,7 +68,7 @@ function CheckoutAddr() {
             "Content-Type": "application/x-www-form-urlencoded",
           },
           body: new URLSearchParams({
-            user_id: user._id,
+            user_id: localStorage.getItem("user_id"),
             saveAs: newAddress.saveAs,
             city: newAddress.city,
             landmark: newAddress.landmark,
@@ -246,8 +249,11 @@ function CheckoutAddr() {
           </div>
           <div
             onClick={async () => {
-              let user = await getUser(localStorage.getItem("username"));
-              localStorage.setItem("credits", await getCredits(user._id));
+              // let user = await getUser(localStorage.getItem("username"));
+              localStorage.setItem(
+                "credits",
+                await getCredits(localStorage.getItem("user_id"))
+              );
               // localStorage.setItem(
               //   "tempCredits",
               //   localStorage.getItem("credits")

@@ -81,7 +81,6 @@ function PlanDays() {
               if (!localStorage.getItem("token"))
                 navigate(`/plans/${planType}/checkout`);
               else {
-                // let user = await getUser(localStorage.getItem("username"));
                 let plan = await getLastPlan(localStorage.getItem("user_id"));
                 if (!planValidator(plan.end)) {
                   navigate(`/plans/${planType}/checkout`);

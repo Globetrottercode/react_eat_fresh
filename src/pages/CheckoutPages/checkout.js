@@ -47,10 +47,12 @@ function Checkout() {
 
   async function handleClick() {
     if (localStorage.getItem("token")) {
-      let user = await getUser(localStorage.getItem("username"));
+      // let user = await getUser(localStorage.getItem("username"));
       let allAddress = [];
       let response = await fetch(
-        `https://backend-eat-fresh.onrender.com/customer/address/getAddress/${user._id}`,
+        `https://backend-eat-fresh.onrender.com/customer/address/getAddress/${localStorage.getItem(
+          "user_id"
+        )}`,
         {
           method: "GET",
           headers: {
@@ -64,9 +66,9 @@ function Checkout() {
       );
       if (response.status === 200) {
         allAddress = await response.json();
-        console.log(allAddress);
+        // console.log(allAddress);
         dispatch(allActions.setAll_Address(allAddress));
-        console.log(arrayOfAddress, "got it");
+        // console.log(arrayOfAddress, "got it");
         if (allAddress.savedAddress === 0) {
           navigate(`/plans/${planType}/checkout/address`);
         } else {
@@ -77,7 +79,7 @@ function Checkout() {
         console.log(response.status);
         dispatch(allActions.setAll_Address(allAddress));
         // localStorage.setItem("allAddress", allAddress);
-        console.log(arrayOfAddress, "ok ok");
+        // console.log(arrayOfAddress, "ok ok");
         // navigate();
       }
     } else {

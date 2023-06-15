@@ -21,10 +21,10 @@ function Settings() {
   let navigate = useNavigate();
   async function handlePlansClick() {
     if (localStorage.getItem("token")) {
-      let user = await getUser(localStorage.getItem("username"));
-      let allPlans = await getPrevPlans(user._id);
+      // let user = await getUser(localStorage.getItem("username"));
+      let allPlans = await getPrevPlans(localStorage.getItem("user_id"));
       localStorage.setItem("allPlans", JSON.stringify(allPlans));
-      console.log(JSON.parse(localStorage.getItem("allPlans")), " all Plans");
+      // console.log(JSON.parse(localStorage.getItem("allPlans")), " all Plans");
       navigate("/settings/prevplans");
     } else {
       notify("You need to login");
@@ -32,13 +32,13 @@ function Settings() {
   }
   async function handleCancellation() {
     if (localStorage.getItem("token")) {
-      let user = await getUser(localStorage.getItem("username"));
-      let credits = await getCredits(user._id);
+      // let user = await getUser(localStorage.getItem("username"));
+      let credits = await getCredits(localStorage.getItem("user_id")); //get credits
       localStorage.setItem("credits", credits);
-      let plan = await getLastPlan(user._id); //last plan
-      console.log(plan.end, "plan-end");
+      let plan = await getLastPlan(localStorage.getItem("user_id")); //get last plan
+      // console.log(plan.end, "plan-end");
       localStorage.setItem("lastPlan", JSON.stringify(plan));
-      console.log(planValidator(plan.end));
+      // console.log(planValidator(plan.end));
       if (planValidator(plan.end)) {
         if (canCancel(plan)) {
           navigate("/settings/cancellation");
@@ -54,13 +54,12 @@ function Settings() {
   }
   async function handleTransactionsClick() {
     if (localStorage.getItem("token")) {
-      let user = await getUser(localStorage.getItem("username"));
-      let allTransactions = await getTransactions(user._id);
+      // let user = await getUser(localStorage.getItem("username"));
+      let allTransactions = await getTransactions(
+        // get transactions
+        localStorage.getItem("user_id")
+      );
       localStorage.setItem("allTransactions", JSON.stringify(allTransactions));
-      // console.log(
-      //   JSON.parse(localStorage.getItem("allTransactions")),
-      //   " all Transactions"
-      // );
       navigate("/settings/prevtransactions");
     } else {
       notify("You need to login !");

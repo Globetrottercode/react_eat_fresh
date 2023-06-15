@@ -42,8 +42,6 @@ function TopNavbar() {
       }, 2000);
     }
     console.log("click dash");
-    // let user = await getUser(localStorage.getItem("user_id"));
-    // console.log(user);
     let lastPlan = await getLastPlan(localStorage.getItem("user_id")); // getting last plan
     if (lastPlan.end) {
       localStorage.setItem("lastPlan", JSON.stringify(lastPlan));
@@ -62,8 +60,6 @@ function TopNavbar() {
       "credits",
       await getCredits(localStorage.getItem("user_id"))
     );
-    // console.log(localStorage.getItem("credits"));
-
     navigate("/dashboard");
   }
   function handleSettings() {
