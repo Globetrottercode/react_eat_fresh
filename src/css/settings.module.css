@@ -478,20 +478,20 @@
   } */
   .prevbody {
     /* background-color: aqua; */
-    height: 88vh;
+    height: 80vh;
     /* display: block;
     text-align: -webkit-center;
     overflow-y: scroll; */
   }
   .previousPlansCard {
-    height: 30%;
+    height: 40%;
   }
   .previousPlansCard > div {
     height: 80%;
   }
 
   .previousTransCard {
-    height: 30%;
+    height: 40%;
   }
 
   #prevTransacDet {
