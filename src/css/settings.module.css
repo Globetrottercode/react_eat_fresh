@@ -484,9 +484,18 @@
     overflow-y: scroll; */
   }
   .previousPlansCard {
-    height: 50%;
+    height: 30%;
   }
+  .previousPlansCard > div {
+    height: 80%;
+  }
+
   .previousTransCard {
+    height: 30%;
+  }
+
+  #prevTransacDet {
+    /* PreviousTransactions.js */
     height: 50%;
   }
 }

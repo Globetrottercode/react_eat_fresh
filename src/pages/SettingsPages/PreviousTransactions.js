@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import previous from "../../css/settings.module.css";
 import infoStyles from "../../css/planinfo.module.css";
 import { useNavigate } from "react-router-dom";
+import AltFooter from "../../components/altfooter";
 
 function PrevoiusTransactions() {
   let navigate = useNavigate();
@@ -42,6 +43,7 @@ function PrevoiusTransactions() {
             </div>
           )}
         </div>
+        {/* <AltFooter text="The Right Decisions for thy Healthy Body" /> */}
       </div>
       <Footer />
     </>
