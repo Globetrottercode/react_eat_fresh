@@ -30,57 +30,63 @@ function PlanDetail() {
         >
           <i class="fa-solid fa-backward"></i>
         </div>
-        <div className={infoStyles.card}>
-          <div className={infoStyles.innerCard1}>
-            <div
-              onClick={() => navigate(`/plans/${planType}/monday`)}
-              type="button"
-              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
-            >
-              <p> MON</p>
-            </div>
-            <div
-              onClick={() => navigate(`/plans/${planType}/tuesday`)}
-              type="button"
-              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
-            >
-              <p>TUES</p>
-            </div>
-            <div
-              onClick={() => navigate(`/plans/${planType}/wednesday`)}
-              type="button"
-              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
-            >
-              <p>WED</p>
-            </div>
-            <div
-              onClick={() => navigate(`/plans/${planType}/thursday`)}
-              type="button"
-              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
-            >
-              <p>THURS</p>
-            </div>
-            <div
-              onClick={() => navigate(`/plans/${planType}/friday`)}
-              type="button"
-              style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
-            >
-              <p>FRI</p>
-            </div>
-            <div
-              onClick={() => navigate(`/plans/${planType}/saturday`)}
-              type="button"
-              style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
-            >
-              <p> SAT </p>
-            </div>
+        <div className={infoStyles.left}>
+          <div className={infoStyles.checkMeals}>
+            <span>Check Meals for Days</span>
           </div>
-          <div
-            onClick={() => navigate(`/plans/${planType}/sunday`)}
-            type="button"
-            className={infoStyles.innerCard2}
-          >
-            <p> SUNDAY </p>
+          <div className={infoStyles.card}>
+            <div className={infoStyles.innerCard1}>
+              <div
+                onClick={() => navigate(`/plans/${planType}/monday`)}
+                type="button"
+                style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
+              >
+                <p> MON</p>
+              </div>
+              <div
+                onClick={() => navigate(`/plans/${planType}/tuesday`)}
+                type="button"
+                style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
+              >
+                <p>TUES</p>
+              </div>
+              <div
+                onClick={() => navigate(`/plans/${planType}/wednesday`)}
+                type="button"
+                style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
+              >
+                <p>WED</p>
+              </div>
+              <div
+                onClick={() => navigate(`/plans/${planType}/thursday`)}
+                type="button"
+                style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
+              >
+                <p>THURS</p>
+              </div>
+              <div
+                onClick={() => navigate(`/plans/${planType}/friday`)}
+                type="button"
+                style={{ backgroundColor: "rgba(48, 47, 107, 0.8)" }}
+              >
+                <p>FRI</p>
+              </div>
+              <div
+                onClick={() => navigate(`/plans/${planType}/saturday`)}
+                type="button"
+                style={{ backgroundColor: "rgba(99, 47, 107, 0.8)" }}
+              >
+                <p> SAT </p>
+              </div>
+            </div>
+
+            <div
+              onClick={() => navigate(`/plans/${planType}/sunday`)}
+              type="button"
+              className={infoStyles.innerCard2}
+            >
+              <p> SUNDAY </p>
+            </div>
           </div>
         </div>
         <div className={infoStyles.details}>

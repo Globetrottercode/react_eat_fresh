@@ -18,6 +18,29 @@
   display: none;
 }
 
+.left {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* rgba(136, 80, 180, 0.6); */
+.checkMeals {
+  background-color: rgba(217, 217, 217, 1);
+  height: 2rem;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vh;
+  /* color: white; */
+}
+.checkMeals > span {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
 .cardDays {
   background-color: rgba(217, 217, 217, 0.6);
   height: 47vh;
@@ -383,7 +406,7 @@
     overflow-y: scroll;
   }
   .card {
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
     width: 85vw;
     height: 40vh;
     border-radius: 4vh;
@@ -411,6 +434,9 @@
     justify-content: center;
     align-items: center;
   }
+  .checkMeals {
+    height: 3rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -422,7 +448,7 @@
     overflow-y: scroll;
   }
   .card {
-    margin-top: 10vh;
+    margin-top: 0vh;
     width: 85vw;
     height: 40vh;
     border-radius: 4vh;
@@ -436,6 +462,11 @@
   .pricing {
     width: 80vw;
     height: 25vh;
+  }
+  .checkMeals {
+    height: 3rem;
+    width: 70%;
+    margin-top: 5%;
   }
 }
 
