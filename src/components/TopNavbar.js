@@ -41,9 +41,10 @@ function TopNavbar() {
         navigate("/login");
       }, 2000);
     }
-    let user = await getUser(localStorage.getItem("username"));
+    console.log("click dash");
+    // let user = await getUser(localStorage.getItem("user_id"));
     // console.log(user);
-    let lastPlan = await getLastPlan(user._id); // getting last plan
+    let lastPlan = await getLastPlan(localStorage.getItem("user_id")); // getting last plan
     if (lastPlan.end) {
       localStorage.setItem("lastPlan", JSON.stringify(lastPlan));
       localStorage.setItem(
@@ -57,7 +58,10 @@ function TopNavbar() {
       // console.log("plan valid", JSON.parse(localStorage.getItem("planValid")));
       // console.log("user never had a plan");
     }
-    localStorage.setItem("credits", await getCredits(user._id));
+    localStorage.setItem(
+      "credits",
+      await getCredits(localStorage.getItem("user_id"))
+    );
     // console.log(localStorage.getItem("credits"));
 
     navigate("/dashboard");
