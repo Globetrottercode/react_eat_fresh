@@ -397,9 +397,9 @@
     margin-top: 1.5%;
   }
 }
-@media (max-width: 912px) {
+@media (max-width: 913px) {
   .body {
-    height: 72.5vh;
+    height: 88vh;
     width: 100%;
     display: block;
     text-align: -webkit-center;

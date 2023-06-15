@@ -445,6 +445,7 @@
   }
   .previousPlansCard {
     width: 80%;
+    height: 50%;
   }
   .previousPlansCard > div {
     height: 50%;
@@ -457,6 +458,7 @@
   .previousTransCard {
     /* PreviousTransactions.js */
     width: 80%;
+    height: 50%;
   }
 }
 
@@ -476,10 +478,16 @@
   } */
   .prevbody {
     /* background-color: aqua; */
-    height: 80vh;
+    height: 88vh;
     /* display: block;
     text-align: -webkit-center;
     overflow-y: scroll; */
+  }
+  .previousPlansCard {
+    height: 50%;
+  }
+  .previousTransCard {
+    height: 50%;
   }
 }
 
@@ -525,6 +533,14 @@
   .cancelMealProceed > p {
     font-size: 1rem;
     margin-top: 8%;
+  }
+  .cancelBody {
+    margin-top: 10%;
+    display: block;
+    text-align: -webkit-center;
+  }
+  .cancelRight {
+    margin-top: 20%;
   }
 }
 

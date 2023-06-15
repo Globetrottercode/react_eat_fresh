@@ -258,7 +258,7 @@ function CheckoutAddr() {
               //   "tempCredits",
               //   localStorage.getItem("credits")
               // );
-              console.log(localStorage.getItem("credits"), "credits");
+              // console.log(localStorage.getItem("credits"), "credits");
               if (localStorage.getItem("selected_address")) {
                 navigate("payment");
               } else {

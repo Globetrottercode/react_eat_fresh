@@ -529,7 +529,7 @@ body {
 
 /* //////////////// Footer.js /////////////////*/
 
-@media (max-width: 500px) {
+@media (max-width: 913px) {
   .lowerFooter {
     border-top-right-radius: 0.5vh;
     border-top-left-radius: 0.5vh;

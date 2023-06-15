@@ -19,6 +19,7 @@ import {
 import { changePlanSubject } from "../../messages/emailSubject";
 import Plans from "../PlanPages/Plans";
 import AltFooter from "../../components/altfooter";
+import infoStyles from "../../css/planinfo.module.css";
 
 let getLastPlan = getAllPlans.getLastPlan;
 // if a user has a valid plan then only they come to this page, if a user has a valid plan the last
@@ -67,6 +68,15 @@ function ChangePlan() {
     <>
       <TopNavbar />
       <div className={change.changeBody}>
+        <div
+          style={{ marginBottom: "2%" }}
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={infoStyles.pdBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={change.changeLeft}>
           <div className={change.changeCurrPlan}>
             <div className={change.changeCurrPlanLabel}>

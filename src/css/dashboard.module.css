@@ -535,15 +535,24 @@ flex-direction: column; */
 }
 /* ///////////////////////////// Address.js ////////////////// */
 
-@media (max-width: 800px) {
-  .body {
+@media (max-width: 913px) {
+  /* .body {
     height: 72.5vw;
+  } */
+  .addressesBody {
+    /* background-color: aqua; */
+    height: 88vh;
+    display: block;
+    text-align: -webkit-center;
+    overflow-y: scroll;
   }
   .savedAddressesCard {
     width: 85vw;
   }
   .savedAddressLabel {
+    margin-top: 4%;
     width: 70vw;
+    margin-bottom: 4%;
   }
   .savedAddressLabel > p {
     font-size: 1rem;
@@ -571,10 +580,20 @@ flex-direction: column; */
 }
 
 @media (max-width: 913px) {
+  .body {
+    /* background-color: aqua; */
+    height: 88vh;
+    display: block;
+    overflow-y: scroll;
+    text-align: -webkit-center;
+    /* flex-direction: column;
+    justify-content: center; */
+  }
   .right {
     width: 70vw;
     height: 69vh;
     margin-bottom: 0.5vh;
+    margin-top: 10vh;
   }
   .start > p {
     margin-top: 5%;
@@ -592,7 +611,7 @@ flex-direction: column; */
 
 @media (max-width: 769px) {
   .right {
-    margin-top: 20vh;
+    margin-top: 15vh;
     height: 50vh;
   }
 }
@@ -665,6 +684,14 @@ flex-direction: column; */
   .changeRight {
     width: 85%;
     height: 60vh;
+  }
+  .changeBody {
+    display: block;
+    text-align: -webkit-center;
+    height: 88vh;
+    overflow-y: scroll;
+    padding-bottom: 0vh;
+    /* background-color: blue; */
   }
 }
 

@@ -16,6 +16,7 @@ import {
   cancelDayMessage,
   cancelMealMessge,
 } from "../../messages/emailMessage";
+import infoStyles from "../../css/planinfo.module.css";
 
 let getLastPlan = getAllPlans.getLastPlan;
 
@@ -89,6 +90,14 @@ function Cancellation() {
     <>
       <TopNavbar />
       <div className={cancel.cancelBody}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={infoStyles.pdBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={cancel.cancelLeft}>
           <img style={{ height: "38.5vh" }} src={LOGO} />
           <div>

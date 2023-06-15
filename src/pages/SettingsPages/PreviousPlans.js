@@ -2,6 +2,8 @@ import TopNavbar from "../../components/TopNavbar";
 import Footer from "../../components/Footer";
 import previous from "../../css/settings.module.css";
 import AltFooter from "../../components/altfooter";
+import { useNavigate } from "react-router-dom";
+import infoStyles from "../../css/planinfo.module.css";
 
 let array = [1, 2, 3, 4, 5, 6, 7];
 
@@ -50,12 +52,21 @@ function assignSelectedDays(days) {
 }
 
 function PrevoiusPlans() {
+  let navigate = useNavigate();
   let allPlans = JSON.parse(localStorage.getItem("allPlans"));
   console.log("allPlans in prev Plans", allPlans);
   return (
     <>
       <TopNavbar />
       <div className={previous.prevbody}>
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+          className={infoStyles.pdBack}
+        >
+          <i class="fa-solid fa-backward"></i>
+        </div>
         <div className={previous.previousPlanLabel}>
           <p>Previous Plans</p>
         </div>

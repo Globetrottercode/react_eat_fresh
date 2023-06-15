@@ -76,7 +76,7 @@ function Checkout() {
           navigate(`/plans/${planType}/checkout/address`);
         }
       } else {
-        console.log(response.status);
+        console.log(response.status, "problem");
         dispatch(allActions.setAll_Address(allAddress));
         // localStorage.setItem("allAddress", allAddress);
         // console.log(arrayOfAddress, "ok ok");
