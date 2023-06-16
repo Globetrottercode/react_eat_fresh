@@ -204,6 +204,7 @@ function Login() {
           <i className="fab fa-google"></i> Sign In with Google
         </a>
       </div>
+      {/* <button onClick={() =>{ throw new TypeError(`okay`)}}>Break the world</button>; */}
     </div>
   );
 }
