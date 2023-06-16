@@ -9,7 +9,7 @@ import updateMyPlan from "../../getData/updateMyPlan";
 import getAllPlans from "../../getData/getAllPlans";
 import LOGO from "../../images/LOGO.png";
 import axios from "axios";
-import getUser from "../../getData/getUser";
+// import getUser from "../../getData/getUser";
 import { notify } from "../../alerts/toastify";
 import sendMail from "../../getData/sendMail";
 import {
@@ -147,19 +147,20 @@ function ChangePlanProcess() {
     plan.end
   );
   async function handleCredits() {
-    let user = await getUser(localStorage.getItem("username"));
+    // let user = await getUser(localStorage.getItem("username"));
     if (localStorage.getItem("clicked")) {
-      console.log(
-        "clicked value :",
-        JSON.parse(localStorage.getItem("clicked")),
-        localStorage.getItem("clicked")
-      );
+      // console.log(
+      //   "clicked value :",
+      //   JSON.parse(localStorage.getItem("clicked")),
+      //   localStorage.getItem("clicked")
+      // );
       console.log("returned");
       return;
     }
     localStorage.setItem("clicked", true);
+    notify("Processing your request for change.");
     let result = await updateCredits(
-      user._id,
+      localStorage.getitem("user_id"),
       Number(changeDetail.amt) + Number(currCredits)
     );
     notify(`${changeDetail.amt} credits added !!`);
@@ -199,6 +200,7 @@ function ChangePlanProcess() {
       return;
     }
     localStorage.setItem("clicked", true);
+    notify("Processing your request for change.");
     let data = await updateMyPlan(
       plan._id,
       plan.selectedPlan,
@@ -237,9 +239,8 @@ function ChangePlanProcess() {
     // }
     // localStorage.setItem("clicked", true);
     // removing only single clicks from online payment
-    let user = await getUser(localStorage.getItem("username"));
-    let user_id = user._id;
-    console.log(amount, "ok");
+    let user_id = localStorage.getItem("user_id");
+    // console.log(amount, "ok");
     let changeObject = {
       id: plan._id,
       selectedPlan: plan.selectedPlan,
