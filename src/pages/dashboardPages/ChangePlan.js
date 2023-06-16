@@ -160,7 +160,7 @@ function ChangePlanProcess() {
     localStorage.setItem("clicked", true);
     notify("Processing your request for change.");
     let result = await updateCredits(
-      localStorage.getitem("user_id"),
+      localStorage.getItem("user_id"),
       Number(changeDetail.amt) + Number(currCredits)
     );
     notify(`${changeDetail.amt} credits added !!`);
