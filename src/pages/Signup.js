@@ -44,6 +44,10 @@ function SignUp() {
       notify("Enter Full Name !");
       return;
     }
+    if (register.password.length < 8) {
+      notify("Enter minimum 8 characters");
+      return;
+    }
     if (register.password !== register.repass) {
       // alert("Passwords dont match !");
       notify("Passwords dont match !!");
