@@ -80,7 +80,10 @@ function TopNavbar() {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark  "
-        style={{ backgroundColor: "rgba(136, 80, 180, 0.50)" }}
+        style={{
+          backgroundColor: "rgba(136, 80, 180, 0.50)",
+          backgroundImage: "linear-gradient(to right , orange , violet) ",
+        }}
       >
         <i style={{ marginLeft: "4%" }} className="navbar-brand">
           {" "}
