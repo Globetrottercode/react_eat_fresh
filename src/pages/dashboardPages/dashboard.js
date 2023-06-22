@@ -73,6 +73,7 @@ function Dashboard() {
     plan = JSON.parse(localStorage.getItem("lastPlan"));
     selectedPlan = assignSelectedPlan(plan);
     selectedDays = assignSelectedDays(plan);
+    console.log(curr, plan.planChangeDate);
     if (curr === plan.planChangeDate) {
       console.log("matched");
       //if no change date available then ,it wont enter this block
