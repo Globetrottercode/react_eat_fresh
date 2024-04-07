@@ -131,3 +131,209 @@ p {
     font-size: 0.7rem;
   }
 }
+
+/* import Upload from "~/components/UserProfile/Upload";
+import Header from "../../components/UserProfile/Header/Header";
+import PersonalDetails from "~/components/UserProfile/PersonalDetail";
+import Skills from "~/components/UserProfile/Skills";
+import EducationDetails from "~/components/UserProfile/EducationalDetail";
+import React, { useState } from "react";
+import Image from "next/image";
+import tick from "../../assets/tick.svg";
+import Hobbies from "~/components/UserProfile/Hobbies";
+import Footer from "~/components/General/Footer/Footer";
+import Link from "next/link";
+
+const tickImg = tick as string;
+
+export default function Up() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <>
+      <section className="min-h-[100%]  min-w-[100%] bg-bg-primary font-syne">
+        <Header />
+        <div className="container flex h-screen flex-col items-center">
+          <div className="flex w-full justify-center">
+            <h1 className="text-center text-[1rem] font-bold text-text-primary underline underline-offset-8 lg:text-left lg:text-[1.5rem]">
+              Premium Subscription
+            </h1>
+          </div>
+          <div className="pt-6"></div>
+
+          <div className="flex h-[80vh] w-full flex-col items-center rounded-2xl  bg-white  shadow-sm transition-all duration-300 ease-in-out hover:shadow-2xl lg:h-4/6 lg:w-[45%]">
+            <div className="m-2 mb-4 flex h-1/6  w-[97%] flex-col items-center justify-around rounded-2xl  bg-bg-secondary p-8 text-white  md:h-1/5 lg:mb-0">
+              <p className="text-[0.5rem] font-bold md:text-[0.9rem]">
+                Candidate Premium Subscription + 10 Days Boosting
+              </p>
+              <p className="text-[0.5rem] font-bold md:mt-2  md:text-sm">
+                only at ₹{" "}
+                <span className="ml-2 text-[1rem] md:text-[2rem]">300</span>
+              </p>
+            </div>
+            <div className="mt-4 flex h-2/4 w-4/5 flex-col  justify-around ">
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                Life Time Verification Tick
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                Access to Unlimited Templates
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                5 Suggested Companies
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                Skill and Development Training
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                Reach up to 4 times more Companies
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                Get noticed with feature tag in a top Position
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                AI Support
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                Regular Job Post Openings on WhatsApp
+              </p>
+              <p className="mb-2 flex items-center text-xs font-bold lg:mb-0">
+                {" "}
+                <Image
+                  src={tickImg}
+                  alt="Selected"
+                  className="mr-2"
+                  width={15}
+                  height={15}
+                  draggable={false}
+                />
+                International Support
+              </p>
+            </div>
+            <div className="mt-4 flex w-4/5 ">
+              <p className=" flex items-center text-xs">
+                <input
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    const checked = e.target.checked;
+                    setChecked(checked);
+                    console.log(checked, "kk");
+                  }}
+                  className="mr-2"
+                  type="checkbox"
+                ></input>{" "}
+                Accept Terms and Conditions{`(`}{" "}
+                <Link
+                  className="text-blue-500 hover:text-blue-700"
+                  href="/PrivacyPolicy"
+                >
+                  Privacy
+                </Link>
+                /
+                <Link
+                  className="text-blue-500 hover:text-blue-700"
+                  text-xs
+                  href="/TermsAndConditions"
+                >
+                  Terms
+                </Link>
+                {`)`}
+              </p>
+            </div>
+            <div className="mb-4 mr-4 mt-4 flex h-16 w-4/5 items-center justify-center  lg:mt-4 lg:h-1/5">
+              {checked ? (
+                <button className="h-[100%] w-2/3 rounded-lg border-2 border-btn-primary bg-btn-primary  font-syne font-bold text-white  transition-all duration-300 ease-in-out hover:bg-white  hover:text-btn-primary md:h-2/3">
+                  {" "}
+                  PAY NOW{" "}
+                </button>
+              ) : (
+                <button className="h-[100%] w-2/3 rounded-lg border-2 border-gray bg-gray  font-syne font-bold text-white  transition-all duration-300 ease-in-out hover:bg-white  hover:text-btn-primary md:h-2/3">
+                  {" "}
+                  PAY NOW{" "}
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="pt-5 lg:hidden"></div>
+          <div className="h-full lg:hidden"></div>
+
+          {/*<div className="pt-5"></div>
+          <Skills />
+          <div className="pt-5"></div>
+          <Hobbies /> 
+          /* <div className="pt-20"></div>
+        </div>
+        <Footer />
+      </section>
+    </>
+  );
+} */

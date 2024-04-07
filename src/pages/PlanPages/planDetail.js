@@ -32,7 +32,7 @@ function PlanDetail() {
         </div>
         <div className={infoStyles.left}>
           <div className={infoStyles.checkMeals}>
-            <span>Check Meals for Days</span>
+            <span>Check Meals for {planType}</span>
           </div>
           <div className={infoStyles.card}>
             <div className={infoStyles.innerCard1}>
